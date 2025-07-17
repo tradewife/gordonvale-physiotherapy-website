@@ -1,0 +1,153 @@
+import Link from "next/link"
+import { Button } from "@/components/ui/button"
+
+interface LayoutProps {
+  children: React.ReactNode
+}
+
+export default function Layout({ children }: LayoutProps) {
+  console.log('Layout component rendering with BackgroundAnimation...')
+  return (
+    <div className="min-h-screen bg-white relative">
+      <div className="fixed top-4 right-4 w-8 h-8 bg-blue-500 rounded-full" style={{ zIndex: 9999 }}>
+        LAYOUT
+      </div>
+      {/* Header */}
+      <header className="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-xl border-b border-black/10 relative">
+        <div className="container mx-auto px-8 py-6 flex items-center justify-between">
+          <Link href="/" className="text-2xl font-light text-black tracking-wider">
+            Gordonvale Physiotherapy
+          </Link>
+          <nav className="hidden md:flex space-x-8">
+            <Link
+              href="/"
+              className="text-black/70 hover:text-black transition-all duration-500 font-light text-sm tracking-wide uppercase"
+            >
+              Home
+            </Link>
+            <Link
+              href="/about"
+              className="text-black/70 hover:text-black transition-all duration-500 font-light text-sm tracking-wide uppercase"
+            >
+              Our Team
+            </Link>
+            <Link
+              href="/services"
+              className="text-black/70 hover:text-black transition-all duration-500 font-light text-sm tracking-wide uppercase"
+            >
+              Services
+            </Link>
+            <Link
+              href="/dizzy-clinic"
+              className="text-black/70 hover:text-black transition-all duration-500 font-light text-sm tracking-wide uppercase"
+            >
+              Dizzy Clinic
+            </Link>
+            <Link
+              href="/ndis"
+              className="text-black/70 hover:text-black transition-all duration-500 font-light text-sm tracking-wide uppercase"
+            >
+              NDIS
+            </Link>
+            <Link
+              href="/products"
+              className="text-black/70 hover:text-black transition-all duration-500 font-light text-sm tracking-wide uppercase"
+            >
+              Products
+            </Link>
+            <Link
+              href="/telehealth"
+              className="text-black/70 hover:text-black transition-all duration-500 font-light text-sm tracking-wide uppercase"
+            >
+              Telehealth
+            </Link>
+            <Link
+              href="/contact"
+              className="text-black/70 hover:text-black transition-all duration-500 font-light text-sm tracking-wide uppercase"
+            >
+              Contact
+            </Link>
+            <Link
+              href="/blog"
+              className="text-black/70 hover:text-black transition-all duration-500 font-light text-sm tracking-wide uppercase"
+            >
+              Blog
+            </Link>
+          </nav>
+          <Button className="bg-black text-white hover:bg-black/90 transition-all duration-300 px-8 py-3 font-medium text-sm tracking-wide">
+            Book now
+          </Button>
+        </div>
+      </header>
+
+      {/* Main Content */}
+      <main className="relative z-10">{children}</main>
+
+      {/* Footer */}
+      <footer className="bg-white/90 text-black py-24 border-t border-black/10 relative z-10">
+        <div className="absolute inset-0 bg-gradient-to-t from-white to-transparent"></div>
+        <div className="container mx-auto px-8 relative z-10">
+          <div className="grid md:grid-cols-4 gap-16">
+            <div>
+              <h4 className="font-light mb-8 text-black text-xl tracking-wide">Contact</h4>
+              <p className="text-black/60 leading-relaxed text-lg font-light">
+                Shop 8C, Bryce's Arcade
+                <br />
+                58 Norman St, Gordonvale
+                <br />
+                Queensland 4865
+                <br />
+                Phone: 0401 942 903
+                <br />
+                Email: reception@gordonvalephysiotherapy.com
+              </p>
+            </div>
+            <div>
+              <h4 className="font-light mb-8 text-black text-xl tracking-wide">Services</h4>
+              <ul className="text-black/60 space-y-4 text-lg font-light">
+                <li className="hover:text-black transition-colors duration-500 cursor-pointer">
+                  Pain &amp; Movement Management
+                </li>
+                <li className="hover:text-black transition-colors duration-500 cursor-pointer">
+                  Aquatic Physiotherapy
+                </li>
+                <li className="hover:text-black transition-colors duration-500 cursor-pointer">
+                  Running Rehabilitation
+                </li>
+                <li className="hover:text-black transition-colors duration-500 cursor-pointer">
+                  Women's Health
+                </li>
+                <li className="hover:text-black transition-colors duration-500 cursor-pointer">
+                  NDIS Services
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-light mb-8 text-black text-xl tracking-wide">Hours</h4>
+              <p className="text-black/60 leading-relaxed text-lg font-light">
+                Monday - Friday: 9:00am - 5:00pm
+                <br />
+                After hours appointments by arrangement
+                <br />
+                Closed Public Holidays
+              </p>
+            </div>
+            <div>
+              <h4 className="font-light mb-8 text-black text-xl tracking-wide">Follow Us</h4>
+              <p className="text-black/60 leading-relaxed text-lg font-light">
+                <a 
+                  href="https://facebook.com/helencooper000/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="hover:text-black transition-colors duration-500"
+                >
+                  Facebook
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  )
+}
