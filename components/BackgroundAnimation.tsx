@@ -4,7 +4,20 @@ import { useEffect, useRef, useState } from 'react'
 
 declare global {
   interface Window {
-    UnicornStudio: any;
+    UnicornStudio: {
+      init: (config: {
+        canvas: HTMLCanvasElement;
+        src: string;
+        scale: number;
+        dpi: number;
+        fps: number;
+        disableMobile: boolean;
+        autoplay: boolean;
+        loop: boolean;
+        onLoad?: () => void;
+        onError?: (error: unknown) => void;
+      }) => void;
+    };
   }
 }
 
@@ -52,7 +65,7 @@ export default function BackgroundAnimation() {
           onLoad: () => {
             console.log('Birds of Paradise animation loaded successfully')
           },
-          onError: (error: any) => {
+          onError: (error: unknown) => {
             console.error('Animation loading error:', error)
           }
         })

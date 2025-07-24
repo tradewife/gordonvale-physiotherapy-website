@@ -1,5 +1,4 @@
 import React from "react"
-import Layout from "@/components/Layout"
 import { Card, CardContent } from "@/components/ui/card"
 import BackgroundAnimation from "@/components/BackgroundAnimation"
 

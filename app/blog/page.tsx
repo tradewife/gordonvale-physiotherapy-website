@@ -1,5 +1,4 @@
 import React from "react"
-import Layout from "@/components/Layout"
 import { Card, CardContent } from "@/components/ui/card"
 import BackgroundAnimation from "@/components/BackgroundAnimation"
 import { Button } from "@/components/ui/button"
@@ -42,7 +41,7 @@ export default function BlogPage() {
                     Coming Soon
                   </h2>
                   <p className="text-gray-700 text-xl leading-relaxed font-light mb-12">
-                    We're working on bringing you valuable health and physiotherapy content. 
+                    We&apos;re working on bringing you valuable health and physiotherapy content. 
                     In the meantime, feel free to contact us directly for any questions or 
                     to book an appointment.
                   </p>

@@ -1,5 +1,4 @@
 import React from "react"
-import Layout from "@/components/Layout"
 import { Card, CardContent } from "@/components/ui/card"
 import BackgroundAnimation from "@/components/BackgroundAnimation"
 
@@ -44,10 +43,10 @@ export default function AboutPage() {
                   <p className="text-gray-700 leading-relaxed text-lg font-light mb-6">
                     Helen founded Gordonvale Physiotherapy in 2016 with a vision to provide comprehensive, 
                     evidence-based physiotherapy care to the local community. With extensive experience in 
-                    pain management, women's health, and rehabilitation.
+                    pain management, women&apos;s health, and rehabilitation.
                   </p>
                   <p className="text-gray-700 leading-relaxed text-lg font-light">
-                    Helen specializes in women's health and continence, offering dedicated 1-hour sessions 
+                    Helen specializes in women&apos;s health and continence, offering dedicated 1-hour sessions 
                     for comprehensive care and treatment.
                   </p>
                 </CardContent>

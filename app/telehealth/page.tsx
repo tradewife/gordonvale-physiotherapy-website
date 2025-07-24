@@ -1,5 +1,4 @@
 import React from "react"
-import Layout from "@/components/Layout"
 import { Card, CardContent } from "@/components/ui/card"
 import BackgroundAnimation from "@/components/BackgroundAnimation"
 
@@ -68,7 +67,7 @@ export default function TelehealthPage() {
                         Initial Contact
                       </h3>
                       <p className="text-gray-700 leading-relaxed text-lg font-light">
-                        Contact us and we'll send you a contact form by SMS or email with your details. 
+                        Contact us and we&apos;ll send you a contact form by SMS or email with your details. 
                         Our staff will interview you to determine if telehealth is suitable for your condition.
                       </p>
                     </CardContent>
@@ -83,7 +82,7 @@ export default function TelehealthPage() {
                         Appointment Setup
                       </h3>
                       <p className="text-gray-700 leading-relaxed text-lg font-light">
-                        You'll receive an email platform notification before your appointment. 
+                        You&apos;ll receive an email platform notification before your appointment. 
                         A questionnaire app may be sent to gather additional information about your condition.
                       </p>
                     </CardContent>
@@ -113,7 +112,7 @@ export default function TelehealthPage() {
                         Follow-up Care
                       </h3>
                       <p className="text-gray-700 leading-relaxed text-lg font-light">
-                        After your session, you'll receive information and exercises via email. 
+                        After your session, you&apos;ll receive information and exercises via email. 
                         Follow-up appointments can be scheduled as needed for ongoing care.
                       </p>
                     </CardContent>
@@ -126,7 +125,7 @@ export default function TelehealthPage() {
               <Card className="bg-white border border-black backdrop-blur-sm mb-16">
                 <CardContent className="p-16">
                   <h2 className="text-4xl font-light mb-12 text-black tracking-tight">
-                    What You'll Need
+                    What You&apos;ll Need
                   </h2>
                   <div className="grid md:grid-cols-2 gap-12">
                     <div>
@@ -182,7 +181,7 @@ export default function TelehealthPage() {
                       </div>
                       <h3 className="text-xl font-light mb-4 text-gray-900">Flexibility</h3>
                       <p className="text-gray-700 leading-relaxed font-light">
-                        Easier scheduling and the ability to continue care when you're unwell or unable to leave home.
+                        Easier scheduling and the ability to continue care when you&apos;re unwell or unable to leave home.
                       </p>
                     </div>
                   </div>

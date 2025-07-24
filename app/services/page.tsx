@@ -1,5 +1,4 @@
 import React from "react"
-import Layout from "@/components/Layout"
 import { Card, CardContent } from "@/components/ui/card"
 import BackgroundAnimation from "@/components/BackgroundAnimation"
 
@@ -133,19 +132,19 @@ export default function ServicesPage() {
                   <div className="w-full h-64 bg-gradient-to-br from-pink-600/20 to-pink-800/20 rounded-lg mb-10 relative overflow-hidden">
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
                     <div className="absolute bottom-8 left-8 text-white font-light text-lg tracking-wide">
-                      Women's Health
+                      Women&apos;s Health
                     </div>
                   </div>
                   <h3 className="text-3xl font-light mb-8 text-gray-900 group-hover:text-gray-800 transition-colors duration-500">
-                    Women's Health and Continence
+                    Women&apos;s Health and Continence
                   </h3>
                   <p className="text-gray-700 leading-relaxed text-lg font-light mb-6">
-                    Helen specializes in women's health physiotherapy, offering dedicated 1-hour 
+                    Helen specializes in women&apos;s health physiotherapy, offering dedicated 1-hour 
                     sessions for comprehensive assessment and treatment of pelvic floor dysfunction, 
                     pregnancy-related conditions, and continence issues.
                   </p>
                   <p className="text-gray-700 leading-relaxed text-lg font-light">
-                    Our women's health services provide a comfortable, private environment for 
+                    Our women&apos;s health services provide a comfortable, private environment for 
                     addressing sensitive health concerns with expert, compassionate care.
                   </p>
                 </CardContent>

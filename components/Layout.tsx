@@ -91,7 +91,7 @@ export default function Layout({ children }: LayoutProps) {
             <div>
               <h4 className="font-light mb-8 text-black text-xl tracking-wide">Contact</h4>
               <p className="text-black/60 leading-relaxed text-lg font-light">
-                Shop 8C, Bryce's Arcade
+                Shop 8C, Bryce&apos;s Arcade
                 <br />
                 58 Norman St, Gordonvale
                 <br />
@@ -115,7 +115,7 @@ export default function Layout({ children }: LayoutProps) {
                   Running Rehabilitation
                 </li>
                 <li className="hover:text-black transition-colors duration-500 cursor-pointer">
-                  Women's Health
+                  Women&apos;s Health
                 </li>
                 <li className="hover:text-black transition-colors duration-500 cursor-pointer">
                   NDIS Services

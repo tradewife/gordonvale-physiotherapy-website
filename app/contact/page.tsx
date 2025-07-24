@@ -1,5 +1,4 @@
 import React from "react"
-import Layout from "@/components/Layout"
 import { Card, CardContent } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
@@ -48,7 +47,7 @@ export default function ContactPage() {
                       <div>
                         <h3 className="text-xl font-light mb-3 text-black">Address</h3>
                         <p className="text-gray-700 text-lg leading-relaxed font-light">
-                          Shop 8C, Bryce's Arcade<br />
+                          Shop 8C, Bryce&apos;s Arcade<br />
                           58 Norman St, Gordonvale<br />
                           Queensland 4865
                         </p>
