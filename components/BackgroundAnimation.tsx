@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState, useCallback } from 'react'
 
 declare global {
   interface Window {
@@ -21,24 +21,56 @@ declare global {
   }
 }
 
+interface AnimationState {
+  isScriptLoaded: boolean;
+  isAnimationLoaded: boolean;
+  hasError: boolean;
+  errorMessage?: string;
+}
+
 export default function BackgroundAnimation() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
-  const [isLoaded, setIsLoaded] = useState(false)
+  const [animationState, setAnimationState] = useState<AnimationState>({
+    isScriptLoaded: false,
+    isAnimationLoaded: false,
+    hasError: false
+  })
 
-  console.log('BackgroundAnimation component rendering...')
+  const handleScriptLoad = useCallback(() => {
+    console.log('UnicornStudio script loaded successfully')
+    setAnimationState(prev => ({ ...prev, isScriptLoaded: true }))
+  }, [])
+
+  const handleScriptError = useCallback(() => {
+    console.error('Failed to load UnicornStudio script')
+    setAnimationState(prev => ({ 
+      ...prev, 
+      hasError: true, 
+      errorMessage: 'Failed to load UnicornStudio script' 
+    }))
+  }, [])
+
+  const handleAnimationLoad = useCallback(() => {
+    console.log('Birds of Paradise Remix animation loaded successfully')
+    setAnimationState(prev => ({ ...prev, isAnimationLoaded: true }))
+  }, [])
+
+  const handleAnimationError = useCallback((error: unknown) => {
+    console.error('Animation loading error:', error)
+    setAnimationState(prev => ({ 
+      ...prev, 
+      hasError: true, 
+      errorMessage: `Animation error: ${error}` 
+    }))
+  }, [])
 
   useEffect(() => {
-    console.log('BackgroundAnimation useEffect - loading script...')
+    console.log('BackgroundAnimation: Loading UnicornStudio script...')
     const script = document.createElement('script')
     script.src = '/unicornStudio.umd.js'
     script.async = true
-    script.onload = () => {
-      console.log('UnicornStudio script loaded successfully')
-      setIsLoaded(true)
-    }
-    script.onerror = () => {
-      console.error('Failed to load UnicornStudio script')
-    }
+    script.onload = handleScriptLoad
+    script.onerror = handleScriptError
     document.head.appendChild(script)
 
     return () => {
@@ -46,34 +78,47 @@ export default function BackgroundAnimation() {
         document.head.removeChild(script)
       }
     }
-  }, [])
+  }, [handleScriptLoad, handleScriptError])
 
   useEffect(() => {
-    console.log('BackgroundAnimation second useEffect - isLoaded:', isLoaded, 'canvasRef.current:', !!canvasRef.current, 'window.UnicornStudio:', !!window.UnicornStudio)
-    if (isLoaded && canvasRef.current && window.UnicornStudio) {
-      console.log('Initializing UnicornStudio animation...')
+    if (animationState.isScriptLoaded && canvasRef.current && window.UnicornStudio && !animationState.hasError) {
+      console.log('BackgroundAnimation: Initializing Birds of Paradise Remix animation...')
       try {
         window.UnicornStudio.init({
           canvas: canvasRef.current,
           src: '/birds-of-paradise-animation.json',
           scale: 1,
-          dpi: 1,
-          fps: 60,
+          dpi: Math.min(window.devicePixelRatio || 1, 2),
+          fps: 30,
           disableMobile: false,
           autoplay: true,
           loop: true,
-          onLoad: () => {
-            console.log('Birds of Paradise animation loaded successfully')
-          },
-          onError: (error: unknown) => {
-            console.error('Animation loading error:', error)
-          }
+          onLoad: handleAnimationLoad,
+          onError: handleAnimationError
         })
       } catch (error) {
-        console.error('Failed to initialize animation:', error)
+        console.error('Failed to initialize Birds of Paradise Remix animation:', error)
+        setAnimationState(prev => ({ 
+          ...prev, 
+          hasError: true, 
+          errorMessage: `Initialization error: ${error}` 
+        }))
       }
     }
-  }, [isLoaded])
+  }, [animationState.isScriptLoaded, animationState.hasError, handleAnimationLoad, handleAnimationError])
+
+  if (animationState.hasError) {
+    console.warn('BackgroundAnimation: Rendering fallback due to error:', animationState.errorMessage)
+    return (
+      <div className="fixed inset-0 pointer-events-none" style={{ zIndex: 1 }}>
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-50/30 to-purple-50/30" />
+        <div 
+          className="absolute inset-0 bg-white/80"
+          style={{ zIndex: 2 }}
+        />
+      </div>
+    )
+  }
 
   return (
     <div className="fixed inset-0 pointer-events-none" style={{ zIndex: 1 }}>
