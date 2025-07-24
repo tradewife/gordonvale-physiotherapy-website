@@ -17,12 +17,12 @@ export default function BlogPage() {
             <div className="absolute top-1/3 right-1/3 w-80 h-80 bg-blue-400/5 rounded-full blur-3xl"></div>
           </div>
 
-          <div className="container mx-auto px-8 relative z-10">
+          <div className="container mx-auto px-4 sm:px-6 md:px-8 relative z-10">
             <div className="max-w-4xl">
-              <h1 className="text-5xl md:text-7xl font-light mb-8 text-black leading-[0.9] tracking-tight">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light mb-6 sm:mb-8 text-black leading-[0.9] tracking-tight">
                 Blog <span className="font-normal">&amp; Resources</span>.
               </h1>
-              <p className="text-xl md:text-2xl text-black/70 mb-12 max-w-2xl leading-relaxed font-light">
+              <p className="text-lg sm:text-xl md:text-2xl text-black/70 mb-8 sm:mb-12 max-w-2xl leading-relaxed font-light">
                 Stay updated with the latest physiotherapy insights and health tips.
               </p>
             </div>
@@ -32,7 +32,7 @@ export default function BlogPage() {
         {/* Coming Soon / Contact Redirect */}
         <section className="py-32 relative">
           <div className="absolute inset-0 bg-white"></div>
-          <div className="container mx-auto px-8 relative z-10">
+          <div className="container mx-auto px-4 sm:px-6 md:px-8 relative z-10">
             <div className="max-w-4xl mx-auto text-center">
               
               <Card className="bg-white border border-black backdrop-blur-sm">

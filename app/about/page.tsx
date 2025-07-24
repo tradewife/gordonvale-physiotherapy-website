@@ -15,12 +15,12 @@ export default function AboutPage() {
             <div className="absolute top-1/3 right-1/3 w-80 h-80 bg-blue-400/5 rounded-full blur-3xl"></div>
           </div>
 
-          <div className="container mx-auto px-8 relative z-10">
+          <div className="container mx-auto px-4 sm:px-6 md:px-8 relative z-10">
             <div className="max-w-4xl">
-              <h1 className="text-5xl md:text-7xl font-light mb-8 text-black leading-[0.9] tracking-tight">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light mb-6 sm:mb-8 text-black leading-[0.9] tracking-tight">
                 Meet our <span className="font-normal">expert team</span>.
               </h1>
-              <p className="text-xl md:text-2xl text-black/70 mb-12 max-w-2xl leading-relaxed font-light">
+              <p className="text-lg sm:text-xl md:text-2xl text-black/70 mb-8 sm:mb-12 max-w-2xl leading-relaxed font-light">
                 Our experienced physiotherapists are dedicated to providing evidence-based treatment and personalized care.
               </p>
             </div>
@@ -30,12 +30,12 @@ export default function AboutPage() {
         {/* Team Members */}
         <section className="py-32 relative">
           <div className="absolute inset-0 bg-white"></div>
-          <div className="container mx-auto px-8 relative z-10">
-            <div className="grid lg:grid-cols-2 gap-12">
+          <div className="container mx-auto px-4 sm:px-6 md:px-8 relative z-10">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12">
               
               {/* Helen Cooper */}
               <Card className="bg-white border border-black hover:border-black/80 transition-all duration-700 group backdrop-blur-sm">
-                <CardContent className="p-12">
+                <CardContent className="p-6 sm:p-8 md:p-10 lg:p-12">
                   <h3 className="text-3xl font-light mb-4 text-gray-900 group-hover:text-gray-800 transition-colors duration-500">
                     Helen Cooper
                   </h3>
@@ -54,7 +54,7 @@ export default function AboutPage() {
 
               {/* Rhys Simpson */}
               <Card className="bg-white border border-black hover:border-black/80 transition-all duration-700 group backdrop-blur-sm">
-                <CardContent className="p-12">
+                <CardContent className="p-6 sm:p-8 md:p-10 lg:p-12">
                   <h3 className="text-3xl font-light mb-4 text-gray-900 group-hover:text-gray-800 transition-colors duration-500">
                     Rhys Simpson
                   </h3>
@@ -72,7 +72,7 @@ export default function AboutPage() {
 
               {/* Steven Miller */}
               <Card className="bg-white border border-black hover:border-black/80 transition-all duration-700 group backdrop-blur-sm">
-                <CardContent className="p-12">
+                <CardContent className="p-6 sm:p-8 md:p-10 lg:p-12">
                   <h3 className="text-3xl font-light mb-4 text-gray-900 group-hover:text-gray-800 transition-colors duration-500">
                     Steven Miller
                   </h3>
@@ -87,7 +87,7 @@ export default function AboutPage() {
 
               {/* Peta Leo */}
               <Card className="bg-white border border-black hover:border-black/80 transition-all duration-700 group backdrop-blur-sm">
-                <CardContent className="p-12">
+                <CardContent className="p-6 sm:p-8 md:p-10 lg:p-12">
                   <h3 className="text-3xl font-light mb-4 text-gray-900 group-hover:text-gray-800 transition-colors duration-500">
                     Peta Leo
                   </h3>
@@ -102,7 +102,7 @@ export default function AboutPage() {
 
               {/* David Holzheimer */}
               <Card className="bg-white border border-black hover:border-black/80 transition-all duration-700 group backdrop-blur-sm">
-                <CardContent className="p-12">
+                <CardContent className="p-6 sm:p-8 md:p-10 lg:p-12">
                   <h3 className="text-3xl font-light mb-4 text-gray-900 group-hover:text-gray-800 transition-colors duration-500">
                     David Holzheimer
                   </h3>
@@ -117,7 +117,7 @@ export default function AboutPage() {
 
               {/* Hayley Barnes */}
               <Card className="bg-white border border-black hover:border-black/80 transition-all duration-700 group backdrop-blur-sm">
-                <CardContent className="p-12">
+                <CardContent className="p-6 sm:p-8 md:p-10 lg:p-12">
                   <h3 className="text-3xl font-light mb-4 text-gray-900 group-hover:text-gray-800 transition-colors duration-500">
                     Hayley Barnes
                   </h3>
