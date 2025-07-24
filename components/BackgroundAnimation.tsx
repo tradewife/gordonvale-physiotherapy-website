@@ -8,7 +8,6 @@ export default function BackgroundAnimation() {
       <div 
         className="absolute inset-0 w-full h-full"
         style={{ 
-          opacity: 0.3,
           zIndex: 1 
         }}
       >
