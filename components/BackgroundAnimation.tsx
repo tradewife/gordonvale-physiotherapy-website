@@ -1,114 +1,65 @@
 "use client"
 
-import { useEffect, useRef, useState, useCallback } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 declare global {
   interface Window {
     UnicornStudio: {
-      init: (config: {
-        canvas: HTMLCanvasElement;
-        src: string;
-        scale: number;
-        dpi: number;
-        fps: number;
-        disableMobile: boolean;
-        autoplay: boolean;
-        loop: boolean;
-        onLoad?: () => void;
-        onError?: (error: unknown) => void;
-      }) => void;
+      init: () => Promise<any>;
+      destroy: () => void;
     };
   }
 }
 
-interface AnimationState {
-  isScriptLoaded: boolean;
-  isAnimationLoaded: boolean;
-  hasError: boolean;
-  errorMessage?: string;
-}
-
 export default function BackgroundAnimation() {
-  const canvasRef = useRef<HTMLCanvasElement>(null)
-  const [animationState, setAnimationState] = useState<AnimationState>({
-    isScriptLoaded: false,
-    isAnimationLoaded: false,
-    hasError: false
-  })
-
-  const handleScriptLoad = useCallback(() => {
-    console.log('UnicornStudio script loaded successfully')
-    setAnimationState(prev => ({ ...prev, isScriptLoaded: true }))
-  }, [])
-
-  const handleScriptError = useCallback(() => {
-    console.error('Failed to load UnicornStudio script')
-    setAnimationState(prev => ({ 
-      ...prev, 
-      hasError: true, 
-      errorMessage: 'Failed to load UnicornStudio script' 
-    }))
-  }, [])
-
-  const handleAnimationLoad = useCallback(() => {
-    console.log('Birds of Paradise Remix animation loaded successfully')
-    setAnimationState(prev => ({ ...prev, isAnimationLoaded: true }))
-  }, [])
-
-  const handleAnimationError = useCallback((error: unknown) => {
-    console.error('Animation loading error:', error)
-    setAnimationState(prev => ({ 
-      ...prev, 
-      hasError: true, 
-      errorMessage: `Animation error: ${error}` 
-    }))
-  }, [])
+  const containerRef = useRef<HTMLDivElement>(null)
+  const [isLoaded, setIsLoaded] = useState(false)
+  const [hasError, setHasError] = useState(false)
 
   useEffect(() => {
-    console.log('BackgroundAnimation: Loading UnicornStudio script...')
     const script = document.createElement('script')
-    script.src = '/unicornStudio.umd.js'
+    script.src = 'https://cdn.jsdelivr.net/gh/hiunicornstudio/unicornstudio.js@v1.4.29/dist/unicornStudio.umd.js'
     script.async = true
-    script.onload = handleScriptLoad
-    script.onerror = handleScriptError
+    
+    script.onload = () => {
+      console.log('UnicornStudio CDN script loaded successfully')
+      setIsLoaded(true)
+    }
+    
+    script.onerror = () => {
+      console.error('Failed to load UnicornStudio CDN script')
+      setHasError(true)
+    }
+    
     document.head.appendChild(script)
 
     return () => {
       if (document.head.contains(script)) {
         document.head.removeChild(script)
       }
-    }
-  }, [handleScriptLoad, handleScriptError])
-
-  useEffect(() => {
-    if (animationState.isScriptLoaded && canvasRef.current && window.UnicornStudio && !animationState.hasError) {
-      console.log('BackgroundAnimation: Initializing Birds of Paradise Remix animation...')
-      try {
-        window.UnicornStudio.init({
-          canvas: canvasRef.current,
-          src: '/birds-of-paradise-animation.json',
-          scale: 1,
-          dpi: Math.min(window.devicePixelRatio || 1, 2),
-          fps: 30,
-          disableMobile: false,
-          autoplay: true,
-          loop: true,
-          onLoad: handleAnimationLoad,
-          onError: handleAnimationError
-        })
-      } catch (error) {
-        console.error('Failed to initialize Birds of Paradise Remix animation:', error)
-        setAnimationState(prev => ({ 
-          ...prev, 
-          hasError: true, 
-          errorMessage: `Initialization error: ${error}` 
-        }))
+      if (window.UnicornStudio) {
+        window.UnicornStudio.destroy()
       }
     }
-  }, [animationState.isScriptLoaded, animationState.hasError, handleAnimationLoad, handleAnimationError])
+  }, [])
 
-  if (animationState.hasError) {
-    console.warn('BackgroundAnimation: Rendering fallback due to error:', animationState.errorMessage)
+  useEffect(() => {
+    if (isLoaded && window.UnicornStudio && containerRef.current) {
+      console.log('Initializing Birds of Paradise Remix animation with official embedding...')
+      
+      window.UnicornStudio.init()
+        .then((scenes) => {
+          console.log('Birds of Paradise Remix animation loaded successfully:', scenes)
+        })
+        .catch((error) => {
+          console.error('Animation loading error:', error)
+          setHasError(true)
+        })
+    }
+  }, [isLoaded])
+
+  if (hasError) {
+    console.warn('BackgroundAnimation: Rendering fallback due to error')
     return (
       <div className="fixed inset-0 pointer-events-none" style={{ zIndex: 1 }}>
         <div className="absolute inset-0 bg-gradient-to-br from-blue-50/30 to-purple-50/30" />
@@ -122,8 +73,9 @@ export default function BackgroundAnimation() {
 
   return (
     <div className="fixed inset-0 pointer-events-none" style={{ zIndex: 1 }}>
-      <canvas
-        ref={canvasRef}
+      <div
+        ref={containerRef}
+        data-us-project="JVofcmqXDssnf1aIHxr6"
         className="w-full h-full"
         style={{
           position: 'absolute',
