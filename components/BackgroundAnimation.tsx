@@ -34,10 +34,6 @@ export default function BackgroundAnimation() {
           }}
         />
       </div>
-      <div 
-        className="absolute inset-0 bg-white/80"
-        style={{ zIndex: 2 }}
-      />
     </div>
   )
 }
