@@ -15,12 +15,12 @@ export default function ProductsPage() {
             <div className="absolute top-1/3 right-1/3 w-80 h-80 bg-blue-400/5 rounded-full blur-3xl"></div>
           </div>
 
-          <div className="container mx-auto px-8 relative z-10">
+          <div className="container mx-auto px-4 sm:px-6 md:px-8 relative z-10">
             <div className="max-w-4xl">
-              <h1 className="text-5xl md:text-7xl font-light mb-8 text-black leading-[0.9] tracking-tight">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light mb-6 sm:mb-8 text-black leading-[0.9] tracking-tight">
                 Products <span className="font-normal">&amp; Equipment</span>.
               </h1>
-              <p className="text-xl md:text-2xl text-black/70 mb-12 max-w-2xl leading-relaxed font-light">
+              <p className="text-lg sm:text-xl md:text-2xl text-black/70 mb-8 sm:mb-12 max-w-2xl leading-relaxed font-light">
                 Quality products and equipment to support your health and rehabilitation journey.
               </p>
             </div>
@@ -30,12 +30,12 @@ export default function ProductsPage() {
         {/* Products Grid */}
         <section className="py-32 relative">
           <div className="absolute inset-0 bg-white"></div>
-          <div className="container mx-auto px-8 relative z-10">
-            <div className="grid lg:grid-cols-2 gap-12">
+          <div className="container mx-auto px-4 sm:px-6 md:px-8 relative z-10">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 sm:gap-8 md:gap-10 lg:gap-12">
               
               {/* Therabubble */}
               <Card className="bg-white border border-black hover:border-black/80 transition-all duration-700 group backdrop-blur-sm">
-                <CardContent className="p-12">
+                <CardContent className="p-6 sm:p-8 md:p-10 lg:p-12">
                   <div className="w-full h-64 bg-gradient-to-br from-blue-600/20 to-blue-800/20 rounded-lg mb-10 relative overflow-hidden">
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
                     <div className="absolute bottom-8 left-8 text-white font-light text-lg tracking-wide">
@@ -58,7 +58,7 @@ export default function ProductsPage() {
 
               {/* Archies */}
               <Card className="bg-white border border-black hover:border-black/80 transition-all duration-700 group backdrop-blur-sm">
-                <CardContent className="p-12">
+                <CardContent className="p-6 sm:p-8 md:p-10 lg:p-12">
                   <div className="w-full h-64 bg-gradient-to-br from-orange-600/20 to-orange-800/20 rounded-lg mb-10 relative overflow-hidden">
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
                     <div className="absolute bottom-8 left-8 text-white font-light text-lg tracking-wide">
@@ -81,7 +81,7 @@ export default function ProductsPage() {
 
               {/* Walking Aids */}
               <Card className="bg-white border border-black hover:border-black/80 transition-all duration-700 group backdrop-blur-sm">
-                <CardContent className="p-12">
+                <CardContent className="p-6 sm:p-8 md:p-10 lg:p-12">
                   <div className="w-full h-64 bg-gradient-to-br from-green-600/20 to-green-800/20 rounded-lg mb-10 relative overflow-hidden">
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
                     <div className="absolute bottom-8 left-8 text-white font-light text-lg tracking-wide">
@@ -104,7 +104,7 @@ export default function ProductsPage() {
 
               {/* Olive And Bee */}
               <Card className="bg-white border border-black hover:border-black/80 transition-all duration-700 group backdrop-blur-sm">
-                <CardContent className="p-12">
+                <CardContent className="p-6 sm:p-8 md:p-10 lg:p-12">
                   <div className="w-full h-64 bg-gradient-to-br from-purple-600/20 to-purple-800/20 rounded-lg mb-10 relative overflow-hidden">
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
                     <div className="absolute bottom-8 left-8 text-white font-light text-lg tracking-wide">

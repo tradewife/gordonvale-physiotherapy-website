@@ -14,11 +14,11 @@ export default function Layout({ children }: LayoutProps) {
       </div>
       {/* Header */}
       <header className="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-xl border-b border-black/10 relative">
-        <div className="container mx-auto px-8 py-6 flex items-center justify-between">
-          <Link href="/" className="text-2xl font-light text-black tracking-wider">
+        <div className="container mx-auto px-4 sm:px-6 md:px-8 py-4 sm:py-6 flex items-center justify-between">
+          <Link href="/" className="text-xl sm:text-2xl font-light text-black tracking-wider">
             Gordonvale Physiotherapy
           </Link>
-          <nav className="hidden md:flex space-x-8">
+          <nav className="hidden md:flex space-x-4 lg:space-x-8">
             <Link
               href="/"
               className="text-black/70 hover:text-black transition-all duration-500 font-light text-sm tracking-wide uppercase"
@@ -74,7 +74,7 @@ export default function Layout({ children }: LayoutProps) {
               Blog
             </Link>
           </nav>
-          <Button className="bg-black text-white hover:bg-black/90 transition-all duration-300 px-8 py-3 font-medium text-sm tracking-wide">
+          <Button className="bg-black text-white hover:bg-black/90 transition-all duration-300 px-6 py-2 sm:px-8 sm:py-3 font-medium text-sm tracking-wide">
             Book now
           </Button>
         </div>
@@ -86,8 +86,8 @@ export default function Layout({ children }: LayoutProps) {
       {/* Footer */}
       <footer className="bg-white/90 text-black py-24 border-t border-black/10 relative z-10">
         <div className="absolute inset-0 bg-gradient-to-t from-white to-transparent"></div>
-        <div className="container mx-auto px-8 relative z-10">
-          <div className="grid md:grid-cols-4 gap-16">
+        <div className="container mx-auto px-4 sm:px-6 md:px-8 relative z-10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 sm:gap-12 md:gap-16">
             <div>
               <h4 className="font-light mb-8 text-black text-xl tracking-wide">Contact</h4>
               <p className="text-black/60 leading-relaxed text-lg font-light">

@@ -13,10 +13,10 @@ export default function Component() {
       <BackgroundAnimation />
       {/* Header */}
       <header className="fixed top-0 w-full bg-white/80 backdrop-blur-xl border-b border-black/10" style={{ zIndex: 50 }}>
-        <div className="container mx-auto px-8 py-6 flex items-center justify-between">
-          <div className="text-2xl font-light text-black tracking-wider">Gordonvale Physiotherapy</div>
+        <div className="container mx-auto px-4 sm:px-6 md:px-8 py-4 sm:py-6 flex items-center justify-between">
+          <div className="text-xl sm:text-2xl font-light text-black tracking-wider">Gordonvale Physiotherapy</div>
           
-          <nav className="hidden md:flex space-x-8">
+          <nav className="hidden md:flex space-x-4 lg:space-x-8">
             <Link
               href="/"
               className="text-black/70 hover:text-black transition-all duration-500 font-light text-sm tracking-wide uppercase"
@@ -80,7 +80,7 @@ export default function Component() {
                 <span className="sr-only">Toggle menu</span>
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-[300px] sm:w-[400px]">
+            <SheetContent side="right" className="w-[280px] sm:w-[350px] md:w-[400px]">
               <SheetHeader>
                 <SheetTitle className="text-left font-light text-xl tracking-wider">Menu</SheetTitle>
               </SheetHeader>
@@ -143,7 +143,7 @@ export default function Component() {
             </SheetContent>
           </Sheet>
 
-          <Button className="bg-black text-white hover:bg-black/90 transition-all duration-300 px-8 py-3 font-medium text-sm tracking-wide">
+          <Button className="bg-black text-white hover:bg-black/90 transition-all duration-300 px-6 py-3 sm:px-8 font-medium text-sm tracking-wide">
             Book now
           </Button>
         </div>
@@ -164,15 +164,15 @@ export default function Component() {
         {/* Professional photo overlay effect */}
         <div className="absolute inset-0 bg-gradient-to-t from-white/60 via-transparent to-white/40"></div>
 
-        <div className="container mx-auto px-8 relative z-10">
+        <div className="container mx-auto px-4 sm:px-6 md:px-8 relative z-10">
           <div className="max-w-4xl">
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-light mb-8 text-black leading-[0.9] tracking-tight">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-light mb-6 sm:mb-8 text-black leading-[0.9] tracking-tight">
               Physiotherapy for <span className="font-normal">everybody</span>.
             </h1>
-            <p className="text-xl md:text-2xl text-black/70 mb-12 max-w-2xl leading-relaxed font-light">
+            <p className="text-lg sm:text-xl md:text-2xl text-black/70 mb-8 sm:mb-12 max-w-2xl leading-relaxed font-light">
               Hands-on, experienced, and compassionate care for all ages and conditions.
             </p>
-            <Button className="bg-black text-white hover:bg-black/90 px-12 py-4 text-lg font-medium transition-all duration-300 tracking-wide">
+            <Button className="bg-black text-white hover:bg-black/90 px-8 sm:px-12 py-3 sm:py-4 text-base sm:text-lg font-medium transition-all duration-300 tracking-wide">
               Book now
             </Button>
           </div>
@@ -186,11 +186,11 @@ export default function Component() {
           <div className="absolute top-20 right-20 w-96 h-96 bg-blue-500/3 rounded-full blur-3xl"></div>
         </div>
 
-        <div className="container mx-auto px-8 relative z-10">
-          <div className="grid lg:grid-cols-3 gap-8">
+        <div className="container mx-auto px-4 sm:px-6 md:px-8 relative z-10">
+          <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {/* Sports & Injury Care */}
             <Card className="bg-white border border-black hover:border-black/80 transition-all duration-700 group backdrop-blur-sm">
-              <CardContent className="p-12">
+              <CardContent className="p-6 sm:p-8 md:p-10 lg:p-12">
                 <div className="w-full h-80 bg-gradient-to-br from-blue-600/20 to-blue-800/20 rounded-lg mb-10 relative overflow-hidden">
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
                   <div className="absolute inset-0">
@@ -212,7 +212,7 @@ export default function Component() {
 
             {/* NCS & Aged Care */}
             <Card className="bg-white border border-black hover:border-black/80 transition-all duration-700 group backdrop-blur-sm">
-              <CardContent className="p-12">
+              <CardContent className="p-6 sm:p-8 md:p-10 lg:p-12">
                 <div className="w-full h-80 bg-gradient-to-br from-orange-600/20 to-orange-800/20 rounded-lg mb-10 relative overflow-hidden">
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
                   <div className="absolute inset-0">
@@ -232,7 +232,7 @@ export default function Component() {
 
             {/* Women's Health */}
             <Card className="bg-white border border-black hover:border-black/80 transition-all duration-700 group backdrop-blur-sm">
-              <CardContent className="p-12">
+              <CardContent className="p-6 sm:p-8 md:p-10 lg:p-12">
                 <div className="w-full h-80 bg-gradient-to-br from-purple-600/20 to-purple-800/20 rounded-lg mb-10 relative overflow-hidden">
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
                   <div className="absolute inset-0">
@@ -263,12 +263,12 @@ export default function Component() {
           <div className="absolute bottom-1/4 right-1/3 w-80 h-80 bg-blue-400/4 rounded-full blur-3xl"></div>
         </div>
 
-        <div className="container mx-auto px-8 relative z-10">
+        <div className="container mx-auto px-4 sm:px-6 md:px-8 relative z-10">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-5xl md:text-7xl font-light mb-16 text-black leading-tight tracking-tight">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light mb-8 sm:mb-12 md:mb-16 text-black leading-tight tracking-tight">
               Experts in pain, movement &amp; rehabilitation.
             </h2>
-            <p className="text-2xl text-black/70 max-w-4xl mb-20 leading-relaxed font-light">
+            <p className="text-lg sm:text-xl md:text-2xl text-black/70 max-w-4xl mb-12 sm:mb-16 md:mb-20 leading-relaxed font-light">
               Our team of experienced physiotherapists are dedicated to providing evidence-based treatment and
               personalized care for your unique needs.
             </p>
@@ -300,10 +300,10 @@ export default function Component() {
       {/* Professional Services Grid */}
       <section className="py-32 relative">
         <div className="absolute inset-0 bg-white"></div>
-        <div className="container mx-auto px-8 relative z-10">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-16 mb-24">
+        <div className="container mx-auto px-4 sm:px-6 md:px-8 relative z-10">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 sm:gap-12 md:gap-16 mb-16 sm:mb-20 md:mb-24">
             <div className="group text-center">
-              <div className="w-20 h-20 bg-white rounded-full mx-auto mb-8 flex items-center justify-center group-hover:bg-gray-50 transition-all duration-500 border border-black">
+              <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white rounded-full mx-auto mb-6 sm:mb-8 flex items-center justify-center group-hover:bg-gray-50 transition-all duration-500 border border-black">
                 <div className="w-8 h-8 bg-white/20 rounded-full"></div>
               </div>
               <h4 className="font-light text-black/80 group-hover:text-black transition-colors duration-500 text-lg tracking-wide">
@@ -311,7 +311,7 @@ export default function Component() {
               </h4>
             </div>
             <div className="group text-center">
-              <div className="w-20 h-20 bg-white rounded-full mx-auto mb-8 flex items-center justify-center group-hover:bg-gray-50 transition-all duration-500 border border-black">
+              <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white rounded-full mx-auto mb-6 sm:mb-8 flex items-center justify-center group-hover:bg-gray-50 transition-all duration-500 border border-black">
                 <div className="w-8 h-8 bg-white/20 rounded-full"></div>
               </div>
               <h4 className="font-light text-black/80 group-hover:text-black transition-colors duration-500 text-lg tracking-wide">
@@ -319,7 +319,7 @@ export default function Component() {
               </h4>
             </div>
             <div className="group text-center">
-              <div className="w-20 h-20 bg-white rounded-full mx-auto mb-8 flex items-center justify-center group-hover:bg-gray-50 transition-all duration-500 border border-black">
+              <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white rounded-full mx-auto mb-6 sm:mb-8 flex items-center justify-center group-hover:bg-gray-50 transition-all duration-500 border border-black">
                 <div className="w-8 h-8 bg-white/20 rounded-full"></div>
               </div>
               <h4 className="font-light text-black/80 group-hover:text-black transition-colors duration-500 text-lg tracking-wide">
@@ -327,7 +327,7 @@ export default function Component() {
               </h4>
             </div>
             <div className="group text-center">
-              <div className="w-20 h-20 bg-white rounded-full mx-auto mb-8 flex items-center justify-center group-hover:bg-gray-50 transition-all duration-500 border border-black">
+              <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white rounded-full mx-auto mb-6 sm:mb-8 flex items-center justify-center group-hover:bg-gray-50 transition-all duration-500 border border-black">
                 <div className="w-8 h-8 bg-white/20 rounded-full"></div>
               </div>
               <h4 className="font-light text-black/80 group-hover:text-black transition-colors duration-500 text-lg tracking-wide">
@@ -336,7 +336,7 @@ export default function Component() {
             </div>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-16 text-center">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 sm:gap-12 md:gap-16 text-center">
             <div className="text-black/70 hover:text-black transition-colors duration-500 cursor-pointer">
               <h4 className="font-light text-lg tracking-wide">Central location</h4>
             </div>
@@ -360,11 +360,11 @@ export default function Component() {
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-orange-500/4 rounded-full blur-3xl"></div>
         </div>
 
-        <div className="container mx-auto px-8 relative z-10">
+        <div className="container mx-auto px-4 sm:px-6 md:px-8 relative z-10">
           <div className="max-w-2xl mx-auto text-center">
-            <h3 className="text-5xl md:text-6xl font-light mb-16 text-black tracking-tight">Book an appointment</h3>
+            <h3 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light mb-8 sm:mb-12 md:mb-16 text-black tracking-tight">Book an appointment</h3>
 
-            <div className="bg-white p-12 rounded-2xl border border-black backdrop-blur-sm">
+            <div className="bg-white p-6 sm:p-8 md:p-10 lg:p-12 rounded-2xl border border-black backdrop-blur-sm">
               <form className="space-y-8">
                 <Input
                   placeholder="Name"
@@ -397,8 +397,8 @@ export default function Component() {
       {/* Footer - Minimal Professional */}
       <footer className="bg-white text-black py-24 border-t border-black/10 relative">
         <div className="absolute inset-0 bg-gradient-to-t from-white to-transparent"></div>
-        <div className="container mx-auto px-8 relative z-10">
-          <div className="grid md:grid-cols-4 gap-16">
+        <div className="container mx-auto px-4 sm:px-6 md:px-8 relative z-10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 sm:gap-12 md:gap-16">
             <div>
               <h4 className="font-light mb-8 text-black text-xl tracking-wide">Contact</h4>
               <p className="text-black/60 leading-relaxed text-lg font-light">

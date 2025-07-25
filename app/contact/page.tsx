@@ -18,12 +18,12 @@ export default function ContactPage() {
             <div className="absolute top-1/3 right-1/3 w-80 h-80 bg-blue-400/5 rounded-full blur-3xl"></div>
           </div>
 
-          <div className="container mx-auto px-8 relative z-10">
+          <div className="container mx-auto px-4 sm:px-6 md:px-8 relative z-10">
             <div className="max-w-4xl">
-              <h1 className="text-5xl md:text-7xl font-light mb-8 text-black leading-[0.9] tracking-tight">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light mb-6 sm:mb-8 text-black leading-[0.9] tracking-tight">
                 Contact <span className="font-normal">Us</span>.
               </h1>
-              <p className="text-xl md:text-2xl text-black/70 mb-12 max-w-2xl leading-relaxed font-light">
+              <p className="text-lg sm:text-xl md:text-2xl text-black/70 mb-8 sm:mb-12 max-w-2xl leading-relaxed font-light">
                 Get in touch to book an appointment or learn more about our services.
               </p>
             </div>
@@ -33,13 +33,13 @@ export default function ContactPage() {
         {/* Contact Information & Form */}
         <section className="py-32 relative">
           <div className="absolute inset-0 bg-white"></div>
-          <div className="container mx-auto px-8 relative z-10">
-            <div className="grid lg:grid-cols-2 gap-16">
+          <div className="container mx-auto px-4 sm:px-6 md:px-8 relative z-10">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 md:gap-16">
               
               {/* Contact Information */}
               <div>
                 <Card className="bg-white border border-black backdrop-blur-sm mb-8">
-                  <CardContent className="p-12">
+                  <CardContent className="p-6 sm:p-8 md:p-10 lg:p-12">
                     <h2 className="text-3xl font-light mb-8 text-black tracking-tight">
                       Visit Our Clinic
                     </h2>
@@ -69,7 +69,7 @@ export default function ContactPage() {
                 </Card>
 
                 <Card className="bg-white border border-black backdrop-blur-sm">
-                  <CardContent className="p-12">
+                  <CardContent className="p-6 sm:p-8 md:p-10 lg:p-12">
                     <h2 className="text-3xl font-light mb-8 text-black tracking-tight">
                       Opening Hours
                     </h2>
@@ -93,7 +93,7 @@ export default function ContactPage() {
 
               {/* Contact Form */}
               <Card className="bg-white border border-black backdrop-blur-sm">
-                <CardContent className="p-12">
+                <CardContent className="p-6 sm:p-8 md:p-10 lg:p-12">
                   <h2 className="text-3xl font-light mb-8 text-black tracking-tight">
                     Send us a Message
                   </h2>
