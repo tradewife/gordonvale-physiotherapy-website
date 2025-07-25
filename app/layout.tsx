@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import './globals.css'
+import Header from '@/components/Header'
 
 export const metadata: Metadata = {
   title: 'v0 App',
@@ -14,7 +15,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body className="relative min-h-screen">
+        <div className="relative" style={{ zIndex: 50 }}>
+          <Header />
+          <main className="pt-20">{children}</main>
+        </div>
+      </body>
     </html>
   )
 }

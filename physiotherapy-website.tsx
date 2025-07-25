@@ -1,153 +1,13 @@
-import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Card, CardContent } from "@/components/ui/card"
 import BackgroundAnimation from "@/components/BackgroundAnimation"
-import { Menu } from "lucide-react"
-import { Sheet, SheetContent, SheetTrigger, SheetHeader, SheetTitle } from "@/components/ui/sheet"
 
 export default function Component() {
   return (
     <div className="min-h-screen bg-white relative">
       <BackgroundAnimation />
-      {/* Header */}
-      <header className="fixed top-0 w-full bg-white/80 backdrop-blur-xl border-b border-black/10" style={{ zIndex: 50 }}>
-        <div className="container mx-auto px-4 sm:px-6 md:px-8 py-4 sm:py-6 flex items-center justify-between">
-          <div className="text-xl sm:text-2xl font-light text-black tracking-wider">Gordonvale Physiotherapy</div>
-          
-          <nav className="hidden md:flex space-x-4 lg:space-x-8">
-            <Link
-              href="/"
-              className="text-black/70 hover:text-black transition-all duration-500 font-light text-sm tracking-wide uppercase"
-            >
-              Home
-            </Link>
-            <Link
-              href="/about"
-              className="text-black/70 hover:text-black transition-all duration-500 font-light text-sm tracking-wide uppercase"
-            >
-              Our Team
-            </Link>
-            <Link
-              href="/services"
-              className="text-black/70 hover:text-black transition-all duration-500 font-light text-sm tracking-wide uppercase"
-            >
-              Services
-            </Link>
-            <Link
-              href="/dizzy-clinic"
-              className="text-black/70 hover:text-black transition-all duration-500 font-light text-sm tracking-wide uppercase"
-            >
-              Dizzy Clinic
-            </Link>
-            <Link
-              href="/ndis"
-              className="text-black/70 hover:text-black transition-all duration-500 font-light text-sm tracking-wide uppercase"
-            >
-              NDIS
-            </Link>
-            <Link
-              href="/products"
-              className="text-black/70 hover:text-black transition-all duration-500 font-light text-sm tracking-wide uppercase"
-            >
-              Products
-            </Link>
-            <Link
-              href="/telehealth"
-              className="text-black/70 hover:text-black transition-all duration-500 font-light text-sm tracking-wide uppercase"
-            >
-              Telehealth
-            </Link>
-            <Link
-              href="/contact"
-              className="text-black/70 hover:text-black transition-all duration-500 font-light text-sm tracking-wide uppercase"
-            >
-              Contact
-            </Link>
-            <Link
-              href="/blog"
-              className="text-black/70 hover:text-black transition-all duration-500 font-light text-sm tracking-wide uppercase"
-            >
-              Blog
-            </Link>
-          </nav>
-
-          <Sheet>
-            <SheetTrigger asChild>
-              <Button variant="ghost" size="icon" className="md:hidden">
-                <Menu className="h-6 w-6" />
-                <span className="sr-only">Toggle menu</span>
-              </Button>
-            </SheetTrigger>
-            <SheetContent side="right" className="w-[280px] sm:w-[350px] md:w-[400px]">
-              <SheetHeader>
-                <SheetTitle className="text-left font-light text-xl tracking-wider">Menu</SheetTitle>
-              </SheetHeader>
-              <nav className="flex flex-col space-y-6 mt-8">
-                <Link
-                  href="/"
-                  className="text-black/70 hover:text-black transition-all duration-500 font-light text-lg tracking-wide uppercase"
-                >
-                  Home
-                </Link>
-                <Link
-                  href="/about"
-                  className="text-black/70 hover:text-black transition-all duration-500 font-light text-lg tracking-wide uppercase"
-                >
-                  Our Team
-                </Link>
-                <Link
-                  href="/services"
-                  className="text-black/70 hover:text-black transition-all duration-500 font-light text-lg tracking-wide uppercase"
-                >
-                  Services
-                </Link>
-                <Link
-                  href="/dizzy-clinic"
-                  className="text-black/70 hover:text-black transition-all duration-500 font-light text-lg tracking-wide uppercase"
-                >
-                  Dizzy Clinic
-                </Link>
-                <Link
-                  href="/ndis"
-                  className="text-black/70 hover:text-black transition-all duration-500 font-light text-lg tracking-wide uppercase"
-                >
-                  NDIS
-                </Link>
-                <Link
-                  href="/products"
-                  className="text-black/70 hover:text-black transition-all duration-500 font-light text-lg tracking-wide uppercase"
-                >
-                  Products
-                </Link>
-                <Link
-                  href="/telehealth"
-                  className="text-black/70 hover:text-black transition-all duration-500 font-light text-lg tracking-wide uppercase"
-                >
-                  Telehealth
-                </Link>
-                <Link
-                  href="/contact"
-                  className="text-black/70 hover:text-black transition-all duration-500 font-light text-lg tracking-wide uppercase"
-                >
-                  Contact
-                </Link>
-                <Link
-                  href="/blog"
-                  className="text-black/70 hover:text-black transition-all duration-500 font-light text-lg tracking-wide uppercase"
-                >
-                  Blog
-                </Link>
-              </nav>
-            </SheetContent>
-          </Sheet>
-
-          <Button className="bg-black text-white hover:bg-black/90 transition-all duration-300 px-6 py-3 sm:px-8 font-medium text-sm tracking-wide">
-            Book now
-          </Button>
-        </div>
-      </header>
 
       {/* Hero Section with Professional Photography Style */}
       <section className="min-h-screen relative overflow-hidden flex items-center">
@@ -304,7 +164,7 @@ export default function Component() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 sm:gap-12 md:gap-16 mb-16 sm:mb-20 md:mb-24">
             <div className="group text-center">
               <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white rounded-full mx-auto mb-6 sm:mb-8 flex items-center justify-center group-hover:bg-gray-50 transition-all duration-500 border border-black">
-                <div className="w-8 h-8 bg-white/20 rounded-full"></div>
+                <span className="text-2xl">♿</span>
               </div>
               <h4 className="font-light text-black/80 group-hover:text-black transition-colors duration-500 text-lg tracking-wide">
                 Wheelchair access
@@ -312,7 +172,7 @@ export default function Component() {
             </div>
             <div className="group text-center">
               <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white rounded-full mx-auto mb-6 sm:mb-8 flex items-center justify-center group-hover:bg-gray-50 transition-all duration-500 border border-black">
-                <div className="w-8 h-8 bg-white/20 rounded-full"></div>
+                <span className="text-2xl">🚗</span>
               </div>
               <h4 className="font-light text-black/80 group-hover:text-black transition-colors duration-500 text-lg tracking-wide">
                 Disabled parking
@@ -320,7 +180,7 @@ export default function Component() {
             </div>
             <div className="group text-center">
               <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white rounded-full mx-auto mb-6 sm:mb-8 flex items-center justify-center group-hover:bg-gray-50 transition-all duration-500 border border-black">
-                <div className="w-8 h-8 bg-white/20 rounded-full"></div>
+                <span className="text-2xl">🏥</span>
               </div>
               <h4 className="font-light text-black/80 group-hover:text-black transition-colors duration-500 text-lg tracking-wide">
                 Modern equipment
@@ -328,7 +188,7 @@ export default function Component() {
             </div>
             <div className="group text-center">
               <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white rounded-full mx-auto mb-6 sm:mb-8 flex items-center justify-center group-hover:bg-gray-50 transition-all duration-500 border border-black">
-                <div className="w-8 h-8 bg-white/20 rounded-full"></div>
+                <span className="text-2xl">🛡️</span>
               </div>
               <h4 className="font-light text-black/80 group-hover:text-black transition-colors duration-500 text-lg tracking-wide">
                 Insurance care
@@ -337,16 +197,28 @@ export default function Component() {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 sm:gap-12 md:gap-16 text-center">
-            <div className="text-black/70 hover:text-black transition-colors duration-500 cursor-pointer">
+            <div className="group text-black/70 hover:text-black transition-colors duration-500 cursor-pointer">
+              <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white rounded-full mx-auto mb-6 sm:mb-8 flex items-center justify-center group-hover:bg-gray-50 transition-all duration-500 border border-black">
+                <span className="text-2xl">📍</span>
+              </div>
               <h4 className="font-light text-lg tracking-wide">Central location</h4>
             </div>
-            <div className="text-black/70 hover:text-black transition-colors duration-500 cursor-pointer">
+            <div className="group text-black/70 hover:text-black transition-colors duration-500 cursor-pointer">
+              <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white rounded-full mx-auto mb-6 sm:mb-8 flex items-center justify-center group-hover:bg-gray-50 transition-all duration-500 border border-black">
+                <span className="text-2xl">🕐</span>
+              </div>
               <h4 className="font-light text-lg tracking-wide">Flexible hours</h4>
             </div>
-            <div className="text-black/70 hover:text-black transition-colors duration-500 cursor-pointer">
+            <div className="group text-black/70 hover:text-black transition-colors duration-500 cursor-pointer">
+              <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white rounded-full mx-auto mb-6 sm:mb-8 flex items-center justify-center group-hover:bg-gray-50 transition-all duration-500 border border-black">
+                <span className="text-2xl">⚡</span>
+              </div>
               <h4 className="font-light text-lg tracking-wide">Fast recovery</h4>
             </div>
-            <div className="text-black/70 hover:text-black transition-colors duration-500 cursor-pointer">
+            <div className="group text-black/70 hover:text-black transition-colors duration-500 cursor-pointer">
+              <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white rounded-full mx-auto mb-6 sm:mb-8 flex items-center justify-center group-hover:bg-gray-50 transition-all duration-500 border border-black">
+                <span className="text-2xl">❤️</span>
+              </div>
               <h4 className="font-light text-lg tracking-wide">Caring team</h4>
             </div>
           </div>
