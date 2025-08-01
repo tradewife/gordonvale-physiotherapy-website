@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import './globals.css'
 import Header from '@/components/Header'
+import BackgroundAnimation from '@/components/BackgroundAnimation'
 
 export const metadata: Metadata = {
   title: 'v0 App',
@@ -16,6 +17,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="relative min-h-screen">
+        <BackgroundAnimation />
         <div className="relative" style={{ zIndex: 50 }}>
           <Header />
           <main className="pt-20">{children}</main>

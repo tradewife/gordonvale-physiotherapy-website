@@ -2,17 +2,15 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Card, CardContent } from "@/components/ui/card"
-import BackgroundAnimation from "@/components/BackgroundAnimation"
 
 export default function Component() {
   return (
-    <div className="min-h-screen bg-white relative">
-      <BackgroundAnimation />
+    <div className="min-h-screen bg-transparent relative">
 
       {/* Hero Section with Professional Photography Style */}
       <section className="min-h-screen relative overflow-hidden flex items-center">
         {/* Background with cinematic lighting */}
-        <div className="absolute inset-0 bg-gradient-to-br from-white via-blue-50/30 to-white"></div>
+        <div className="absolute inset-0 bg-transparent"></div>
 
         {/* Cinematic lighting effects matching aegnt.site */}
         <div className="absolute inset-0">
@@ -22,7 +20,7 @@ export default function Component() {
         </div>
 
         {/* Professional photo overlay effect */}
-        <div className="absolute inset-0 bg-gradient-to-t from-white/60 via-transparent to-white/40"></div>
+        <div className="absolute inset-0 bg-transparent"></div>
 
         <div className="container mx-auto px-4 sm:px-6 md:px-8 relative z-10">
           <div className="max-w-4xl">
@@ -41,7 +39,7 @@ export default function Component() {
 
       {/* Services Section - Cinematic Cards */}
       <section className="py-32 relative">
-        <div className="absolute inset-0 bg-white"></div>
+        <div className="absolute inset-0 bg-transparent"></div>
         <div className="absolute inset-0">
           <div className="absolute top-20 right-20 w-96 h-96 bg-blue-500/3 rounded-full blur-3xl"></div>
         </div>
@@ -117,7 +115,7 @@ export default function Component() {
 
       {/* Experts Section - Professional Photography Style */}
       <section className="py-32 relative">
-        <div className="absolute inset-0 bg-white"></div>
+        <div className="absolute inset-0 bg-transparent"></div>
         <div className="absolute inset-0">
           <div className="absolute top-1/3 left-1/4 w-96 h-96 bg-orange-500/3 rounded-full blur-3xl"></div>
           <div className="absolute bottom-1/4 right-1/3 w-80 h-80 bg-blue-400/4 rounded-full blur-3xl"></div>
@@ -159,7 +157,7 @@ export default function Component() {
 
       {/* Professional Services Grid */}
       <section className="py-32 relative">
-        <div className="absolute inset-0 bg-white"></div>
+        <div className="absolute inset-0 bg-transparent"></div>
         <div className="container mx-auto px-4 sm:px-6 md:px-8 relative z-10">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 sm:gap-12 md:gap-16 mb-16 sm:mb-20 md:mb-24">
             <div className="group text-center">
@@ -227,7 +225,7 @@ export default function Component() {
 
       {/* Contact Form Section - Professional Layout */}
       <section className="py-32 relative">
-        <div className="absolute inset-0 bg-white"></div>
+        <div className="absolute inset-0 bg-transparent"></div>
         <div className="absolute inset-0">
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-orange-500/4 rounded-full blur-3xl"></div>
         </div>
@@ -267,8 +265,8 @@ export default function Component() {
       </section>
 
       {/* Footer - Minimal Professional */}
-      <footer className="bg-white text-black py-24 border-t border-black/10 relative">
-        <div className="absolute inset-0 bg-gradient-to-t from-white to-transparent"></div>
+      <footer className="bg-white/95 text-black py-24 border-t border-black/10 relative">
+        <div className="absolute inset-0 bg-transparent"></div>
         <div className="container mx-auto px-4 sm:px-6 md:px-8 relative z-10">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 sm:gap-12 md:gap-16">
             <div>
