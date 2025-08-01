@@ -131,7 +131,7 @@ export default function Component() {
               personalized care for your unique needs.
             </p>
 
-            <div className="glass-card/10 backdrop-blur-xl border border-white/20 shadow-lg p-16 rounded-2xl border border-black ">
+            <div className="glass-card p-16 rounded-2xl border border-white/20 ">
               <h4 className="font-light text-black mb-10 text-2xl tracking-wide">Gordonvale Physiotherapy</h4>
               <div className="space-y-8 text-black/70 text-xl leading-relaxed font-light">
                 <p>
@@ -161,7 +161,7 @@ export default function Component() {
         <div className="container mx-auto px-4 sm:px-6 md:px-8 relative z-10">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 sm:gap-12 md:gap-16 mb-16 sm:mb-20 md:mb-24">
             <div className="group text-center">
-              <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white/10 backdrop-blur-xl border border-white/20 shadow-lg rounded-full mx-auto mb-6 sm:mb-8 flex items-center justify-center group-hover:bg-gray-50 transition-all duration-500 border border-black">
+              <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white/10 backdrop-blur-xl border border-white/20 shadow-lg rounded-full mx-auto mb-6 sm:mb-8 flex items-center justify-center group-hover:bg-gray-50 transition-all duration-500 border border-white/20">
                 <span className="text-2xl">♿</span>
               </div>
               <h4 className="font-light text-black/80 group-hover:text-black transition-colors duration-500 text-lg tracking-wide">
@@ -169,7 +169,7 @@ export default function Component() {
               </h4>
             </div>
             <div className="group text-center">
-              <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white/10 backdrop-blur-xl border border-white/20 shadow-lg rounded-full mx-auto mb-6 sm:mb-8 flex items-center justify-center group-hover:bg-gray-50 transition-all duration-500 border border-black">
+              <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white/10 backdrop-blur-xl border border-white/20 shadow-lg rounded-full mx-auto mb-6 sm:mb-8 flex items-center justify-center group-hover:bg-gray-50 transition-all duration-500 border border-white/20">
                 <span className="text-2xl">🚗</span>
               </div>
               <h4 className="font-light text-black/80 group-hover:text-black transition-colors duration-500 text-lg tracking-wide">
@@ -177,7 +177,7 @@ export default function Component() {
               </h4>
             </div>
             <div className="group text-center">
-              <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white/10 backdrop-blur-xl border border-white/20 shadow-lg rounded-full mx-auto mb-6 sm:mb-8 flex items-center justify-center group-hover:bg-gray-50 transition-all duration-500 border border-black">
+              <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white/10 backdrop-blur-xl border border-white/20 shadow-lg rounded-full mx-auto mb-6 sm:mb-8 flex items-center justify-center group-hover:bg-gray-50 transition-all duration-500 border border-white/20">
                 <span className="text-2xl">🏥</span>
               </div>
               <h4 className="font-light text-black/80 group-hover:text-black transition-colors duration-500 text-lg tracking-wide">
@@ -185,7 +185,7 @@ export default function Component() {
               </h4>
             </div>
             <div className="group text-center">
-              <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white/10 backdrop-blur-xl border border-white/20 shadow-lg rounded-full mx-auto mb-6 sm:mb-8 flex items-center justify-center group-hover:bg-gray-50 transition-all duration-500 border border-black">
+              <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white/10 backdrop-blur-xl border border-white/20 shadow-lg rounded-full mx-auto mb-6 sm:mb-8 flex items-center justify-center group-hover:bg-gray-50 transition-all duration-500 border border-white/20">
                 <span className="text-2xl">🛡️</span>
               </div>
               <h4 className="font-light text-black/80 group-hover:text-black transition-colors duration-500 text-lg tracking-wide">
@@ -196,25 +196,25 @@ export default function Component() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 sm:gap-12 md:gap-16 text-center">
             <div className="group text-black/70 hover:text-black transition-colors duration-500 cursor-pointer">
-              <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white/10 backdrop-blur-xl border border-white/20 shadow-lg rounded-full mx-auto mb-6 sm:mb-8 flex items-center justify-center group-hover:bg-gray-50 transition-all duration-500 border border-black">
+              <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white/10 backdrop-blur-xl border border-white/20 shadow-lg rounded-full mx-auto mb-6 sm:mb-8 flex items-center justify-center group-hover:bg-gray-50 transition-all duration-500 border border-white/20">
                 <span className="text-2xl">📍</span>
               </div>
               <h4 className="font-light text-lg tracking-wide">Central location</h4>
             </div>
             <div className="group text-black/70 hover:text-black transition-colors duration-500 cursor-pointer">
-              <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white/10 backdrop-blur-xl border border-white/20 shadow-lg rounded-full mx-auto mb-6 sm:mb-8 flex items-center justify-center group-hover:bg-gray-50 transition-all duration-500 border border-black">
+              <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white/10 backdrop-blur-xl border border-white/20 shadow-lg rounded-full mx-auto mb-6 sm:mb-8 flex items-center justify-center group-hover:bg-gray-50 transition-all duration-500 border border-white/20">
                 <span className="text-2xl">🕐</span>
               </div>
               <h4 className="font-light text-lg tracking-wide">Flexible hours</h4>
             </div>
             <div className="group text-black/70 hover:text-black transition-colors duration-500 cursor-pointer">
-              <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white/10 backdrop-blur-xl border border-white/20 shadow-lg rounded-full mx-auto mb-6 sm:mb-8 flex items-center justify-center group-hover:bg-gray-50 transition-all duration-500 border border-black">
+              <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white/10 backdrop-blur-xl border border-white/20 shadow-lg rounded-full mx-auto mb-6 sm:mb-8 flex items-center justify-center group-hover:bg-gray-50 transition-all duration-500 border border-white/20">
                 <span className="text-2xl">⚡</span>
               </div>
               <h4 className="font-light text-lg tracking-wide">Fast recovery</h4>
             </div>
             <div className="group text-black/70 hover:text-black transition-colors duration-500 cursor-pointer">
-              <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white/10 backdrop-blur-xl border border-white/20 shadow-lg rounded-full mx-auto mb-6 sm:mb-8 flex items-center justify-center group-hover:bg-gray-50 transition-all duration-500 border border-black">
+              <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white/10 backdrop-blur-xl border border-white/20 shadow-lg rounded-full mx-auto mb-6 sm:mb-8 flex items-center justify-center group-hover:bg-gray-50 transition-all duration-500 border border-white/20">
                 <span className="text-2xl">❤️</span>
               </div>
               <h4 className="font-light text-lg tracking-wide">Caring team</h4>
@@ -234,7 +234,7 @@ export default function Component() {
           <div className="max-w-2xl mx-auto text-center">
             <h3 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light mb-8 sm:mb-12 md:mb-16 text-black tracking-tight">Book an appointment</h3>
 
-            <div className="glass-card/10 backdrop-blur-xl border border-white/20 shadow-lg p-6 sm:p-8 md:p-10 lg:p-12 rounded-2xl border border-black ">
+            <div className="glass-card p-6 sm:p-8 md:p-10 lg:p-12 rounded-2xl border border-white/20 ">
               <form className="space-y-8">
                 <Input
                   placeholder="Name"
@@ -265,7 +265,7 @@ export default function Component() {
       </section>
 
       {/* Footer - Minimal Professional */}
-      <footer className="glass-card/10 backdrop-blur-xl border border-white/20 shadow-lg text-black py-24 border-t border-black/10 relative">
+      <footer className="glass-card text-black py-24 border-t border-black/10 relative">
         <div className="absolute inset-0 bg-transparent"></div>
         <div className="container mx-auto px-4 sm:px-6 md:px-8 relative z-10">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 sm:gap-12 md:gap-16">

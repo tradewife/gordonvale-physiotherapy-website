@@ -37,7 +37,7 @@ export default function ContactPage() {
               
               {/* Contact Information */}
               <div>
-                <Card className="glass-card/10 backdrop-blur-xl border border-white/20 shadow-lg  mb-8">
+                <Card className="glass-card mb-8">
                   <CardContent className="p-6 sm:p-8 md:p-10 lg:p-12">
                     <h2 className="text-3xl font-light mb-8 text-black tracking-tight">
                       Visit Our Clinic
@@ -67,7 +67,7 @@ export default function ContactPage() {
                   </CardContent>
                 </Card>
 
-                <Card className="glass-card/10 backdrop-blur-xl border border-white/20 shadow-lg ">
+                <Card className="glass-card ">
                   <CardContent className="p-6 sm:p-8 md:p-10 lg:p-12">
                     <h2 className="text-3xl font-light mb-8 text-black tracking-tight">
                       Opening Hours
@@ -91,7 +91,7 @@ export default function ContactPage() {
               </div>
 
               {/* Contact Form */}
-              <Card className="glass-card/10 backdrop-blur-xl border border-white/20 shadow-lg ">
+              <Card className="glass-card ">
                 <CardContent className="p-6 sm:p-8 md:p-10 lg:p-12">
                   <h2 className="text-3xl font-light mb-8 text-black tracking-tight">
                     Send us a Message

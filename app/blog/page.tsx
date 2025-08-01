@@ -34,7 +34,7 @@ export default function BlogPage() {
           <div className="container mx-auto px-4 sm:px-6 md:px-8 relative z-10">
             <div className="max-w-4xl mx-auto text-center">
               
-              <Card className="glass-card/10 backdrop-blur-xl border border-white/20 shadow-lg ">
+              <Card className="glass-card ">
                 <CardContent className="p-16">
                   <h2 className="text-4xl font-light mb-12 text-black tracking-tight">
                     Coming Soon

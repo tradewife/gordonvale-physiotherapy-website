@@ -33,7 +33,7 @@ export default function TelehealthPage() {
             <div className="max-w-4xl mx-auto">
               
               {/* Overview */}
-              <Card className="glass-card/10 backdrop-blur-xl border border-white/20 shadow-lg  mb-16">
+              <Card className="glass-card mb-16">
                 <CardContent className="p-16">
                   <h2 className="text-4xl font-light mb-12 text-black tracking-tight">
                     Remote Physiotherapy Consultations
@@ -121,7 +121,7 @@ export default function TelehealthPage() {
               </div>
 
               {/* Requirements */}
-              <Card className="glass-card/10 backdrop-blur-xl border border-white/20 shadow-lg  mb-16">
+              <Card className="glass-card mb-16">
                 <CardContent className="p-16">
                   <h2 className="text-4xl font-light mb-12 text-black tracking-tight">
                     What You&apos;ll Need
@@ -150,7 +150,7 @@ export default function TelehealthPage() {
               </Card>
 
               {/* Benefits */}
-              <Card className="glass-card/10 backdrop-blur-xl border border-white/20 shadow-lg ">
+              <Card className="glass-card ">
                 <CardContent className="p-16">
                   <h2 className="text-4xl font-light mb-12 text-black tracking-tight">
                     Benefits of Telehealth

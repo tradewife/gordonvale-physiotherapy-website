@@ -33,7 +33,7 @@ export default function DizzyClinicPage() {
             <div className="max-w-4xl mx-auto">
               
               {/* Overview */}
-              <Card className="glass-card/10 backdrop-blur-xl border border-white/20 shadow-lg  mb-16">
+              <Card className="glass-card mb-16">
                 <CardContent className="p-16">
                   <h2 className="text-4xl font-light mb-12 text-black tracking-tight">
                     Comprehensive Dizzy and Balance Treatment
@@ -132,7 +132,7 @@ export default function DizzyClinicPage() {
               </div>
 
               {/* Assessment Process */}
-              <Card className="glass-card/10 backdrop-blur-xl border border-white/20 shadow-lg  mt-16">
+              <Card className="glass-card mt-16">
                 <CardContent className="p-16">
                   <h2 className="text-4xl font-light mb-12 text-black tracking-tight">
                     Thorough Assessment Process
