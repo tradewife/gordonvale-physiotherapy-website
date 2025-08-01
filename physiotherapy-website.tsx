@@ -47,7 +47,7 @@ export default function Component() {
         <div className="container mx-auto px-4 sm:px-6 md:px-8 relative z-10">
           <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {/* Sports & Injury Care */}
-            <Card className="bg-white border border-black hover:border-black/80 transition-all duration-700 group backdrop-blur-sm">
+            <Card className="glass-card hover:border-white/40 transition-all duration-700 group">
               <CardContent className="p-6 sm:p-8 md:p-10 lg:p-12">
                 <div className="w-full h-80 bg-gradient-to-br from-blue-600/20 to-blue-800/20 rounded-lg mb-10 relative overflow-hidden">
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
@@ -69,7 +69,7 @@ export default function Component() {
             </Card>
 
             {/* NCS & Aged Care */}
-            <Card className="bg-white border border-black hover:border-black/80 transition-all duration-700 group backdrop-blur-sm">
+            <Card className="glass-card hover:border-white/40 transition-all duration-700 group">
               <CardContent className="p-6 sm:p-8 md:p-10 lg:p-12">
                 <div className="w-full h-80 bg-gradient-to-br from-orange-600/20 to-orange-800/20 rounded-lg mb-10 relative overflow-hidden">
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
@@ -89,7 +89,7 @@ export default function Component() {
             </Card>
 
             {/* Women's Health */}
-            <Card className="bg-white border border-black hover:border-black/80 transition-all duration-700 group backdrop-blur-sm">
+            <Card className="glass-card hover:border-white/40 transition-all duration-700 group">
               <CardContent className="p-6 sm:p-8 md:p-10 lg:p-12">
                 <div className="w-full h-80 bg-gradient-to-br from-purple-600/20 to-purple-800/20 rounded-lg mb-10 relative overflow-hidden">
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
@@ -131,7 +131,7 @@ export default function Component() {
               personalized care for your unique needs.
             </p>
 
-            <div className="bg-white p-16 rounded-2xl border border-black backdrop-blur-sm">
+            <div className="glass-card/10 backdrop-blur-xl border border-white/20 shadow-lg p-16 rounded-2xl border border-black ">
               <h4 className="font-light text-black mb-10 text-2xl tracking-wide">Gordonvale Physiotherapy</h4>
               <div className="space-y-8 text-black/70 text-xl leading-relaxed font-light">
                 <p>
@@ -161,7 +161,7 @@ export default function Component() {
         <div className="container mx-auto px-4 sm:px-6 md:px-8 relative z-10">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 sm:gap-12 md:gap-16 mb-16 sm:mb-20 md:mb-24">
             <div className="group text-center">
-              <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white rounded-full mx-auto mb-6 sm:mb-8 flex items-center justify-center group-hover:bg-gray-50 transition-all duration-500 border border-black">
+              <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white/10 backdrop-blur-xl border border-white/20 shadow-lg rounded-full mx-auto mb-6 sm:mb-8 flex items-center justify-center group-hover:bg-gray-50 transition-all duration-500 border border-black">
                 <span className="text-2xl">♿</span>
               </div>
               <h4 className="font-light text-black/80 group-hover:text-black transition-colors duration-500 text-lg tracking-wide">
@@ -169,7 +169,7 @@ export default function Component() {
               </h4>
             </div>
             <div className="group text-center">
-              <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white rounded-full mx-auto mb-6 sm:mb-8 flex items-center justify-center group-hover:bg-gray-50 transition-all duration-500 border border-black">
+              <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white/10 backdrop-blur-xl border border-white/20 shadow-lg rounded-full mx-auto mb-6 sm:mb-8 flex items-center justify-center group-hover:bg-gray-50 transition-all duration-500 border border-black">
                 <span className="text-2xl">🚗</span>
               </div>
               <h4 className="font-light text-black/80 group-hover:text-black transition-colors duration-500 text-lg tracking-wide">
@@ -177,7 +177,7 @@ export default function Component() {
               </h4>
             </div>
             <div className="group text-center">
-              <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white rounded-full mx-auto mb-6 sm:mb-8 flex items-center justify-center group-hover:bg-gray-50 transition-all duration-500 border border-black">
+              <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white/10 backdrop-blur-xl border border-white/20 shadow-lg rounded-full mx-auto mb-6 sm:mb-8 flex items-center justify-center group-hover:bg-gray-50 transition-all duration-500 border border-black">
                 <span className="text-2xl">🏥</span>
               </div>
               <h4 className="font-light text-black/80 group-hover:text-black transition-colors duration-500 text-lg tracking-wide">
@@ -185,7 +185,7 @@ export default function Component() {
               </h4>
             </div>
             <div className="group text-center">
-              <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white rounded-full mx-auto mb-6 sm:mb-8 flex items-center justify-center group-hover:bg-gray-50 transition-all duration-500 border border-black">
+              <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white/10 backdrop-blur-xl border border-white/20 shadow-lg rounded-full mx-auto mb-6 sm:mb-8 flex items-center justify-center group-hover:bg-gray-50 transition-all duration-500 border border-black">
                 <span className="text-2xl">🛡️</span>
               </div>
               <h4 className="font-light text-black/80 group-hover:text-black transition-colors duration-500 text-lg tracking-wide">
@@ -196,25 +196,25 @@ export default function Component() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 sm:gap-12 md:gap-16 text-center">
             <div className="group text-black/70 hover:text-black transition-colors duration-500 cursor-pointer">
-              <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white rounded-full mx-auto mb-6 sm:mb-8 flex items-center justify-center group-hover:bg-gray-50 transition-all duration-500 border border-black">
+              <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white/10 backdrop-blur-xl border border-white/20 shadow-lg rounded-full mx-auto mb-6 sm:mb-8 flex items-center justify-center group-hover:bg-gray-50 transition-all duration-500 border border-black">
                 <span className="text-2xl">📍</span>
               </div>
               <h4 className="font-light text-lg tracking-wide">Central location</h4>
             </div>
             <div className="group text-black/70 hover:text-black transition-colors duration-500 cursor-pointer">
-              <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white rounded-full mx-auto mb-6 sm:mb-8 flex items-center justify-center group-hover:bg-gray-50 transition-all duration-500 border border-black">
+              <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white/10 backdrop-blur-xl border border-white/20 shadow-lg rounded-full mx-auto mb-6 sm:mb-8 flex items-center justify-center group-hover:bg-gray-50 transition-all duration-500 border border-black">
                 <span className="text-2xl">🕐</span>
               </div>
               <h4 className="font-light text-lg tracking-wide">Flexible hours</h4>
             </div>
             <div className="group text-black/70 hover:text-black transition-colors duration-500 cursor-pointer">
-              <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white rounded-full mx-auto mb-6 sm:mb-8 flex items-center justify-center group-hover:bg-gray-50 transition-all duration-500 border border-black">
+              <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white/10 backdrop-blur-xl border border-white/20 shadow-lg rounded-full mx-auto mb-6 sm:mb-8 flex items-center justify-center group-hover:bg-gray-50 transition-all duration-500 border border-black">
                 <span className="text-2xl">⚡</span>
               </div>
               <h4 className="font-light text-lg tracking-wide">Fast recovery</h4>
             </div>
             <div className="group text-black/70 hover:text-black transition-colors duration-500 cursor-pointer">
-              <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white rounded-full mx-auto mb-6 sm:mb-8 flex items-center justify-center group-hover:bg-gray-50 transition-all duration-500 border border-black">
+              <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white/10 backdrop-blur-xl border border-white/20 shadow-lg rounded-full mx-auto mb-6 sm:mb-8 flex items-center justify-center group-hover:bg-gray-50 transition-all duration-500 border border-black">
                 <span className="text-2xl">❤️</span>
               </div>
               <h4 className="font-light text-lg tracking-wide">Caring team</h4>
@@ -234,26 +234,26 @@ export default function Component() {
           <div className="max-w-2xl mx-auto text-center">
             <h3 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light mb-8 sm:mb-12 md:mb-16 text-black tracking-tight">Book an appointment</h3>
 
-            <div className="bg-white p-6 sm:p-8 md:p-10 lg:p-12 rounded-2xl border border-black backdrop-blur-sm">
+            <div className="glass-card/10 backdrop-blur-xl border border-white/20 shadow-lg p-6 sm:p-8 md:p-10 lg:p-12 rounded-2xl border border-black ">
               <form className="space-y-8">
                 <Input
                   placeholder="Name"
-                  className="bg-white border-black text-black placeholder:text-black/40 focus:border-black/70 focus:ring-black/10 h-16 text-lg backdrop-blur-sm font-light"
+                  className="glass-card glass-input placeholder:text-black/40 focus:border-black/70 focus:ring-black/10 h-16 text-lg  font-light"
                 />
                 <Input
                   placeholder="Email"
                   type="email"
-                  className="bg-white border-black text-black placeholder:text-black/40 focus:border-black/70 focus:ring-black/10 h-16 text-lg backdrop-blur-sm font-light"
+                  className="glass-card glass-input placeholder:text-black/40 focus:border-black/70 focus:ring-black/10 h-16 text-lg  font-light"
                 />
                 <Input
                   placeholder="Phone"
                   type="tel"
-                  className="bg-white border-black text-black placeholder:text-black/40 focus:border-black/70 focus:ring-black/10 h-16 text-lg backdrop-blur-sm font-light"
+                  className="glass-card glass-input placeholder:text-black/40 focus:border-black/70 focus:ring-black/10 h-16 text-lg  font-light"
                 />
                 <Textarea
                   placeholder="Message"
                   rows={6}
-                  className="bg-white border-black text-black placeholder:text-black/40 focus:border-black/70 focus:ring-black/10 text-lg backdrop-blur-sm font-light"
+                  className="glass-card glass-input placeholder:text-black/40 focus:border-black/70 focus:ring-black/10 text-lg  font-light"
                 />
                 <Button className="w-full bg-black text-white hover:bg-black/90 py-6 text-xl font-medium transition-all duration-300 tracking-wide">
                   Submit
@@ -265,7 +265,7 @@ export default function Component() {
       </section>
 
       {/* Footer - Minimal Professional */}
-      <footer className="bg-white/95 text-black py-24 border-t border-black/10 relative">
+      <footer className="glass-card/10 backdrop-blur-xl border border-white/20 shadow-lg text-black py-24 border-t border-black/10 relative">
         <div className="absolute inset-0 bg-transparent"></div>
         <div className="container mx-auto px-4 sm:px-6 md:px-8 relative z-10">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 sm:gap-12 md:gap-16">

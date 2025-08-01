@@ -34,7 +34,7 @@ export default function BlogPage() {
           <div className="container mx-auto px-4 sm:px-6 md:px-8 relative z-10">
             <div className="max-w-4xl mx-auto text-center">
               
-              <Card className="bg-white border border-black backdrop-blur-sm">
+              <Card className="glass-card/10 backdrop-blur-xl border border-white/20 shadow-lg ">
                 <CardContent className="p-16">
                   <h2 className="text-4xl font-light mb-12 text-black tracking-tight">
                     Coming Soon
@@ -52,7 +52,7 @@ export default function BlogPage() {
                     </Link>
                     <Button 
                       variant="outline" 
-                      className="border-black text-black hover:bg-black/10 transition-all duration-300 px-8 py-4 text-lg font-medium"
+                      className="glass-input hover:bg-black/10 transition-all duration-300 px-8 py-4 text-lg font-medium"
                     >
                       Call 0401 942 903
                     </Button>

@@ -33,7 +33,7 @@ export default function NDISPage() {
             <div className="max-w-4xl mx-auto">
               
               {/* Overview */}
-              <Card className="bg-white border border-black backdrop-blur-sm mb-16">
+              <Card className="glass-card/10 backdrop-blur-xl border border-white/20 shadow-lg  mb-16">
                 <CardContent className="p-16">
                   <h2 className="text-4xl font-light mb-12 text-black tracking-tight">
                     Helping Participants Achieve Their Goals
@@ -57,7 +57,7 @@ export default function NDISPage() {
                 </h2>
                 <div className="grid lg:grid-cols-3 gap-8">
                   
-                  <Card className="bg-white border border-black hover:border-white/20 transition-all duration-700 group backdrop-blur-sm">
+                  <Card className="glass-card/10 backdrop-blur-xl border border-white/20 shadow-lg hover:border-white/20 transition-all duration-700 group ">
                     <CardContent className="p-8">
                       <h3 className="text-xl font-light mb-4 text-gray-900 group-hover:text-gray-800 transition-colors duration-500">
                         Pain &amp; Movement Management
@@ -68,7 +68,7 @@ export default function NDISPage() {
                     </CardContent>
                   </Card>
 
-                  <Card className="bg-white border border-black hover:border-white/20 transition-all duration-700 group backdrop-blur-sm">
+                  <Card className="glass-card/10 backdrop-blur-xl border border-white/20 shadow-lg hover:border-white/20 transition-all duration-700 group ">
                     <CardContent className="p-8">
                       <h3 className="text-xl font-light mb-4 text-gray-900 group-hover:text-gray-800 transition-colors duration-500">
                         Post Surgery Rehabilitation
@@ -79,7 +79,7 @@ export default function NDISPage() {
                     </CardContent>
                   </Card>
 
-                  <Card className="bg-white border border-black hover:border-white/20 transition-all duration-700 group backdrop-blur-sm">
+                  <Card className="glass-card/10 backdrop-blur-xl border border-white/20 shadow-lg hover:border-white/20 transition-all duration-700 group ">
                     <CardContent className="p-8">
                       <h3 className="text-xl font-light mb-4 text-gray-900 group-hover:text-gray-800 transition-colors duration-500">
                         Balance and Falls Prevention
@@ -90,7 +90,7 @@ export default function NDISPage() {
                     </CardContent>
                   </Card>
 
-                  <Card className="bg-white border border-black hover:border-white/20 transition-all duration-700 group backdrop-blur-sm">
+                  <Card className="glass-card/10 backdrop-blur-xl border border-white/20 shadow-lg hover:border-white/20 transition-all duration-700 group ">
                     <CardContent className="p-8">
                       <h3 className="text-xl font-light mb-4 text-gray-900 group-hover:text-gray-800 transition-colors duration-500">
                         Strength and Conditioning
@@ -101,7 +101,7 @@ export default function NDISPage() {
                     </CardContent>
                   </Card>
 
-                  <Card className="bg-white border border-black hover:border-white/20 transition-all duration-700 group backdrop-blur-sm">
+                  <Card className="glass-card/10 backdrop-blur-xl border border-white/20 shadow-lg hover:border-white/20 transition-all duration-700 group ">
                     <CardContent className="p-8">
                       <h3 className="text-xl font-light mb-4 text-gray-900 group-hover:text-gray-800 transition-colors duration-500">
                         Education and Advice
@@ -112,7 +112,7 @@ export default function NDISPage() {
                     </CardContent>
                   </Card>
 
-                  <Card className="bg-white border border-black hover:border-white/20 transition-all duration-700 group backdrop-blur-sm">
+                  <Card className="glass-card/10 backdrop-blur-xl border border-white/20 shadow-lg hover:border-white/20 transition-all duration-700 group ">
                     <CardContent className="p-8">
                       <h3 className="text-xl font-light mb-4 text-gray-900 group-hover:text-gray-800 transition-colors duration-500">
                         Equipment Supply
@@ -133,7 +133,7 @@ export default function NDISPage() {
                 </h2>
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12">
                   
-                  <Card className="bg-white border border-black hover:border-white/20 transition-all duration-700 group backdrop-blur-sm">
+                  <Card className="glass-card/10 backdrop-blur-xl border border-white/20 shadow-lg hover:border-white/20 transition-all duration-700 group ">
                     <CardContent className="p-6 sm:p-8 md:p-10 lg:p-12">
                       <h3 className="text-2xl font-light mb-6 text-gray-900 group-hover:text-gray-800 transition-colors duration-500">
                         Clinic-Based Programs
@@ -147,7 +147,7 @@ export default function NDISPage() {
                     </CardContent>
                   </Card>
 
-                  <Card className="bg-white border border-black hover:border-white/20 transition-all duration-700 group backdrop-blur-sm">
+                  <Card className="glass-card/10 backdrop-blur-xl border border-white/20 shadow-lg hover:border-white/20 transition-all duration-700 group ">
                     <CardContent className="p-6 sm:p-8 md:p-10 lg:p-12">
                       <h3 className="text-2xl font-light mb-6 text-gray-900 group-hover:text-gray-800 transition-colors duration-500">
                         Community-Based Programs
@@ -165,7 +165,7 @@ export default function NDISPage() {
               </div>
 
               {/* Specialized Equipment */}
-              <Card className="bg-white border border-black backdrop-blur-sm mb-16">
+              <Card className="glass-card/10 backdrop-blur-xl border border-white/20 shadow-lg  mb-16">
                 <CardContent className="p-16">
                   <h2 className="text-4xl font-light mb-12 text-black tracking-tight">
                     Specialized Gymnasium Equipment
@@ -184,7 +184,7 @@ export default function NDISPage() {
               </Card>
 
               {/* Plan Management */}
-              <Card className="bg-white border border-black backdrop-blur-sm">
+              <Card className="glass-card/10 backdrop-blur-xl border border-white/20 shadow-lg ">
                 <CardContent className="p-16">
                   <h2 className="text-4xl font-light mb-12 text-black tracking-tight">
                     Plan Management Support

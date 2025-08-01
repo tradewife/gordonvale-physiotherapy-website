@@ -33,7 +33,7 @@ export default function ProductsPage() {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 sm:gap-8 md:gap-10 lg:gap-12">
               
               {/* Therabubble */}
-              <Card className="bg-white border border-black hover:border-black/80 transition-all duration-700 group backdrop-blur-sm">
+              <Card className="glass-card hover:border-white/40 transition-all duration-700 group">
                 <CardContent className="p-6 sm:p-8 md:p-10 lg:p-12">
                   <div className="w-full h-64 bg-gradient-to-br from-blue-600/20 to-blue-800/20 rounded-lg mb-10 relative overflow-hidden">
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
@@ -56,7 +56,7 @@ export default function ProductsPage() {
               </Card>
 
               {/* Archies */}
-              <Card className="bg-white border border-black hover:border-black/80 transition-all duration-700 group backdrop-blur-sm">
+              <Card className="glass-card hover:border-white/40 transition-all duration-700 group">
                 <CardContent className="p-6 sm:p-8 md:p-10 lg:p-12">
                   <div className="w-full h-64 bg-gradient-to-br from-orange-600/20 to-orange-800/20 rounded-lg mb-10 relative overflow-hidden">
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
@@ -79,7 +79,7 @@ export default function ProductsPage() {
               </Card>
 
               {/* Walking Aids */}
-              <Card className="bg-white border border-black hover:border-black/80 transition-all duration-700 group backdrop-blur-sm">
+              <Card className="glass-card hover:border-white/40 transition-all duration-700 group">
                 <CardContent className="p-6 sm:p-8 md:p-10 lg:p-12">
                   <div className="w-full h-64 bg-gradient-to-br from-green-600/20 to-green-800/20 rounded-lg mb-10 relative overflow-hidden">
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
@@ -102,7 +102,7 @@ export default function ProductsPage() {
               </Card>
 
               {/* Olive And Bee */}
-              <Card className="bg-white border border-black hover:border-black/80 transition-all duration-700 group backdrop-blur-sm">
+              <Card className="glass-card hover:border-white/40 transition-all duration-700 group">
                 <CardContent className="p-6 sm:p-8 md:p-10 lg:p-12">
                   <div className="w-full h-64 bg-gradient-to-br from-purple-600/20 to-purple-800/20 rounded-lg mb-10 relative overflow-hidden">
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>

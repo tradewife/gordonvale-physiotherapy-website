@@ -33,7 +33,7 @@ export default function TelehealthPage() {
             <div className="max-w-4xl mx-auto">
               
               {/* Overview */}
-              <Card className="bg-white border border-black backdrop-blur-sm mb-16">
+              <Card className="glass-card/10 backdrop-blur-xl border border-white/20 shadow-lg  mb-16">
                 <CardContent className="p-16">
                   <h2 className="text-4xl font-light mb-12 text-black tracking-tight">
                     Remote Physiotherapy Consultations
@@ -57,7 +57,7 @@ export default function TelehealthPage() {
                 </h2>
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12">
                   
-                  <Card className="bg-white border border-black hover:border-black/80 transition-all duration-700 group backdrop-blur-sm">
+                  <Card className="glass-card hover:border-white/40 transition-all duration-700 group">
                     <CardContent className="p-6 sm:p-8 md:p-10 lg:p-12">
                       <div className="w-16 h-16 bg-blue-500/20 rounded-full flex items-center justify-center mb-8">
                         <span className="text-blue-400 text-2xl font-light">1</span>
@@ -72,7 +72,7 @@ export default function TelehealthPage() {
                     </CardContent>
                   </Card>
 
-                  <Card className="bg-white border border-black hover:border-black/80 transition-all duration-700 group backdrop-blur-sm">
+                  <Card className="glass-card hover:border-white/40 transition-all duration-700 group">
                     <CardContent className="p-6 sm:p-8 md:p-10 lg:p-12">
                       <div className="w-16 h-16 bg-green-500/20 rounded-full flex items-center justify-center mb-8">
                         <span className="text-green-400 text-2xl font-light">2</span>
@@ -87,7 +87,7 @@ export default function TelehealthPage() {
                     </CardContent>
                   </Card>
 
-                  <Card className="bg-white border border-black hover:border-black/80 transition-all duration-700 group backdrop-blur-sm">
+                  <Card className="glass-card hover:border-white/40 transition-all duration-700 group">
                     <CardContent className="p-6 sm:p-8 md:p-10 lg:p-12">
                       <div className="w-16 h-16 bg-purple-500/20 rounded-full flex items-center justify-center mb-8">
                         <span className="text-purple-400 text-2xl font-light">3</span>
@@ -102,7 +102,7 @@ export default function TelehealthPage() {
                     </CardContent>
                   </Card>
 
-                  <Card className="bg-white border border-black hover:border-black/80 transition-all duration-700 group backdrop-blur-sm">
+                  <Card className="glass-card hover:border-white/40 transition-all duration-700 group">
                     <CardContent className="p-6 sm:p-8 md:p-10 lg:p-12">
                       <div className="w-16 h-16 bg-orange-500/20 rounded-full flex items-center justify-center mb-8">
                         <span className="text-orange-400 text-2xl font-light">4</span>
@@ -121,7 +121,7 @@ export default function TelehealthPage() {
               </div>
 
               {/* Requirements */}
-              <Card className="bg-white border border-black backdrop-blur-sm mb-16">
+              <Card className="glass-card/10 backdrop-blur-xl border border-white/20 shadow-lg  mb-16">
                 <CardContent className="p-16">
                   <h2 className="text-4xl font-light mb-12 text-black tracking-tight">
                     What You&apos;ll Need
@@ -150,7 +150,7 @@ export default function TelehealthPage() {
               </Card>
 
               {/* Benefits */}
-              <Card className="bg-white border border-black backdrop-blur-sm">
+              <Card className="glass-card/10 backdrop-blur-xl border border-white/20 shadow-lg ">
                 <CardContent className="p-16">
                   <h2 className="text-4xl font-light mb-12 text-black tracking-tight">
                     Benefits of Telehealth

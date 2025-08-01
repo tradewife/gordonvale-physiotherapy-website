@@ -32,7 +32,7 @@ export default function AboutPage() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12">
               
               {/* Helen Cooper */}
-              <Card className="bg-white border border-black hover:border-black/80 transition-all duration-700 group backdrop-blur-sm">
+              <Card className="glass-card hover:border-white/40 transition-all duration-700 group">
                 <CardContent className="p-6 sm:p-8 md:p-10 lg:p-12">
                   <h3 className="text-3xl font-light mb-4 text-gray-900 group-hover:text-gray-800 transition-colors duration-500">
                     Helen Cooper
@@ -51,7 +51,7 @@ export default function AboutPage() {
               </Card>
 
               {/* Rhys Simpson */}
-              <Card className="bg-white border border-black hover:border-black/80 transition-all duration-700 group backdrop-blur-sm">
+              <Card className="glass-card hover:border-white/40 transition-all duration-700 group">
                 <CardContent className="p-6 sm:p-8 md:p-10 lg:p-12">
                   <h3 className="text-3xl font-light mb-4 text-gray-900 group-hover:text-gray-800 transition-colors duration-500">
                     Rhys Simpson
@@ -69,7 +69,7 @@ export default function AboutPage() {
               </Card>
 
               {/* Steven Miller */}
-              <Card className="bg-white border border-black hover:border-black/80 transition-all duration-700 group backdrop-blur-sm">
+              <Card className="glass-card hover:border-white/40 transition-all duration-700 group">
                 <CardContent className="p-6 sm:p-8 md:p-10 lg:p-12">
                   <h3 className="text-3xl font-light mb-4 text-gray-900 group-hover:text-gray-800 transition-colors duration-500">
                     Steven Miller
@@ -84,7 +84,7 @@ export default function AboutPage() {
               </Card>
 
               {/* Peta Leo */}
-              <Card className="bg-white border border-black hover:border-black/80 transition-all duration-700 group backdrop-blur-sm">
+              <Card className="glass-card hover:border-white/40 transition-all duration-700 group">
                 <CardContent className="p-6 sm:p-8 md:p-10 lg:p-12">
                   <h3 className="text-3xl font-light mb-4 text-gray-900 group-hover:text-gray-800 transition-colors duration-500">
                     Peta Leo
@@ -99,7 +99,7 @@ export default function AboutPage() {
               </Card>
 
               {/* David Holzheimer */}
-              <Card className="bg-white border border-black hover:border-black/80 transition-all duration-700 group backdrop-blur-sm">
+              <Card className="glass-card hover:border-white/40 transition-all duration-700 group">
                 <CardContent className="p-6 sm:p-8 md:p-10 lg:p-12">
                   <h3 className="text-3xl font-light mb-4 text-gray-900 group-hover:text-gray-800 transition-colors duration-500">
                     David Holzheimer
@@ -114,7 +114,7 @@ export default function AboutPage() {
               </Card>
 
               {/* Hayley Barnes */}
-              <Card className="bg-white border border-black hover:border-black/80 transition-all duration-700 group backdrop-blur-sm">
+              <Card className="glass-card hover:border-white/40 transition-all duration-700 group">
                 <CardContent className="p-6 sm:p-8 md:p-10 lg:p-12">
                   <h3 className="text-3xl font-light mb-4 text-gray-900 group-hover:text-gray-800 transition-colors duration-500">
                     Hayley Barnes

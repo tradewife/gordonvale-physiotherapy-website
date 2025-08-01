@@ -37,7 +37,7 @@ export default function ContactPage() {
               
               {/* Contact Information */}
               <div>
-                <Card className="bg-white border border-black backdrop-blur-sm mb-8">
+                <Card className="glass-card/10 backdrop-blur-xl border border-white/20 shadow-lg  mb-8">
                   <CardContent className="p-6 sm:p-8 md:p-10 lg:p-12">
                     <h2 className="text-3xl font-light mb-8 text-black tracking-tight">
                       Visit Our Clinic
@@ -67,7 +67,7 @@ export default function ContactPage() {
                   </CardContent>
                 </Card>
 
-                <Card className="bg-white border border-black backdrop-blur-sm">
+                <Card className="glass-card/10 backdrop-blur-xl border border-white/20 shadow-lg ">
                   <CardContent className="p-6 sm:p-8 md:p-10 lg:p-12">
                     <h2 className="text-3xl font-light mb-8 text-black tracking-tight">
                       Opening Hours
@@ -91,7 +91,7 @@ export default function ContactPage() {
               </div>
 
               {/* Contact Form */}
-              <Card className="bg-white border border-black backdrop-blur-sm">
+              <Card className="glass-card/10 backdrop-blur-xl border border-white/20 shadow-lg ">
                 <CardContent className="p-6 sm:p-8 md:p-10 lg:p-12">
                   <h2 className="text-3xl font-light mb-8 text-black tracking-tight">
                     Send us a Message
@@ -102,7 +102,7 @@ export default function ContactPage() {
                         Name *
                       </label>
                       <Input 
-                        className="bg-white border-black text-black placeholder:text-black/40 focus:border-black/40 text-lg p-4"
+                        className="glass-card glass-input placeholder:text-black/40 focus:border-black/40 text-lg p-4"
                         placeholder="Your full name"
                       />
                     </div>
@@ -112,7 +112,7 @@ export default function ContactPage() {
                       </label>
                       <Input 
                         type="email"
-                        className="bg-white border-black text-black placeholder:text-black/40 focus:border-black/40 text-lg p-4"
+                        className="glass-card glass-input placeholder:text-black/40 focus:border-black/40 text-lg p-4"
                         placeholder="your.email@example.com"
                       />
                     </div>
@@ -121,7 +121,7 @@ export default function ContactPage() {
                         Message *
                       </label>
                       <Textarea 
-                        className="bg-white border-black text-black placeholder:text-black/40 focus:border-black/40 text-lg p-4 min-h-[150px]"
+                        className="glass-card glass-input placeholder:text-black/40 focus:border-black/40 text-lg p-4 min-h-[150px]"
                         placeholder="Tell us about your condition or how we can help you..."
                       />
                     </div>

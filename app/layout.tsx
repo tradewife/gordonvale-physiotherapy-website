@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import './globals.css'
+import '../styles/glass.css'
 import Header from '@/components/Header'
 import BackgroundAnimation from '@/components/BackgroundAnimation'
 
