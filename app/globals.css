@@ -4,6 +4,8 @@
 
 body {
   font-family: var(--font-instrument-serif), serif;
+  font-size: 1.25rem; /* 20px */
+  line-height: 1.6;
 }
 
 @layer utilities {

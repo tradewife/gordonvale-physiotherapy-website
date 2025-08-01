@@ -12,7 +12,7 @@ export default function Header() {
         <nav className="hidden md:flex space-x-4 lg:space-x-8">
           <Link
             href="/"
-            className="text-black/70 hover:text-black transition-all duration-500 font-light text-sm tracking-wide uppercase"
+className="text-black/70 hover:text-black transition-all duration-500 font-light text-base tracking-wide uppercase"
           >
             Home
           </Link>
@@ -80,7 +80,7 @@ export default function Header() {
             <nav className="flex flex-col space-y-6 mt-8">
               <Link
                 href="/"
-                className="text-black/70 hover:text-black transition-all duration-500 font-light text-lg tracking-wide uppercase"
+className="text-black/70 hover:text-black transition-all duration-500 font-light text-xl tracking-wide uppercase"
               >
                 Home
               </Link>
