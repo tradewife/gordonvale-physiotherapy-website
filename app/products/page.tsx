@@ -1,5 +1,10 @@
 import React from "react"
 import { Card, CardContent } from "@/components/ui/card"
+import {
+  HeroHeadline,
+  SubsectionHeadline,
+  LargeBodyText
+} from "@/components/ui/Typography"
 
 export default function ProductsPage() {
   return (
@@ -16,12 +21,12 @@ export default function ProductsPage() {
 
           <div className="container mx-auto px-4 sm:px-6 md:px-8 relative z-10">
             <div className="max-w-4xl">
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light mb-6 sm:mb-8 text-black leading-[0.9] tracking-tight">
-                Products <span className="font-normal">&amp; Equipment</span>.
-              </h1>
-              <p className="text-lg sm:text-xl md:text-2xl text-black/70 mb-8 sm:mb-12 max-w-2xl leading-relaxed font-light">
+              <HeroHeadline className="mb-6 sm:mb-8 text-black text-balance">
+                Products <span className="font-normal">&amp; Equipment</span>
+              </HeroHeadline>
+              <LargeBodyText className="text-black/70 mb-8 sm:mb-12 max-w-2xl text-pretty">
                 Quality products and equipment to support your health and rehabilitation journey.
-              </p>
+              </LargeBodyText>
             </div>
           </div>
         </section>
@@ -41,9 +46,9 @@ export default function ProductsPage() {
                       Respiratory Care
                     </div>
                   </div>
-                  <h3 className="text-3xl font-light mb-8 text-gray-900 group-hover:text-gray-800 transition-colors duration-500">
+                  <SubsectionHeadline className="mb-8 text-gray-900 group-hover:text-gray-800 transition-colors duration-500 font-light">
                     Therabubble
-                  </h3>
+                  </SubsectionHeadline>
                   <p className="text-gray-700 leading-relaxed text-lg font-light mb-6">
                     Get rid of excess phlegm and start breathing better. Created by physiotherapists, 
                     the Therabubble™ Original is an effective and affordable bubble PEP device.
@@ -64,9 +69,9 @@ export default function ProductsPage() {
                       Orthotic Footwear
                     </div>
                   </div>
-                  <h3 className="text-3xl font-light mb-8 text-gray-900 group-hover:text-gray-800 transition-colors duration-500">
+                  <SubsectionHeadline className="mb-8 text-gray-900 group-hover:text-gray-800 transition-colors duration-500 font-light">
                     Archies Thongs &amp; Slides
-                  </h3>
+                  </SubsectionHeadline>
                   <p className="text-gray-700 leading-relaxed text-lg font-light mb-6">
                     Orthotic support footwear with real arch support up to 2.2cm, featuring 
                     specialized foam material for superior comfort and foot health.
@@ -87,9 +92,9 @@ export default function ProductsPage() {
                       Mobility Support
                     </div>
                   </div>
-                  <h3 className="text-3xl font-light mb-8 text-gray-900 group-hover:text-gray-800 transition-colors duration-500">
+                  <SubsectionHeadline className="mb-8 text-gray-900 group-hover:text-gray-800 transition-colors duration-500 font-light">
                     Walking Aids, Splints and Braces
-                  </h3>
+                  </SubsectionHeadline>
                   <p className="text-gray-700 leading-relaxed text-lg font-light mb-6">
                     Comprehensive range of mobility and support equipment including walking sticks, 
                     frames, crutches, moonboots, braces and various support devices.
@@ -110,9 +115,9 @@ export default function ProductsPage() {
                       Personal Care
                     </div>
                   </div>
-                  <h3 className="text-3xl font-light mb-8 text-gray-900 group-hover:text-gray-800 transition-colors duration-500">
+                  <SubsectionHeadline className="mb-8 text-gray-900 group-hover:text-gray-800 transition-colors duration-500 font-light">
                     Olive And Bee
-                  </h3>
+                  </SubsectionHeadline>
                   <p className="text-gray-700 leading-relaxed text-lg font-light mb-6">
                     100% Natural Personal Lubricant designed for comfort and safety. 
                     This premium product provides natural, effective lubrication for personal care needs.

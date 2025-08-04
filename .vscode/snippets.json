@@ -1,0 +1,115 @@
+{
+  "Typography Hero": {
+    "prefix": "typo-hero",
+    "body": [
+      "<HeroHeadline className=\"${1:mb-6 text-black text-balance}\">",
+      "  ${2:Your headline text}",
+      "</HeroHeadline>"
+    ],
+    "description": "Create a hero headline component"
+  },
+  "Typography Display": {
+    "prefix": "typo-display",
+    "body": [
+      "<DisplayHeadline className=\"${1:mb-8 text-black text-balance}\">",
+      "  ${2:Your display headline}",
+      "</DisplayHeadline>"
+    ],
+    "description": "Create a display headline component"
+  },
+  "Typography Section": {
+    "prefix": "typo-section",
+    "body": [
+      "<section className=\"${1:mb-16}\">",
+      "  <SectionHeadline className=\"${2:mb-8 text-black}\">",
+      "    ${3:Section Title}",
+      "  </SectionHeadline>",
+      "  <BodyText className=\"${4:max-w-prose text-pretty}\">",
+      "    ${5:Section content}",
+      "  </BodyText>",
+      "</section>"
+    ],
+    "description": "Create a section with headline and body text"
+  },
+  "Typography Card": {
+    "prefix": "typo-card",
+    "body": [
+      "<Card className=\"${1:glass-card}\">",
+      "  <CardContent className=\"${2:p-8}\">",
+      "    <CardHeadline className=\"${3:mb-4 text-gray-900}\">",
+      "      ${4:Card Title}",
+      "    </CardHeadline>",
+      "    <BodyText className=\"${5:text-gray-700}\">",
+      "      ${6:Card description}",
+      "    </BodyText>",
+      "  </CardContent>",
+      "</Card>"
+    ],
+    "description": "Create a card with proper typography"
+  },
+  "Typography Body Large": {
+    "prefix": "typo-body-large",
+    "body": [
+      "<LargeBodyText className=\"${1:text-pretty}\">",
+      "  ${2:Your large body text}",
+      "</LargeBodyText>"
+    ],
+    "description": "Create large body text component"
+  },
+  "Typography Body": {
+    "prefix": "typo-body",
+    "body": [
+      "<BodyText className=\"${1:text-pretty}\">",
+      "  ${2:Your body text}",
+      "</BodyText>"
+    ],
+    "description": "Create body text component"
+  },
+  "Typography Small": {
+    "prefix": "typo-small",
+    "body": [
+      "<SmallText className=\"${1:text-muted}\">",
+      "  ${2:Your small text}",
+      "</SmallText>"
+    ],
+    "description": "Create small text component"
+  },
+  "Typography Caption": {
+    "prefix": "typo-caption",
+    "body": [
+      "<CaptionText className=\"${1:text-muted}\">",
+      "  ${2:Your caption text}",
+      "</CaptionText>"
+    ],
+    "description": "Create caption text component"
+  },
+  "Typography Import": {
+    "prefix": "typo-import",
+    "body": [
+      "import {",
+      "  ${1:HeroHeadline,}",
+      "  ${2:SectionHeadline,}",
+      "  ${3:BodyText,}",
+      "  ${4:CardHeadline}",
+      "} from '@/components/ui/Typography'"
+    ],
+    "description": "Import typography components"
+  },
+  "Typography Full Import": {
+    "prefix": "typo-import-all",
+    "body": [
+      "import {",
+      "  HeroHeadline,",
+      "  DisplayHeadline,",
+      "  SectionHeadline,",
+      "  SubsectionHeadline,",
+      "  CardHeadline,",
+      "  BodyText,",
+      "  LargeBodyText,",
+      "  SmallText,",
+      "  CaptionText",
+      "} from '@/components/ui/Typography'"
+    ],
+    "description": "Import all typography components"
+  }
+}

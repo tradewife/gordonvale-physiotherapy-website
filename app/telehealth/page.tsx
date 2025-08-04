@@ -1,5 +1,10 @@
 import React from "react"
 import { Card, CardContent } from "@/components/ui/card"
+import {
+  HeroHeadline,
+  SectionHeadline,
+  LargeBodyText
+} from "@/components/ui/Typography"
 
 export default function TelehealthPage() {
   return (
@@ -16,12 +21,12 @@ export default function TelehealthPage() {
 
           <div className="container mx-auto px-4 sm:px-6 md:px-8 relative z-10">
             <div className="max-w-4xl">
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light mb-6 sm:mb-8 text-black leading-[0.9] tracking-tight">
-                Telehealth <span className="font-normal">Services</span>.
-              </h1>
-              <p className="text-lg sm:text-xl md:text-2xl text-black/70 mb-8 sm:mb-12 max-w-2xl leading-relaxed font-light">
+              <HeroHeadline className="mb-6 sm:mb-8 text-black font-light">
+                Telehealth <span className="font-normal">Services</span>
+              </HeroHeadline>
+              <LargeBodyText className="text-black/70 mb-8 sm:mb-12 max-w-2xl">
                 Professional physiotherapy assessment and management via smartphone, tablet or computer with webcam.
-              </p>
+              </LargeBodyText>
             </div>
           </div>
         </section>
@@ -35,9 +40,9 @@ export default function TelehealthPage() {
               {/* Overview */}
               <Card className="glass-card mb-16">
                 <CardContent className="p-16">
-                  <h2 className="text-4xl font-light mb-12 text-black tracking-tight">
+                  <SectionHeadline className="mb-12 text-black font-light">
                     Remote Physiotherapy Consultations
-                  </h2>
+                  </SectionHeadline>
                   <p className="text-gray-700 text-xl leading-relaxed font-light mb-8">
                     Our telehealth services allow you to receive professional physiotherapy assessment 
                     and management from the comfort of your own home using your smartphone, tablet, 
@@ -52,9 +57,9 @@ export default function TelehealthPage() {
 
               {/* Process Steps */}
               <div className="mb-16">
-                <h2 className="text-4xl font-light mb-12 text-black tracking-tight text-center">
+                <SectionHeadline className="mb-12 text-black font-light text-center">
                   How It Works
-                </h2>
+                </SectionHeadline>
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12">
                   
                   <Card className="glass-card hover:border-white/40 transition-all duration-700 group">
@@ -123,9 +128,9 @@ export default function TelehealthPage() {
               {/* Requirements */}
               <Card className="glass-card mb-16">
                 <CardContent className="p-16">
-                  <h2 className="text-4xl font-light mb-12 text-black tracking-tight">
+                  <SectionHeadline className="mb-12 text-black font-light">
                     What You&apos;ll Need
-                  </h2>
+                  </SectionHeadline>
                   <div className="grid md:grid-cols-2 gap-12">
                     <div>
                       <h3 className="text-2xl font-light mb-6 text-gray-900">Technical Requirements</h3>
@@ -152,9 +157,9 @@ export default function TelehealthPage() {
               {/* Benefits */}
               <Card className="glass-card ">
                 <CardContent className="p-16">
-                  <h2 className="text-4xl font-light mb-12 text-black tracking-tight">
+                  <SectionHeadline className="mb-12 text-black font-light">
                     Benefits of Telehealth
-                  </h2>
+                  </SectionHeadline>
                   <div className="grid md:grid-cols-3 gap-8">
                     <div className="text-center">
                       <div className="w-20 h-20 bg-blue-500/20 rounded-full flex items-center justify-center mx-auto mb-6">

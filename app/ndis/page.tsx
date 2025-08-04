@@ -1,5 +1,12 @@
 import React from "react"
 import { Card, CardContent } from "@/components/ui/card"
+import {
+  HeroHeadline,
+  SectionHeadline,
+  SubsectionHeadline,
+  CardHeadline,
+  LargeBodyText
+} from "@/components/ui/Typography"
 
 export default function NDISPage() {
   return (
@@ -16,12 +23,12 @@ export default function NDISPage() {
 
           <div className="container mx-auto px-4 sm:px-6 md:px-8 relative z-10">
             <div className="max-w-4xl">
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light mb-6 sm:mb-8 text-black leading-[0.9] tracking-tight">
-                NDIS <span className="font-normal">Services</span>.
-              </h1>
-              <p className="text-lg sm:text-xl md:text-2xl text-black/70 mb-8 sm:mb-12 max-w-2xl leading-relaxed font-light">
+              <HeroHeadline className="mb-6 sm:mb-8 text-black text-balance">
+                NDIS <span className="font-normal">Services</span>
+              </HeroHeadline>
+              <LargeBodyText className="text-black/70 mb-8 sm:mb-12 max-w-2xl text-pretty">
                 Registered NDIS Provider with experienced staff and in-depth knowledge in NDIS plan reading.
-              </p>
+              </LargeBodyText>
             </div>
           </div>
         </section>
@@ -35,9 +42,9 @@ export default function NDISPage() {
               {/* Overview */}
               <Card className="glass-card mb-16">
                 <CardContent className="p-16">
-                  <h2 className="text-4xl font-light mb-12 text-black tracking-tight">
+                  <SectionHeadline className="mb-12 text-black font-light">
                     Helping Participants Achieve Their Goals
-                  </h2>
+                  </SectionHeadline>
                   <p className="text-gray-700 text-xl leading-relaxed font-light mb-8">
                     As a registered NDIS provider, we have experienced staff with in-depth knowledge 
                     in NDIS plan reading and implementation. We work closely with participants to 
@@ -52,16 +59,16 @@ export default function NDISPage() {
 
               {/* Treatment Options */}
               <div className="mb-16">
-                <h2 className="text-4xl font-light mb-12 text-black tracking-tight text-center">
+                <SectionHeadline className="mb-12 text-black font-light text-center">
                   Treatment Options
-                </h2>
+                </SectionHeadline>
                 <div className="grid lg:grid-cols-3 gap-8">
                   
                   <Card className="glass-card hover:border-white/40 transition-all duration-700 group ">
                     <CardContent className="p-8">
-                      <h3 className="text-xl font-light mb-4 text-gray-900 group-hover:text-gray-800 transition-colors duration-500">
+                      <CardHeadline className="mb-4 text-gray-900 group-hover:text-gray-800 transition-colors duration-500 font-light">
                         Pain &amp; Movement Management
-                      </h3>
+                      </CardHeadline>
                       <p className="text-gray-700 leading-relaxed font-light">
                         Comprehensive pain management and movement optimization strategies.
                       </p>
@@ -70,9 +77,9 @@ export default function NDISPage() {
 
                   <Card className="glass-card hover:border-white/40 transition-all duration-700 group ">
                     <CardContent className="p-8">
-                      <h3 className="text-xl font-light mb-4 text-gray-900 group-hover:text-gray-800 transition-colors duration-500">
+                      <CardHeadline className="mb-4 text-gray-900 group-hover:text-gray-800 transition-colors duration-500 font-light">
                         Post Surgery Rehabilitation
-                      </h3>
+                      </CardHeadline>
                       <p className="text-gray-700 leading-relaxed font-light">
                         Specialized rehabilitation programs following surgical procedures.
                       </p>
@@ -81,9 +88,9 @@ export default function NDISPage() {
 
                   <Card className="glass-card hover:border-white/40 transition-all duration-700 group ">
                     <CardContent className="p-8">
-                      <h3 className="text-xl font-light mb-4 text-gray-900 group-hover:text-gray-800 transition-colors duration-500">
+                      <CardHeadline className="mb-4 text-gray-900 group-hover:text-gray-800 transition-colors duration-500 font-light">
                         Balance and Falls Prevention
-                      </h3>
+                      </CardHeadline>
                       <p className="text-gray-700 leading-relaxed font-light">
                         Targeted programs to improve balance and reduce fall risk.
                       </p>
@@ -92,9 +99,9 @@ export default function NDISPage() {
 
                   <Card className="glass-card hover:border-white/40 transition-all duration-700 group ">
                     <CardContent className="p-8">
-                      <h3 className="text-xl font-light mb-4 text-gray-900 group-hover:text-gray-800 transition-colors duration-500">
+                      <CardHeadline className="mb-4 text-gray-900 group-hover:text-gray-800 transition-colors duration-500 font-light">
                         Strength and Conditioning
-                      </h3>
+                      </CardHeadline>
                       <p className="text-gray-700 leading-relaxed font-light">
                         Progressive strength training and conditioning programs.
                       </p>
@@ -103,9 +110,9 @@ export default function NDISPage() {
 
                   <Card className="glass-card hover:border-white/40 transition-all duration-700 group ">
                     <CardContent className="p-8">
-                      <h3 className="text-xl font-light mb-4 text-gray-900 group-hover:text-gray-800 transition-colors duration-500">
+                      <CardHeadline className="mb-4 text-gray-900 group-hover:text-gray-800 transition-colors duration-500 font-light">
                         Education and Advice
-                      </h3>
+                      </CardHeadline>
                       <p className="text-gray-700 leading-relaxed font-light">
                         Comprehensive education and self-management strategies.
                       </p>
@@ -114,9 +121,9 @@ export default function NDISPage() {
 
                   <Card className="glass-card hover:border-white/40 transition-all duration-700 group ">
                     <CardContent className="p-8">
-                      <h3 className="text-xl font-light mb-4 text-gray-900 group-hover:text-gray-800 transition-colors duration-500">
+                      <CardHeadline className="mb-4 text-gray-900 group-hover:text-gray-800 transition-colors duration-500 font-light">
                         Equipment Supply
-                      </h3>
+                      </CardHeadline>
                       <p className="text-gray-700 leading-relaxed font-light">
                         Assessment and provision of appropriate mobility equipment.
                       </p>
@@ -128,16 +135,16 @@ export default function NDISPage() {
 
               {/* Program Types */}
               <div className="mb-16">
-                <h2 className="text-4xl font-light mb-12 text-black tracking-tight text-center">
+                <SectionHeadline className="mb-12 text-black font-light text-center">
                   Program Types
-                </h2>
+                </SectionHeadline>
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12">
                   
                   <Card className="glass-card hover:border-white/40 transition-all duration-700 group ">
                     <CardContent className="p-6 sm:p-8 md:p-10 lg:p-12">
-                      <h3 className="text-2xl font-light mb-6 text-gray-900 group-hover:text-gray-800 transition-colors duration-500">
+                      <SubsectionHeadline className="mb-6 text-gray-900 group-hover:text-gray-800 transition-colors duration-500 font-light">
                         Clinic-Based Programs
-                      </h3>
+                      </SubsectionHeadline>
                       <ul className="text-gray-700 leading-relaxed text-lg font-light space-y-3">
                         <li>• Therapeutic Treatments</li>
                         <li>• Gymnasium programs with specialized equipment</li>
@@ -149,9 +156,9 @@ export default function NDISPage() {
 
                   <Card className="glass-card hover:border-white/40 transition-all duration-700 group ">
                     <CardContent className="p-6 sm:p-8 md:p-10 lg:p-12">
-                      <h3 className="text-2xl font-light mb-6 text-gray-900 group-hover:text-gray-800 transition-colors duration-500">
+                      <SubsectionHeadline className="mb-6 text-gray-900 group-hover:text-gray-800 transition-colors duration-500 font-light">
                         Community-Based Programs
-                      </h3>
+                      </SubsectionHeadline>
                       <ul className="text-gray-700 leading-relaxed text-lg font-light space-y-3">
                         <li>• In home physiotherapy</li>
                         <li>• Hydrotherapy programs</li>
@@ -167,9 +174,9 @@ export default function NDISPage() {
               {/* Specialized Equipment */}
               <Card className="glass-card mb-16">
                 <CardContent className="p-16">
-                  <h2 className="text-4xl font-light mb-12 text-black tracking-tight">
+                  <SectionHeadline className="mb-12 text-black font-light">
                     Specialized Gymnasium Equipment
-                  </h2>
+                  </SectionHeadline>
                   <p className="text-gray-700 text-xl leading-relaxed font-light mb-8">
                     Our clinic features specialized gymnasium equipment designed to accommodate 
                     participants of all abilities and mobility levels. This includes accessible 
@@ -186,9 +193,9 @@ export default function NDISPage() {
               {/* Plan Management */}
               <Card className="glass-card ">
                 <CardContent className="p-16">
-                  <h2 className="text-4xl font-light mb-12 text-black tracking-tight">
+                  <SectionHeadline className="mb-12 text-black font-light">
                     Plan Management Support
-                  </h2>
+                  </SectionHeadline>
                   <p className="text-gray-700 text-xl leading-relaxed font-light mb-8">
                     We support all plan management types including self managed, plan managed, 
                     provider managed, and NDIA managed plans. Our experienced team can help 

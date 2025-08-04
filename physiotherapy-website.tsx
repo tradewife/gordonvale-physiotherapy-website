@@ -2,6 +2,15 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Card, CardContent } from "@/components/ui/card"
+import {
+  HeroHeadline,
+  SectionHeadline,
+  SubsectionHeadline,
+  BodyText,
+  LargeBodyText,
+  CardHeadline,
+  SmallText
+} from "@/components/ui/Typography"
 
 export default function Component() {
   return (
@@ -24,12 +33,12 @@ export default function Component() {
 
         <div className="container mx-auto px-4 sm:px-6 md:px-8 relative z-10">
           <div className="max-w-4xl">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-light mb-6 sm:mb-8 text-black leading-[0.9] tracking-tight">
-              Physiotherapy for <span className="font-normal">everybody</span>.
-            </h1>
-            <p className="text-lg sm:text-xl md:text-2xl text-black/70 mb-8 sm:mb-12 max-w-2xl leading-relaxed font-light">
+            <HeroHeadline className="mb-6 sm:mb-8 text-black text-balance">
+              Physiotherapy for <span className="font-normal">everybody</span>
+            </HeroHeadline>
+            <LargeBodyText className="text-black/70 mb-8 sm:mb-12 max-w-2xl text-pretty">
               Hands-on, experienced, and compassionate care for all ages and conditions.
-            </p>
+            </LargeBodyText>
             <Button className="bg-black text-white hover:bg-black/90 px-8 sm:px-12 py-3 sm:py-4 text-base sm:text-lg font-medium transition-all duration-300 tracking-wide">
               Book now
             </Button>
@@ -59,12 +68,12 @@ export default function Component() {
                     Sports Care
                   </div>
                 </div>
-                <h3 className="text-3xl font-light mb-8 text-gray-900 group-hover:text-gray-800 transition-colors duration-500">
-                  Sports &amp; injury care.
-                </h3>
-                <p className="text-gray-700 leading-relaxed text-lg font-light">
+                <CardHeadline className="mb-8 text-gray-900 group-hover:text-gray-800 transition-colors duration-500">
+                  Sports &amp; injury care
+                </CardHeadline>
+                <BodyText className="text-gray-700">
                   Treatment and rehabilitation for sports and non-related injuries, chronic pain and acute conditions.
-                </p>
+                </BodyText>
               </CardContent>
             </Card>
 
@@ -79,12 +88,12 @@ export default function Component() {
                   </div>
                   <div className="absolute bottom-8 left-8 text-white font-light text-lg tracking-wide">Aged Care</div>
                 </div>
-                <h3 className="text-3xl font-light mb-8 text-gray-900 group-hover:text-gray-800 transition-colors duration-500">
-                  NCS &amp; aged care.
-                </h3>
-                <p className="text-gray-700 leading-relaxed text-lg font-light">
+                <CardHeadline className="mb-8 text-gray-900 group-hover:text-gray-800 transition-colors duration-500">
+                  NCS &amp; aged care
+                </CardHeadline>
+                <BodyText className="text-gray-700">
                   Responsive NCS expertise, accessible care and support for all ages and abilities.
-                </p>
+                </BodyText>
               </CardContent>
             </Card>
 
@@ -101,12 +110,12 @@ export default function Component() {
                     Women's Health
                   </div>
                 </div>
-                <h3 className="text-3xl font-light mb-8 text-gray-900 group-hover:text-gray-800 transition-colors duration-500">
+                <CardHeadline className="mb-8 text-gray-900 group-hover:text-gray-800 transition-colors duration-500">
                   Women's Health
-                </h3>
-                <p className="text-gray-700 leading-relaxed text-lg font-light">
+                </CardHeadline>
+                <BodyText className="text-gray-700">
                   Specialized care including pelvic floor dysfunction, pregnancy, and women's pain care.
-                </p>
+                </BodyText>
               </CardContent>
             </Card>
           </div>
@@ -123,32 +132,32 @@ export default function Component() {
 
         <div className="container mx-auto px-4 sm:px-6 md:px-8 relative z-10">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light mb-8 sm:mb-12 md:mb-16 text-black leading-tight tracking-tight">
-              Experts in pain, movement &amp; rehabilitation.
-            </h2>
-            <p className="text-lg sm:text-xl md:text-2xl text-black/70 max-w-4xl mb-12 sm:mb-16 md:mb-20 leading-relaxed font-light">
+            <SectionHeadline className="mb-8 sm:mb-12 md:mb-16 text-black text-balance">
+              Experts in pain, movement &amp; rehabilitation
+            </SectionHeadline>
+            <LargeBodyText className="text-black/70 max-w-4xl mb-12 sm:mb-16 md:mb-20 text-pretty">
               Our team of experienced physiotherapists are dedicated to providing evidence-based treatment and
               personalized care for your unique needs.
-            </p>
+            </LargeBodyText>
 
             <div className="glass-card p-16 rounded-2xl border border-white/20 ">
-              <h4 className="font-light text-black mb-10 text-2xl tracking-wide">Gordonvale Physiotherapy</h4>
-              <div className="space-y-8 text-black/70 text-xl leading-relaxed font-light">
-                <p>
+              <SubsectionHeadline className="text-black mb-10">Gordonvale Physiotherapy</SubsectionHeadline>
+              <div className="space-y-8 text-black/70">
+                <LargeBodyText>
                   We're a team of experienced physiotherapists who are passionate about helping people move better, feel
                   better and live better. Our clinic offers a wide range of services including sports injury treatment,
                   chronic pain management, post-surgical rehabilitation, and preventive care.
-                </p>
-                <p>
+                </LargeBodyText>
+                <LargeBodyText>
                   Our approach combines the latest evidence-based treatments with hands-on manual therapy techniques. We
                   believe in empowering our patients through education and providing them with the tools they need for
                   long-term success.
-                </p>
-                <p>
+                </LargeBodyText>
+                <LargeBodyText>
                   Whether you're recovering from an injury, managing a chronic condition, or looking to optimize your
                   performance, our team is here to support you every step of the way. We work closely with other
                   healthcare professionals to ensure you receive comprehensive care.
-                </p>
+                </LargeBodyText>
               </div>
             </div>
           </div>
@@ -232,7 +241,7 @@ export default function Component() {
 
         <div className="container mx-auto px-4 sm:px-6 md:px-8 relative z-10">
           <div className="max-w-2xl mx-auto text-center">
-            <h3 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light mb-8 sm:mb-12 md:mb-16 text-black tracking-tight">Book an appointment</h3>
+            <SectionHeadline className="mb-8 sm:mb-12 md:mb-16 text-black text-balance">Book an appointment</SectionHeadline>
 
             <div className="glass-card p-6 sm:p-8 md:p-10 lg:p-12 rounded-2xl border border-white/20 ">
               <form className="space-y-8">

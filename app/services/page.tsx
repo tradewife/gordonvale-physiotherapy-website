@@ -1,5 +1,11 @@
 import React from "react"
 import { Card, CardContent } from "@/components/ui/card"
+import {
+  HeroHeadline,
+  SectionHeadline,
+  SubsectionHeadline,
+  LargeBodyText
+} from "@/components/ui/Typography"
 
 export default function ServicesPage() {
   return (
@@ -15,12 +21,12 @@ export default function ServicesPage() {
 
           <div className="container mx-auto px-4 sm:px-6 md:px-8 relative z-10">
             <div className="max-w-4xl">
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light mb-6 sm:mb-8 text-black leading-[0.9] tracking-tight">
-                Comprehensive <span className="font-normal">physiotherapy services</span>.
-              </h1>
-              <p className="text-lg sm:text-xl md:text-2xl text-black/70 mb-8 sm:mb-12 max-w-2xl leading-relaxed font-light">
+              <HeroHeadline className="mb-6 sm:mb-8 text-black text-balance">
+                Comprehensive <span className="font-normal">physiotherapy services</span>
+              </HeroHeadline>
+              <LargeBodyText className="text-black/70 mb-8 sm:mb-12 max-w-2xl text-pretty">
                 Evidence-based treatment and personalized care for all ages and conditions.
-              </p>
+              </LargeBodyText>
             </div>
           </div>
         </section>
@@ -40,9 +46,9 @@ export default function ServicesPage() {
                       Pain Management
                     </div>
                   </div>
-                  <h3 className="text-3xl font-light mb-8 text-gray-900 group-hover:text-gray-800 transition-colors duration-500">
+                  <SubsectionHeadline className="mb-8 text-gray-900 group-hover:text-gray-800 transition-colors duration-500">
                     Management of Acute and Chronic Pain
-                  </h3>
+                  </SubsectionHeadline>
                   <p className="text-gray-700 leading-relaxed text-lg font-light mb-6">
                     Physiotherapy plays a crucial role in pain management through evidence-based treatments 
                     that address both the symptoms and underlying causes of pain conditions.
@@ -63,9 +69,9 @@ export default function ServicesPage() {
                       Aquatic Therapy
                     </div>
                   </div>
-                  <h3 className="text-3xl font-light mb-8 text-gray-900 group-hover:text-gray-800 transition-colors duration-500">
+                  <SubsectionHeadline className="mb-8 text-gray-900 group-hover:text-gray-800 transition-colors duration-500">
                     Aquatic Physiotherapy at Gordonvale Pool
-                  </h3>
+                  </SubsectionHeadline>
                   <p className="text-gray-700 leading-relaxed text-lg font-light mb-6">
                     Our hydrotherapy services utilize the unique properties of water to provide 
                     low-impact, high-resistance exercise in a supportive environment.
@@ -86,9 +92,9 @@ export default function ServicesPage() {
                       Running Rehab
                     </div>
                   </div>
-                  <h3 className="text-3xl font-light mb-8 text-gray-900 group-hover:text-gray-800 transition-colors duration-500">
+                  <SubsectionHeadline className="mb-8 text-gray-900 group-hover:text-gray-800 transition-colors duration-500">
                     Running Rehabilitation
-                  </h3>
+                  </SubsectionHeadline>
                   <p className="text-gray-700 leading-relaxed text-lg font-light mb-6">
                     Specialized treatment for running-related injuries including shin splints, 
                     plantar fasciitis, IT band syndrome, and other common running conditions.
@@ -109,9 +115,9 @@ export default function ServicesPage() {
                       Aged Care
                     </div>
                   </div>
-                  <h3 className="text-3xl font-light mb-8 text-gray-900 group-hover:text-gray-800 transition-colors duration-500">
+                  <SubsectionHeadline className="mb-8 text-gray-900 group-hover:text-gray-800 transition-colors duration-500">
                     Aged Care - Add Life to Your Years
-                  </h3>
+                  </SubsectionHeadline>
                   <p className="text-gray-700 leading-relaxed text-lg font-light mb-6">
                     Specialized physiotherapy services designed to help older adults maintain 
                     independence, improve mobility, and enhance quality of life through targeted 
@@ -133,9 +139,9 @@ export default function ServicesPage() {
                       Women&apos;s Health
                     </div>
                   </div>
-                  <h3 className="text-3xl font-light mb-8 text-gray-900 group-hover:text-gray-800 transition-colors duration-500">
+                  <SubsectionHeadline className="mb-8 text-gray-900 group-hover:text-gray-800 transition-colors duration-500">
                     Women&apos;s Health and Continence
-                  </h3>
+                  </SubsectionHeadline>
                   <p className="text-gray-700 leading-relaxed text-lg font-light mb-6">
                     Helen specializes in women&apos;s health physiotherapy, offering dedicated 1-hour 
                     sessions for comprehensive assessment and treatment of pelvic floor dysfunction, 
@@ -157,9 +163,9 @@ export default function ServicesPage() {
                       Pediatric Care
                     </div>
                   </div>
-                  <h3 className="text-3xl font-light mb-8 text-gray-900 group-hover:text-gray-800 transition-colors duration-500">
+                  <SubsectionHeadline className="mb-8 text-gray-900 group-hover:text-gray-800 transition-colors duration-500">
                     Pediatric Physiotherapy
-                  </h3>
+                  </SubsectionHeadline>
                   <p className="text-gray-700 leading-relaxed text-lg font-light mb-6">
                     Specialized physiotherapy services for children, including NDIS clients, 
                     focusing on developmental support, motor skills development, and addressing 

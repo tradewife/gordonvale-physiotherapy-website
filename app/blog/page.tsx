@@ -2,6 +2,11 @@ import React from "react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
+import {
+  HeroHeadline,
+  SectionHeadline,
+  LargeBodyText
+} from "@/components/ui/Typography"
 
 export default function BlogPage() {
   return (
@@ -18,12 +23,12 @@ export default function BlogPage() {
 
           <div className="container mx-auto px-4 sm:px-6 md:px-8 relative z-10">
             <div className="max-w-4xl">
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light mb-6 sm:mb-8 text-black leading-[0.9] tracking-tight">
-                Blog <span className="font-normal">&amp; Resources</span>.
-              </h1>
-              <p className="text-lg sm:text-xl md:text-2xl text-black/70 mb-8 sm:mb-12 max-w-2xl leading-relaxed font-light">
+              <HeroHeadline className="mb-6 sm:mb-8 text-black font-light">
+                Blog <span className="font-normal">&amp; Resources</span>
+              </HeroHeadline>
+              <LargeBodyText className="text-black/70 mb-8 sm:mb-12 max-w-2xl">
                 Stay updated with the latest physiotherapy insights and health tips.
-              </p>
+              </LargeBodyText>
             </div>
           </div>
         </section>
@@ -36,9 +41,9 @@ export default function BlogPage() {
               
               <Card className="glass-card ">
                 <CardContent className="p-16">
-                  <h2 className="text-4xl font-light mb-12 text-black tracking-tight">
+                  <SectionHeadline className="mb-12 text-black font-light">
                     Coming Soon
-                  </h2>
+                  </SectionHeadline>
                   <p className="text-gray-700 text-xl leading-relaxed font-light mb-12">
                     We&apos;re working on bringing you valuable health and physiotherapy content. 
                     In the meantime, feel free to contact us directly for any questions or 

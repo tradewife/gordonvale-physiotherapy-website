@@ -1,9 +1,15 @@
 import type { Metadata } from 'next'
-import { Instrument_Serif } from 'next/font/google'
+import { Instrument_Sans, Instrument_Serif } from 'next/font/google'
 import './globals.css'
 import '../styles/glass.css'
 import Header from '@/components/Header'
 import BackgroundAnimation from '@/components/BackgroundAnimation'
+
+const instrumentSans = Instrument_Sans({
+  subsets: ['latin'],
+  variable: '--font-instrument-sans',
+  display: 'swap',
+})
 
 const instrumentSerif = Instrument_Serif({
   subsets: ['latin'],
@@ -24,8 +30,8 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
-      <body className={`relative min-h-screen ${instrumentSerif.variable}`}>
+    <html lang="en" className={`${instrumentSans.variable} ${instrumentSerif.variable}`}>
+      <body className="relative min-h-screen">
         <BackgroundAnimation />
         <div className="relative" style={{ zIndex: 50 }}>
           <Header />

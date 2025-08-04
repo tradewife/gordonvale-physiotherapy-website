@@ -3,6 +3,11 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Button } from "@/components/ui/button"
+import {
+  HeroHeadline,
+  SectionHeadline,
+  LargeBodyText
+} from "@/components/ui/Typography"
 
 export default function ContactPage() {
   return (
@@ -19,12 +24,12 @@ export default function ContactPage() {
 
           <div className="container mx-auto px-4 sm:px-6 md:px-8 relative z-10">
             <div className="max-w-4xl">
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light mb-6 sm:mb-8 text-black leading-[0.9] tracking-tight">
-                Contact <span className="font-normal">Us</span>.
-              </h1>
-              <p className="text-lg sm:text-xl md:text-2xl text-black/70 mb-8 sm:mb-12 max-w-2xl leading-relaxed font-light">
+              <HeroHeadline className="mb-6 sm:mb-8 text-black font-light">
+                Contact <span className="font-normal">Us</span>
+              </HeroHeadline>
+              <LargeBodyText className="text-black/70 mb-8 sm:mb-12 max-w-2xl">
                 Get in touch to book an appointment or learn more about our services.
-              </p>
+              </LargeBodyText>
             </div>
           </div>
         </section>
@@ -39,9 +44,9 @@ export default function ContactPage() {
               <div>
                 <Card className="glass-card mb-8">
                   <CardContent className="p-6 sm:p-8 md:p-10 lg:p-12">
-                    <h2 className="text-3xl font-light mb-8 text-black tracking-tight">
+                    <SectionHeadline className="mb-8 text-black font-light">
                       Visit Our Clinic
-                    </h2>
+                    </SectionHeadline>
                     <div className="space-y-6">
                       <div>
                         <h3 className="text-xl font-light mb-3 text-black">Address</h3>
@@ -69,9 +74,9 @@ export default function ContactPage() {
 
                 <Card className="glass-card ">
                   <CardContent className="p-6 sm:p-8 md:p-10 lg:p-12">
-                    <h2 className="text-3xl font-light mb-8 text-black tracking-tight">
+                    <SectionHeadline className="mb-8 text-black font-light">
                       Opening Hours
-                    </h2>
+                    </SectionHeadline>
                     <div className="space-y-4">
                       <div className="flex justify-between">
                         <span className="text-gray-700 text-lg font-light">Monday - Friday</span>
@@ -93,9 +98,9 @@ export default function ContactPage() {
               {/* Contact Form */}
               <Card className="glass-card ">
                 <CardContent className="p-6 sm:p-8 md:p-10 lg:p-12">
-                  <h2 className="text-3xl font-light mb-8 text-black tracking-tight">
+                  <SectionHeadline className="mb-8 text-black font-light">
                     Send us a Message
-                  </h2>
+                  </SectionHeadline>
                   <form className="space-y-6">
                     <div>
                       <label className="block text-gray-700 text-lg font-light mb-3">

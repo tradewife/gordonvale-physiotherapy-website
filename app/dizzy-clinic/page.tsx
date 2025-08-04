@@ -1,5 +1,11 @@
 import React from "react"
 import { Card, CardContent } from "@/components/ui/card"
+import {
+  HeroHeadline,
+  SectionHeadline,
+  SubsectionHeadline,
+  LargeBodyText
+} from "@/components/ui/Typography"
 
 export default function DizzyClinicPage() {
   return (
@@ -16,12 +22,12 @@ export default function DizzyClinicPage() {
 
           <div className="container mx-auto px-4 sm:px-6 md:px-8 relative z-10">
             <div className="max-w-4xl">
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light mb-6 sm:mb-8 text-black leading-[0.9] tracking-tight">
-                Dizzy <span className="font-normal">Clinic</span>.
-              </h1>
-              <p className="text-lg sm:text-xl md:text-2xl text-black/70 mb-8 sm:mb-12 max-w-2xl leading-relaxed font-light">
+              <HeroHeadline className="mb-6 sm:mb-8 text-black text-balance">
+                Dizzy <span className="font-normal">Clinic</span>
+              </HeroHeadline>
+              <LargeBodyText className="text-black/70 mb-8 sm:mb-12 max-w-2xl text-pretty">
                 Specialized treatment and rehabilitation for dizziness, vertigo and balance disorders.
-              </p>
+              </LargeBodyText>
             </div>
           </div>
         </section>
@@ -35,9 +41,9 @@ export default function DizzyClinicPage() {
               {/* Overview */}
               <Card className="glass-card mb-16">
                 <CardContent className="p-16">
-                  <h2 className="text-4xl font-light mb-12 text-black tracking-tight">
+                  <SectionHeadline className="mb-12 text-black font-light">
                     Comprehensive Dizzy and Balance Treatment
-                  </h2>
+                  </SectionHeadline>
                   <p className="text-gray-700 text-xl leading-relaxed font-light mb-8">
                     Our Dizzy Clinic provides thorough assessment and treatment for patients experiencing 
                     dizziness, vertigo, and balance disorders. We use evidence-based techniques to determine 
@@ -62,9 +68,9 @@ export default function DizzyClinicPage() {
                         Habituation
                       </div>
                     </div>
-                    <h3 className="text-2xl font-light mb-6 text-gray-900 group-hover:text-gray-800 transition-colors duration-500">
+                    <SubsectionHeadline className="mb-6 text-gray-900 group-hover:text-gray-800 transition-colors duration-500 font-light">
                       Habituation Exercises
-                    </h3>
+                    </SubsectionHeadline>
                     <p className="text-gray-700 leading-relaxed text-lg font-light">
                       Specialized exercises designed to help your vestibular system adapt and reduce 
                       sensitivity to movements that trigger dizziness symptoms.
@@ -81,9 +87,9 @@ export default function DizzyClinicPage() {
                         Eye Coordination
                       </div>
                     </div>
-                    <h3 className="text-2xl font-light mb-6 text-gray-900 group-hover:text-gray-800 transition-colors duration-500">
+                    <SubsectionHeadline className="mb-6 text-gray-900 group-hover:text-gray-800 transition-colors duration-500 font-light">
                       Eye Head Coordination Exercises
-                    </h3>
+                    </SubsectionHeadline>
                     <p className="text-gray-700 leading-relaxed text-lg font-light">
                       Targeted exercises to improve focus and visual stability during head movements, 
                       helping to reduce dizziness and improve overall balance function.
@@ -100,9 +106,9 @@ export default function DizzyClinicPage() {
                         Balance Training
                       </div>
                     </div>
-                    <h3 className="text-2xl font-light mb-6 text-gray-900 group-hover:text-gray-800 transition-colors duration-500">
+                    <SubsectionHeadline className="mb-6 text-gray-900 group-hover:text-gray-800 transition-colors duration-500 font-light">
                       Balance and Gait Exercises
-                    </h3>
+                    </SubsectionHeadline>
                     <p className="text-gray-700 leading-relaxed text-lg font-light">
                       Progressive balance training and gait exercises designed to build confidence 
                       and improve stability in various environments and situations.
@@ -119,9 +125,9 @@ export default function DizzyClinicPage() {
                         BPPV Treatment
                       </div>
                     </div>
-                    <h3 className="text-2xl font-light mb-6 text-gray-900 group-hover:text-gray-800 transition-colors duration-500">
+                    <SubsectionHeadline className="mb-6 text-gray-900 group-hover:text-gray-800 transition-colors duration-500 font-light">
                       Repositioning Techniques for BPPV
-                    </h3>
+                    </SubsectionHeadline>
                     <p className="text-gray-700 leading-relaxed text-lg font-light">
                       Specialized repositioning techniques including the Epley manoeuvre for treating 
                       Benign Paroxysmal Positional Vertigo (BPPV) and related conditions.
@@ -134,9 +140,9 @@ export default function DizzyClinicPage() {
               {/* Assessment Process */}
               <Card className="glass-card mt-16">
                 <CardContent className="p-16">
-                  <h2 className="text-4xl font-light mb-12 text-black tracking-tight">
+                  <SectionHeadline className="mb-12 text-black font-light">
                     Thorough Assessment Process
-                  </h2>
+                  </SectionHeadline>
                   <p className="text-gray-700 text-xl leading-relaxed font-light mb-8">
                     Our comprehensive assessment process begins with a detailed history and examination 
                     to determine the underlying causes of your dizziness or balance problems.
