@@ -3,199 +3,176 @@ import { Card, CardContent } from "@/components/ui/card"
 import {
   HeroHeadline,
   SectionHeadline,
+  CardHeadline,
+  BodyText,
   LargeBodyText
 } from "@/components/ui/Typography"
 
 export default function TelehealthPage() {
   return (
     <div className="min-h-screen bg-transparent relative">
-      
-      <div className="pt-32 pb-16">
-        {/* Hero Section */}
-        <section className="py-32 relative">
-          <div className="absolute inset-0 bg-transparent"></div>
-          <div className="absolute inset-0">
-            <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-orange-500/5 rounded-full blur-3xl"></div>
-            <div className="absolute top-1/3 right-1/3 w-80 h-80 bg-blue-400/5 rounded-full blur-3xl"></div>
-          </div>
+      {/* Hero Section */}
+      <section className="hero-spacing relative">
+        <div className="absolute inset-0 bg-transparent"></div>
+        <div className="absolute inset-0">
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-orange-500/5 rounded-full blur-3xl"></div>
+          <div className="absolute top-1/3 right-1/3 w-80 h-80 bg-blue-400/5 rounded-full blur-3xl"></div>
+        </div>
 
-          <div className="container mx-auto px-4 sm:px-6 md:px-8 relative z-10">
-            <div className="max-w-4xl">
-              <HeroHeadline className="mb-6 sm:mb-8 text-black font-light">
-                Telehealth <span className="font-normal">Services</span>
-              </HeroHeadline>
-              <LargeBodyText className="text-black/70 mb-8 sm:mb-12 max-w-2xl">
-                Professional physiotherapy assessment and management via smartphone, tablet or computer with webcam.
-              </LargeBodyText>
-            </div>
+        <div className="page-container">
+          <div className="hero-content">
+            <HeroHeadline className="hero-text-spacing text-black text-balance">
+              Telehealth <span className="font-normal">Services</span>
+            </HeroHeadline>
+            <LargeBodyText className="text-black/70 body-text-spacing max-w-2xl text-pretty">
+              Our telehealth services allow you to receive professional physiotherapy assessment
+              and management from the comfort of your own home using your smartphone, tablet,
+              or computer with webcam capability.
+            </LargeBodyText>
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* Main Content */}
-        <section className="py-32 relative">
-          <div className="absolute inset-0 bg-transparent"></div>
-          <div className="container mx-auto px-4 sm:px-6 md:px-8 relative z-10">
-            <div className="max-w-4xl mx-auto">
+      {/* Main Content */}
+      <section className="section-spacing relative">
+        <div className="absolute inset-0 bg-transparent"></div>
+        <div className="absolute inset-0">
+          <div className="absolute top-1/3 left-1/4 w-96 h-96 bg-orange-500/3 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-1/4 right-1/3 w-80 h-80 bg-blue-400/4 rounded-full blur-3xl"></div>
+        </div>
+
+        <div className="page-container">
+
+            {/* Process Steps */}
+            <SectionHeadline className="mb-12 sm:mb-16 text-black">
+              How It Works
+            </SectionHeadline>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 content-spacing">
               
-              {/* Overview */}
-              <Card className="glass-card mb-16">
-                <CardContent className="p-16">
-                  <SectionHeadline className="mb-12 text-black font-light">
-                    Remote Physiotherapy Consultations
-                  </SectionHeadline>
-                  <p className="text-gray-700 text-xl leading-relaxed font-light mb-8">
-                    Our telehealth services allow you to receive professional physiotherapy assessment 
-                    and management from the comfort of your own home using your smartphone, tablet, 
-                    or computer with webcam capability.
-                  </p>
-                  <p className="text-gray-700 text-xl leading-relaxed font-light">
-                    This service is particularly beneficial for patients who are unwell, live long 
-                    distances from our clinic, or are homebound and unable to travel for appointments.
-                  </p>
+              <Card className="glass-card hover:border-white/40 transition-all duration-700 group">
+                <CardContent className="p-6 sm:p-8 md:p-10 lg:p-12">
+                  <div className="w-16 h-16 bg-blue-500/20 rounded-full flex items-center justify-center mb-8">
+                    <span className="text-blue-400 text-2xl font-light">1</span>
+                  </div>
+                  <CardHeadline className="mb-6 text-gray-900 group-hover:text-gray-800 transition-colors duration-500">
+                    Initial Contact
+                  </CardHeadline>
+                  <LargeBodyText className="text-gray-700">
+                    Contact us and we&apos;ll send you a contact form by SMS or email with your details. 
+                    Our staff will interview you to determine if telehealth is suitable for your condition.
+                  </LargeBodyText>
                 </CardContent>
               </Card>
 
-              {/* Process Steps */}
-              <div className="mb-16">
-                <SectionHeadline className="mb-12 text-black font-light text-center">
-                  How It Works
-                </SectionHeadline>
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12">
-                  
-                  <Card className="glass-card hover:border-white/40 transition-all duration-700 group">
-                    <CardContent className="p-6 sm:p-8 md:p-10 lg:p-12">
-                      <div className="w-16 h-16 bg-blue-500/20 rounded-full flex items-center justify-center mb-8">
-                        <span className="text-blue-400 text-2xl font-light">1</span>
-                      </div>
-                      <h3 className="text-2xl font-light mb-6 text-gray-900 group-hover:text-gray-800 transition-colors duration-500">
-                        Initial Contact
-                      </h3>
-                      <p className="text-gray-700 leading-relaxed text-lg font-light">
-                        Contact us and we&apos;ll send you a contact form by SMS or email with your details. 
-                        Our staff will interview you to determine if telehealth is suitable for your condition.
-                      </p>
-                    </CardContent>
-                  </Card>
+              <Card className="glass-card hover:border-white/40 transition-all duration-700 group">
+                <CardContent className="p-6 sm:p-8 md:p-10 lg:p-12">
+                  <div className="w-16 h-16 bg-green-500/20 rounded-full flex items-center justify-center mb-8">
+                    <span className="text-green-400 text-2xl font-light">2</span>
+                  </div>
+                  <CardHeadline className="mb-6 text-gray-900 group-hover:text-gray-800 transition-colors duration-500">
+                    Appointment Setup
+                  </CardHeadline>
+                  <LargeBodyText className="text-gray-700">
+                    You&apos;ll receive an email platform notification before your appointment. 
+                    A questionnaire app may be sent to gather additional information about your condition.
+                  </LargeBodyText>
+                </CardContent>
+              </Card>
 
-                  <Card className="glass-card hover:border-white/40 transition-all duration-700 group">
-                    <CardContent className="p-6 sm:p-8 md:p-10 lg:p-12">
-                      <div className="w-16 h-16 bg-green-500/20 rounded-full flex items-center justify-center mb-8">
-                        <span className="text-green-400 text-2xl font-light">2</span>
-                      </div>
-                      <h3 className="text-2xl font-light mb-6 text-gray-900 group-hover:text-gray-800 transition-colors duration-500">
-                        Appointment Setup
-                      </h3>
-                      <p className="text-gray-700 leading-relaxed text-lg font-light">
-                        You&apos;ll receive an email platform notification before your appointment. 
-                        A questionnaire app may be sent to gather additional information about your condition.
-                      </p>
-                    </CardContent>
-                  </Card>
+              <Card className="glass-card hover:border-white/40 transition-all duration-700 group">
+                <CardContent className="p-6 sm:p-8 md:p-10 lg:p-12">
+                  <div className="w-16 h-16 bg-purple-500/20 rounded-full flex items-center justify-center mb-8">
+                    <span className="text-purple-400 text-2xl font-light">3</span>
+                  </div>
+                  <CardHeadline className="mb-6 text-gray-900 group-hover:text-gray-800 transition-colors duration-500">
+                    Virtual Consultation
+                  </CardHeadline>
+                  <LargeBodyText className="text-gray-700">
+                    During your appointment, our physiotherapist will assess your condition and 
+                    provide treatment recommendations. Technical support is available if needed.
+                  </LargeBodyText>
+                </CardContent>
+              </Card>
 
-                  <Card className="glass-card hover:border-white/40 transition-all duration-700 group">
-                    <CardContent className="p-6 sm:p-8 md:p-10 lg:p-12">
-                      <div className="w-16 h-16 bg-purple-500/20 rounded-full flex items-center justify-center mb-8">
-                        <span className="text-purple-400 text-2xl font-light">3</span>
-                      </div>
-                      <h3 className="text-2xl font-light mb-6 text-gray-900 group-hover:text-gray-800 transition-colors duration-500">
-                        Virtual Consultation
-                      </h3>
-                      <p className="text-gray-700 leading-relaxed text-lg font-light">
-                        During your appointment, our physiotherapist will assess your condition and 
-                        provide treatment recommendations. Technical support is available if needed.
-                      </p>
-                    </CardContent>
-                  </Card>
+              <Card className="glass-card hover:border-white/40 transition-all duration-700 group">
+                <CardContent className="p-6 sm:p-8 md:p-10 lg:p-12">
+                  <div className="w-16 h-16 bg-orange-500/20 rounded-full flex items-center justify-center mb-8">
+                    <span className="text-orange-400 text-2xl font-light">4</span>
+                  </div>
+                  <CardHeadline className="mb-6 text-gray-900 group-hover:text-gray-800 transition-colors duration-500">
+                    Follow-up Care
+                  </CardHeadline>
+                  <LargeBodyText className="text-gray-700">
+                    After your session, you&apos;ll receive information and exercises via email. 
+                    Follow-up appointments can be scheduled as needed for ongoing care.
+                  </LargeBodyText>
+                </CardContent>
+              </Card>
 
-                  <Card className="glass-card hover:border-white/40 transition-all duration-700 group">
-                    <CardContent className="p-6 sm:p-8 md:p-10 lg:p-12">
-                      <div className="w-16 h-16 bg-orange-500/20 rounded-full flex items-center justify-center mb-8">
-                        <span className="text-orange-400 text-2xl font-light">4</span>
-                      </div>
-                      <h3 className="text-2xl font-light mb-6 text-gray-900 group-hover:text-gray-800 transition-colors duration-500">
-                        Follow-up Care
-                      </h3>
-                      <p className="text-gray-700 leading-relaxed text-lg font-light">
-                        After your session, you&apos;ll receive information and exercises via email. 
-                        Follow-up appointments can be scheduled as needed for ongoing care.
-                      </p>
-                    </CardContent>
-                  </Card>
+            </div>
 
+            <div className="space-y-8 text-black/70 text-content content-spacing mt-24 sm:mt-32 md:mt-40">
+              <SectionHeadline className="text-black mb-12 sm:mb-16">
+                What You&apos;ll Need
+              </SectionHeadline>
+              <div className="grid md:grid-cols-2 gap-8 sm:gap-10 md:gap-12">
+                <div>
+                  <CardHeadline className="mb-8 text-gray-900">Technical Requirements</CardHeadline>
+                  <ul className="text-gray-700 space-y-4">
+                    <li><LargeBodyText className="text-gray-700">• Smartphone, tablet, or computer with webcam</LargeBodyText></li>
+                    <li><LargeBodyText className="text-gray-700">• Stable internet connection</LargeBodyText></li>
+                    <li><LargeBodyText className="text-gray-700">• Quiet, private space for consultation</LargeBodyText></li>
+                    <li><LargeBodyText className="text-gray-700">• Good lighting to see movement clearly</LargeBodyText></li>
+                  </ul>
+                </div>
+                <div>
+                  <CardHeadline className="mb-8 text-gray-900">For Assessment</CardHeadline>
+                  <ul className="text-gray-700 space-y-4">
+                    <li><LargeBodyText className="text-gray-700">• Ability to position camera to show painful body parts</LargeBodyText></li>
+                    <li><LargeBodyText className="text-gray-700">• Space to demonstrate movement and exercises</LargeBodyText></li>
+                    <li><LargeBodyText className="text-gray-700">• Comfortable clothing for movement assessment</LargeBodyText></li>
+                    <li><LargeBodyText className="text-gray-700">• Any relevant medical documents or reports</LargeBodyText></li>
+                  </ul>
                 </div>
               </div>
-
-              {/* Requirements */}
-              <Card className="glass-card mb-16">
-                <CardContent className="p-16">
-                  <SectionHeadline className="mb-12 text-black font-light">
-                    What You&apos;ll Need
-                  </SectionHeadline>
-                  <div className="grid md:grid-cols-2 gap-12">
-                    <div>
-                      <h3 className="text-2xl font-light mb-6 text-gray-900">Technical Requirements</h3>
-                      <ul className="text-gray-700 text-lg leading-relaxed font-light space-y-3">
-                        <li>• Smartphone, tablet, or computer with webcam</li>
-                        <li>• Stable internet connection</li>
-                        <li>• Quiet, private space for consultation</li>
-                        <li>• Good lighting to see movement clearly</li>
-                      </ul>
-                    </div>
-                    <div>
-                      <h3 className="text-2xl font-light mb-6 text-gray-900">For Assessment</h3>
-                      <ul className="text-gray-700 text-lg leading-relaxed font-light space-y-3">
-                        <li>• Ability to position camera to show painful body parts</li>
-                        <li>• Space to demonstrate movement and exercises</li>
-                        <li>• Comfortable clothing for movement assessment</li>
-                        <li>• Any relevant medical documents or reports</li>
-                      </ul>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-
-              {/* Benefits */}
-              <Card className="glass-card ">
-                <CardContent className="p-16">
-                  <SectionHeadline className="mb-12 text-black font-light">
-                    Benefits of Telehealth
-                  </SectionHeadline>
-                  <div className="grid md:grid-cols-3 gap-8">
-                    <div className="text-center">
-                      <div className="w-20 h-20 bg-blue-500/20 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <span className="text-blue-400 text-3xl">🏠</span>
-                      </div>
-                      <h3 className="text-xl font-light mb-4 text-gray-900">Convenience</h3>
-                      <p className="text-gray-700 leading-relaxed font-light">
-                        Receive care from the comfort of your own home without travel time or transportation concerns.
-                      </p>
-                    </div>
-                    <div className="text-center">
-                      <div className="w-20 h-20 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <span className="text-green-400 text-3xl">🌍</span>
-                      </div>
-                      <h3 className="text-xl font-light mb-4 text-gray-900">Accessibility</h3>
-                      <p className="text-gray-700 leading-relaxed font-light">
-                        Perfect for patients in remote areas or those with mobility limitations that make travel difficult.
-                      </p>
-                    </div>
-                    <div className="text-center">
-                      <div className="w-20 h-20 bg-purple-500/20 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <span className="text-purple-400 text-3xl">⚡</span>
-                      </div>
-                      <h3 className="text-xl font-light mb-4 text-gray-900">Flexibility</h3>
-                      <p className="text-gray-700 leading-relaxed font-light">
-                        Easier scheduling and the ability to continue care when you&apos;re unwell or unable to leave home.
-                      </p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-
             </div>
+
+            <div className="space-y-8 text-black/70 text-content content-spacing mt-24 sm:mt-32 md:mt-40">
+              <SectionHeadline className="text-black mb-12 sm:mb-16">
+                Benefits of Telehealth
+              </SectionHeadline>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-10 md:gap-12">
+                <div className="text-center">
+                  <div className="w-20 h-20 bg-blue-500/20 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <span className="text-blue-400 text-3xl">🏠</span>
+                  </div>
+                  <CardHeadline className="mb-4 text-gray-900">Convenience</CardHeadline>
+                  <LargeBodyText className="text-gray-700">
+                    Receive care from the comfort of your own home without travel time or transportation concerns.
+                  </LargeBodyText>
+                </div>
+                <div className="text-center">
+                  <div className="w-20 h-20 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <span className="text-green-400 text-3xl">🌍</span>
+                  </div>
+                  <CardHeadline className="mb-4 text-gray-900">Accessibility</CardHeadline>
+                  <LargeBodyText className="text-gray-700">
+                    Perfect for patients in remote areas or those with mobility limitations that make travel difficult.
+                  </LargeBodyText>
+                </div>
+                <div className="text-center">
+                  <div className="w-20 h-20 bg-purple-500/20 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <span className="text-purple-400 text-3xl">⚡</span>
+                  </div>
+                  <CardHeadline className="mb-4 text-gray-900">Flexibility</CardHeadline>
+                  <LargeBodyText className="text-gray-700">
+                    Easier scheduling and the ability to continue care when you&apos;re unwell or unable to leave home.
+                  </LargeBodyText>
+                </div>
+              </div>
           </div>
-        </section>
-      </div>
+        </div>
+      </section>
     </div>
   )
 }

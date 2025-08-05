@@ -66,7 +66,7 @@ export function CardHeadline({ children, className }: TypographyProps) {
   )
 }
 
-// Body Text (Instrument Sans)
+// Body Text (Instrument Sans) - Minimum text size for the site
 export function BodyText({ children, className }: TypographyProps) {
   return (
     <p className={cn(
@@ -83,30 +83,6 @@ export function LargeBodyText({ children, className }: TypographyProps) {
   return (
     <p className={cn(
       "font-sans text-lg md:text-xl leading-relaxed tracking-normal",
-      className
-    )}>
-      {children}
-    </p>
-  )
-}
-
-// Small Text (Instrument Sans)
-export function SmallText({ children, className }: TypographyProps) {
-  return (
-    <p className={cn(
-      "font-sans text-sm leading-normal tracking-normal",
-      className
-    )}>
-      {children}
-    </p>
-  )
-}
-
-// Caption Text (Instrument Sans)
-export function CaptionText({ children, className }: TypographyProps) {
-  return (
-    <p className={cn(
-      "font-sans text-xs leading-normal tracking-wide uppercase",
       className
     )}>
       {children}

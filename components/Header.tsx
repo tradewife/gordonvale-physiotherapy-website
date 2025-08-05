@@ -2,41 +2,41 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Menu } from "lucide-react"
 import { Sheet, SheetContent, SheetTrigger, SheetHeader, SheetTitle } from "@/components/ui/sheet"
-import { SubsectionHeadline, SmallText } from "@/components/ui/Typography"
+import { SubsectionHeadline, BodyText } from "@/components/ui/Typography"
 
 export default function Header() {
   return (
     <header className="fixed top-0 w-full bg-transparent backdrop-blur-xl border-b border-black/10" style={{ zIndex: 50 }}>
-      <div className="container mx-auto px-4 sm:px-6 md:px-8 py-4 sm:py-6 flex items-center justify-between">
+      <div className="page-container py-4 sm:py-6 flex items-center justify-between">
         <SubsectionHeadline className="text-black font-light tracking-wider">Gordonvale Physiotherapy</SubsectionHeadline>
         
         <nav className="hidden md:flex space-x-4 lg:space-x-8">
           <Link href="/" className="text-black/70 hover:text-black transition-all duration-500">
-            <SmallText className="font-light tracking-wide uppercase">Home</SmallText>
+            <BodyText className="font-light tracking-wide uppercase">Home</BodyText>
           </Link>
           <Link href="/about" className="text-black/70 hover:text-black transition-all duration-500">
-            <SmallText className="font-light tracking-wide uppercase">Our Team</SmallText>
+            <BodyText className="font-light tracking-wide uppercase">Our Team</BodyText>
           </Link>
           <Link href="/services" className="text-black/70 hover:text-black transition-all duration-500">
-            <SmallText className="font-light tracking-wide uppercase">Services</SmallText>
+            <BodyText className="font-light tracking-wide uppercase">Services</BodyText>
           </Link>
           <Link href="/dizzy-clinic" className="text-black/70 hover:text-black transition-all duration-500">
-            <SmallText className="font-light tracking-wide uppercase">Dizzy Clinic</SmallText>
+            <BodyText className="font-light tracking-wide uppercase">Dizzy Clinic</BodyText>
           </Link>
           <Link href="/ndis" className="text-black/70 hover:text-black transition-all duration-500">
-            <SmallText className="font-light tracking-wide uppercase">NDIS</SmallText>
+            <BodyText className="font-light tracking-wide uppercase">NDIS</BodyText>
           </Link>
           <Link href="/products" className="text-black/70 hover:text-black transition-all duration-500">
-            <SmallText className="font-light tracking-wide uppercase">Products</SmallText>
+            <BodyText className="font-light tracking-wide uppercase">Products</BodyText>
           </Link>
           <Link href="/telehealth" className="text-black/70 hover:text-black transition-all duration-500">
-            <SmallText className="font-light tracking-wide uppercase">Telehealth</SmallText>
+            <BodyText className="font-light tracking-wide uppercase">Telehealth</BodyText>
           </Link>
           <Link href="/contact" className="text-black/70 hover:text-black transition-all duration-500">
-            <SmallText className="font-light tracking-wide uppercase">Contact</SmallText>
+            <BodyText className="font-light tracking-wide uppercase">Contact</BodyText>
           </Link>
           <Link href="/blog" className="text-black/70 hover:text-black transition-all duration-500">
-            <SmallText className="font-light tracking-wide uppercase">Blog</SmallText>
+            <BodyText className="font-light tracking-wide uppercase">Blog</BodyText>
           </Link>
         </nav>
 
@@ -55,31 +55,31 @@ export default function Header() {
             </SheetHeader>
             <nav className="flex flex-col space-y-6 mt-8">
               <Link href="/" className="text-black/70 hover:text-black transition-all duration-500">
-                <SmallText className="font-light tracking-wide uppercase text-xl">Home</SmallText>
+                <BodyText className="font-light tracking-wide uppercase text-xl">Home</BodyText>
               </Link>
               <Link href="/about" className="text-black/70 hover:text-black transition-all duration-500">
-                <SmallText className="font-light tracking-wide uppercase text-lg">Our Team</SmallText>
+                <BodyText className="font-light tracking-wide uppercase text-lg">Our Team</BodyText>
               </Link>
               <Link href="/services" className="text-black/70 hover:text-black transition-all duration-500">
-                <SmallText className="font-light tracking-wide uppercase text-lg">Services</SmallText>
+                <BodyText className="font-light tracking-wide uppercase text-lg">Services</BodyText>
               </Link>
               <Link href="/dizzy-clinic" className="text-black/70 hover:text-black transition-all duration-500">
-                <SmallText className="font-light tracking-wide uppercase text-lg">Dizzy Clinic</SmallText>
+                <BodyText className="font-light tracking-wide uppercase text-lg">Dizzy Clinic</BodyText>
               </Link>
               <Link href="/ndis" className="text-black/70 hover:text-black transition-all duration-500">
-                <SmallText className="font-light tracking-wide uppercase text-lg">NDIS</SmallText>
+                <BodyText className="font-light tracking-wide uppercase text-lg">NDIS</BodyText>
               </Link>
               <Link href="/products" className="text-black/70 hover:text-black transition-all duration-500">
-                <SmallText className="font-light tracking-wide uppercase text-lg">Products</SmallText>
+                <BodyText className="font-light tracking-wide uppercase text-lg">Products</BodyText>
               </Link>
               <Link href="/telehealth" className="text-black/70 hover:text-black transition-all duration-500">
-                <SmallText className="font-light tracking-wide uppercase text-lg">Telehealth</SmallText>
+                <BodyText className="font-light tracking-wide uppercase text-lg">Telehealth</BodyText>
               </Link>
               <Link href="/contact" className="text-black/70 hover:text-black transition-all duration-500">
-                <SmallText className="font-light tracking-wide uppercase text-lg">Contact</SmallText>
+                <BodyText className="font-light tracking-wide uppercase text-lg">Contact</BodyText>
               </Link>
               <Link href="/blog" className="text-black/70 hover:text-black transition-all duration-500">
-                <SmallText className="font-light tracking-wide uppercase text-lg">Blog</SmallText>
+                <BodyText className="font-light tracking-wide uppercase text-lg">Blog</BodyText>
               </Link>
             </nav>
           </SheetContent>

@@ -186,13 +186,6 @@
     @apply font-sans text-base md:text-lg leading-relaxed tracking-normal;
   }
 
-  .body-small {
-    @apply font-sans text-sm leading-normal tracking-normal;
-  }
-
-  .caption {
-    @apply font-sans text-xs leading-normal tracking-wide uppercase;
-  }
 }
 
 @layer utilities {
@@ -204,6 +197,47 @@
   /* Ensure sufficient contrast */
   .text-muted {
     @apply text-gray-600 dark:text-gray-300;
+  }
+}
+
+@layer components {
+  /* Standardized Container System */
+  .page-container {
+    @apply container mx-auto px-4 sm:px-6 md:px-8 relative z-10;
+  }
+  
+  .content-wrapper {
+    @apply max-w-6xl mx-auto;
+  }
+  
+  .hero-content {
+    @apply max-w-4xl;
+  }
+  
+  .text-content {
+    @apply max-w-4xl;
+  }
+  
+  /* Standardized Section Spacing */
+  .section-spacing {
+    @apply py-24 md:py-32;
+  }
+  
+  .hero-spacing {
+    @apply py-32 md:py-40;
+  }
+  
+  /* Standardized Content Spacing */
+  .content-spacing {
+    @apply mb-8 sm:mb-12 md:mb-16;
+  }
+  
+  .hero-text-spacing {
+    @apply mb-6 sm:mb-8;
+  }
+  
+  .body-text-spacing {
+    @apply mb-8 sm:mb-12;
   }
 }
 

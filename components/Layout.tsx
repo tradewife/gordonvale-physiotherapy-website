@@ -14,7 +14,7 @@ export default function Layout({ children }: LayoutProps) {
       </div>
       {/* Header */}
       <header className="fixed top-0 w-full z-50 bg-transparent backdrop-blur-xl border-b border-black/10 relative">
-        <div className="container mx-auto px-4 sm:px-6 md:px-8 py-4 sm:py-6 flex items-center justify-between">
+        <div className="page-container py-4 sm:py-6 flex items-center justify-between">
           <Link href="/" className="text-xl sm:text-2xl font-light text-black tracking-wider">
             Gordonvale Physiotherapy
           </Link>
@@ -84,10 +84,11 @@ export default function Layout({ children }: LayoutProps) {
       <main className="relative z-10">{children}</main>
 
       {/* Footer */}
-      <footer className="bg-transparent text-black py-24 border-t border-black/10 relative z-10">
+      <footer className="bg-transparent text-black section-spacing border-t border-black/10 relative z-10">
         <div className="absolute inset-0 bg-transparent"></div>
-        <div className="container mx-auto px-4 sm:px-6 md:px-8 relative z-10">
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 sm:gap-12 md:gap-16">
+        <div className="page-container">
+          <div className="content-wrapper">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 sm:gap-12 md:gap-16">
             <div>
               <h4 className="font-light mb-8 text-black text-xl tracking-wide">Contact</h4>
               <p className="text-black/60 leading-relaxed text-lg font-light">
@@ -144,6 +145,7 @@ export default function Layout({ children }: LayoutProps) {
                   Facebook
                 </a>
               </p>
+            </div>
             </div>
           </div>
         </div>

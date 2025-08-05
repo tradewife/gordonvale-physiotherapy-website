@@ -1,13 +1,11 @@
-export type TypographyVariant = 
+export type TypographyVariant =
   | 'hero'
-  | 'display' 
+  | 'display'
   | 'section'
   | 'subsection'
   | 'card'
   | 'body-large'
   | 'body'
-  | 'small'
-  | 'caption'
 
 export type FontFamily = 'sans' | 'serif'
 
@@ -22,13 +20,11 @@ export const getTypographyClasses = (variant: TypographyVariant): string => {
   const variants = {
     hero: 'font-serif text-6xl md:text-8xl font-normal leading-none tracking-tighter',
     display: 'font-serif text-5xl md:text-7xl font-normal leading-tight tracking-tight',
-    section: 'font-sans text-3xl md:text-5xl font-medium leading-tight tracking-tight',
-    subsection: 'font-sans text-2xl md:text-4xl font-medium leading-tight tracking-normal',
-    card: 'font-sans text-xl md:text-2xl font-semibold leading-snug tracking-normal',
+    section: 'font-serif text-3xl md:text-5xl font-medium leading-tight tracking-tight',
+    subsection: 'font-serif text-2xl md:text-4xl font-medium leading-tight tracking-normal',
+    card: 'font-serif text-xl md:text-2xl font-semibold leading-snug tracking-normal',
     'body-large': 'font-sans text-lg md:text-xl leading-relaxed tracking-normal',
     body: 'font-sans text-base md:text-lg leading-relaxed tracking-normal',
-    small: 'font-sans text-sm leading-normal tracking-normal',
-    caption: 'font-sans text-xs leading-normal tracking-wide uppercase',
   }
   
   return variants[variant] || variants.body
@@ -47,17 +43,17 @@ export const TYPOGRAPHY_HIERARCHY = {
     useCase: 'Page titles, section openers'
   },
   section: {
-    font: 'Instrument Sans',
+    font: 'Instrument Serif',
     sizeRange: '36-48px',
     useCase: 'Major content sections'
   },
   subsection: {
-    font: 'Instrument Sans',
+    font: 'Instrument Serif',
     sizeRange: '24-36px',
     useCase: 'Content subsections'
   },
   card: {
-    font: 'Instrument Sans',
+    font: 'Instrument Serif',
     sizeRange: '20-24px',
     useCase: 'Card titles, article headlines'
   },
@@ -69,16 +65,6 @@ export const TYPOGRAPHY_HIERARCHY = {
   body: {
     font: 'Instrument Sans',
     sizeRange: '16-18px',
-    useCase: 'Main content, descriptions'
-  },
-  small: {
-    font: 'Instrument Sans',
-    sizeRange: '14px',
-    useCase: 'Secondary information'
-  },
-  caption: {
-    font: 'Instrument Sans',
-    sizeRange: '12px',
-    useCase: 'Image captions, metadata'
+    useCase: 'Main content, descriptions - MINIMUM SIZE for all text'
   }
 } as const
