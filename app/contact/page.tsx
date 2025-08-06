@@ -68,10 +68,10 @@ export default function ContactPage() {
         </div>
 
         <div className="page-container">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 md:gap-16">
-              
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 md:gap-16 lg:items-stretch">
+
               {/* Contact Information */}
-              <div>
+              <div className="flex flex-col">
                 <Card className="contact-card glass-card mb-8">
                   <CardContent className="p-6 sm:p-8 md:p-10 lg:p-12">
                     <SectionHeadline className="mb-8 text-black">
@@ -102,12 +102,12 @@ export default function ContactPage() {
                   </CardContent>
                 </Card>
 
-                <Card className="contact-card glass-card">
-                  <CardContent className="p-6 sm:p-8 md:p-10 lg:p-12">
+                <Card className="contact-card glass-card flex-1">
+                  <CardContent className="p-6 sm:p-8 md:p-10 lg:p-12 h-full flex flex-col">
                     <SectionHeadline className="mb-8 text-black">
                       Opening Hours
                     </SectionHeadline>
-                    <div className="space-y-4">
+                    <div className="space-y-4 flex-1 flex flex-col justify-center">
                       <div className="flex justify-between">
                         <LargeBodyText className="text-gray-700">Monday - Friday</LargeBodyText>
                         <LargeBodyText className="text-gray-900">9:00am - 5:00pm</LargeBodyText>
@@ -136,8 +136,8 @@ export default function ContactPage() {
                       <LargeBodyText className="block text-gray-700 mb-3">
                         Name *
                       </LargeBodyText>
-                      <Input 
-                        className="glass-card glass-input placeholder:text-black/40 focus:border-black/40 text-lg p-4"
+                      <Input
+                        className="glass-card glass-input placeholder:text-black/40 focus:border-black/40 text-base md:text-lg lg:text-xl p-4"
                         placeholder="Your full name"
                       />
                     </div>
@@ -145,9 +145,9 @@ export default function ContactPage() {
                       <LargeBodyText className="block text-gray-700 mb-3">
                         Email Address *
                       </LargeBodyText>
-                      <Input 
+                      <Input
                         type="email"
-                        className="glass-card glass-input placeholder:text-black/40 focus:border-black/40 text-lg p-4"
+                        className="glass-card glass-input placeholder:text-black/40 focus:border-black/40 text-base md:text-lg lg:text-xl p-4"
                         placeholder="your.email@example.com"
                       />
                     </div>
@@ -155,12 +155,12 @@ export default function ContactPage() {
                       <LargeBodyText className="block text-gray-700 mb-3">
                         Message *
                       </LargeBodyText>
-                      <Textarea 
-                        className="glass-card glass-input placeholder:text-black/40 focus:border-black/40 text-lg p-4 min-h-[150px]"
+                      <Textarea
+                        className="glass-card glass-input placeholder:text-black/40 focus:border-black/40 text-base md:text-lg lg:text-xl p-4 min-h-[150px]"
                         placeholder="Tell us about your condition or how we can help you..."
                       />
                     </div>
-                    <Button className="w-full bg-white text-black hover:bg-transparent transition-all duration-300 py-4 text-lg font-medium">
+                    <Button className="w-full bg-black text-white hover:bg-gray-800 transition-all duration-300 py-4 text-lg font-medium">
                       Send Message
                     </Button>
                   </form>
