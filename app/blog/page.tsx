@@ -1,4 +1,6 @@
-import React from "react"
+'use client'
+
+import React, { useRef } from "react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
@@ -7,26 +9,51 @@ import {
   SectionHeadline,
   LargeBodyText
 } from "@/components/ui/Typography"
+import { useGSAP } from "@gsap/react"
+import { useGSAPAnimations, useReducedMotion } from "@/hooks/use-gsap-animations"
 
 export default function BlogPage() {
+  const heroRef = useRef<HTMLElement>(null)
+  const heroTitleRef = useRef<HTMLDivElement>(null)
+  const heroSubtitleRef = useRef<HTMLDivElement>(null)
+
+  const { fadeInUp, staggerReveal, heroEntrance } = useGSAPAnimations()
+  const { safeAnimate } = useReducedMotion()
+
+  useGSAP(() => {
+    safeAnimate(() => {
+      if (heroTitleRef.current && heroSubtitleRef.current) {
+        heroEntrance(heroTitleRef.current, heroSubtitleRef.current, heroSubtitleRef.current)
+      }
+      // Animate the coming-soon card as a single item
+      staggerReveal('.blog-card', { duration: 1, stagger: 0.15 })
+      // Smooth fade on sections
+      fadeInUp('section.section-spacing', { duration: 0.9 })
+    })
+  }, [])
+
   return (
     <div className="min-h-screen bg-transparent relative">
       {/* Hero Section */}
-      <section className="hero-spacing relative">
+      <section ref={heroRef} className="hero-spacing relative">
         <div className="absolute inset-0 bg-transparent"></div>
-        <div className="absolute inset-0">
+        <div className="absolute inset-0 page-bg-effect">
           <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-orange-500/5 rounded-full blur-3xl"></div>
           <div className="absolute top-1/3 right-1/3 w-80 h-80 bg-blue-400/5 rounded-full blur-3xl"></div>
         </div>
 
         <div className="page-container">
           <div className="hero-content">
-            <HeroHeadline className="hero-text-spacing text-black text-balance">
-              Blog <span className="font-normal">&amp; Resources</span>
-            </HeroHeadline>
-            <LargeBodyText className="text-black/70 body-text-spacing max-w-2xl text-pretty">
-              Stay updated with the latest physiotherapy insights and health tips.
-            </LargeBodyText>
+            <div ref={heroTitleRef}>
+              <HeroHeadline className="hero-text-spacing text-black text-balance section-headline">
+                Blog <span className="font-normal">& Resources</span>
+              </HeroHeadline>
+            </div>
+            <div ref={heroSubtitleRef}>
+              <LargeBodyText className="text-black/70 body-text-spacing max-w-2xl text-pretty">
+                Stay updated with the latest physiotherapy insights and health tips.
+              </LargeBodyText>
+            </div>
           </div>
         </div>
       </section>
@@ -41,7 +68,7 @@ export default function BlogPage() {
 
         <div className="page-container">
           <div className="text-center">
-            <Card className="glass-card">
+            <Card className="blog-card glass-card">
               <CardContent className="p-16">
                 <SectionHeadline className="mb-12 text-black">
                   Coming Soon

@@ -1,4 +1,6 @@
-import React from "react"
+'use client'
+
+import React, { useRef } from "react"
 import { Card, CardContent } from "@/components/ui/card"
 import {
   HeroHeadline,
@@ -7,26 +9,49 @@ import {
   BodyText,
   LargeBodyText
 } from "@/components/ui/Typography"
+import { useGSAP } from "@gsap/react"
+import { useGSAPAnimations, useReducedMotion } from "@/hooks/use-gsap-animations"
 
 export default function AboutPage() {
+  const heroRef = useRef<HTMLElement>(null)
+  const heroTitleRef = useRef<HTMLDivElement>(null)
+  const heroSubtitleRef = useRef<HTMLDivElement>(null)
+
+  const { fadeInUp, staggerReveal, heroEntrance } = useGSAPAnimations()
+  const { safeAnimate } = useReducedMotion()
+
+  useGSAP(() => {
+    safeAnimate(() => {
+      if (heroTitleRef.current && heroSubtitleRef.current) {
+        heroEntrance(heroTitleRef.current, heroSubtitleRef.current, heroSubtitleRef.current)
+      }
+      staggerReveal('.about-card', { duration: 1, stagger: 0.15 })
+      fadeInUp('section.section-spacing', { duration: 0.9 })
+    })
+  }, [])
+
   return (
     <div className="min-h-screen bg-transparent relative">
       {/* Hero Section */}
-      <section className="hero-spacing relative">
+      <section ref={heroRef} className="hero-spacing relative">
         <div className="absolute inset-0 bg-transparent"></div>
-        <div className="absolute inset-0">
+        <div className="absolute inset-0 page-bg-effect">
           <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-orange-500/5 rounded-full blur-3xl"></div>
           <div className="absolute top-1/3 right-1/3 w-80 h-80 bg-blue-400/5 rounded-full blur-3xl"></div>
         </div>
 
         <div className="page-container">
           <div className="hero-content">
-            <HeroHeadline className="hero-text-spacing text-black text-balance">
-              Meet our <span className="font-normal">expert team</span>
-            </HeroHeadline>
-            <LargeBodyText className="text-black/70 body-text-spacing max-w-2xl text-pretty">
-              Our experienced physiotherapists are dedicated to providing evidence-based treatment and personalized care.
-            </LargeBodyText>
+            <div ref={heroTitleRef}>
+              <HeroHeadline className="hero-text-spacing text-black text-balance section-headline">
+                Meet our <span className="font-normal">expert team</span>
+              </HeroHeadline>
+            </div>
+            <div ref={heroSubtitleRef}>
+              <LargeBodyText className="text-black/70 body-text-spacing max-w-2xl text-pretty">
+                Our experienced physiotherapists are dedicated to providing evidence-based treatment and personalized care.
+              </LargeBodyText>
+            </div>
           </div>
         </div>
       </section>
@@ -43,7 +68,7 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12">
               
               {/* Helen Cooper */}
-              <Card className="glass-card hover:border-white/40 transition-all duration-700 group">
+              <Card className="about-card glass-card hover:border-white/40 transition-all duration-700 group">
                 <CardContent className="p-6 sm:p-8 md:p-10 lg:p-12">
                   <CardHeadline className="mb-4 text-gray-900 group-hover:text-gray-800 transition-colors duration-500">
                     Helen Cooper
@@ -62,7 +87,7 @@ export default function AboutPage() {
               </Card>
 
               {/* Rhys Simpson */}
-              <Card className="glass-card hover:border-white/40 transition-all duration-700 group">
+              <Card className="about-card glass-card hover:border-white/40 transition-all duration-700 group">
                 <CardContent className="p-6 sm:p-8 md:p-10 lg:p-12">
                   <CardHeadline className="mb-4 text-gray-900 group-hover:text-gray-800 transition-colors duration-500">
                     Rhys Simpson
@@ -80,7 +105,7 @@ export default function AboutPage() {
               </Card>
 
               {/* Steven Miller */}
-              <Card className="glass-card hover:border-white/40 transition-all duration-700 group">
+              <Card className="about-card glass-card hover:border-white/40 transition-all duration-700 group">
                 <CardContent className="p-6 sm:p-8 md:p-10 lg:p-12">
                   <CardHeadline className="mb-4 text-gray-900 group-hover:text-gray-800 transition-colors duration-500">
                     Steven Miller
@@ -95,7 +120,7 @@ export default function AboutPage() {
               </Card>
 
               {/* Peta Leo */}
-              <Card className="glass-card hover:border-white/40 transition-all duration-700 group">
+              <Card className="about-card glass-card hover:border-white/40 transition-all duration-700 group">
                 <CardContent className="p-6 sm:p-8 md:p-10 lg:p-12">
                   <CardHeadline className="mb-4 text-gray-900 group-hover:text-gray-800 transition-colors duration-500">
                     Peta Leo
@@ -110,7 +135,7 @@ export default function AboutPage() {
               </Card>
 
               {/* David Holzheimer */}
-              <Card className="glass-card hover:border-white/40 transition-all duration-700 group">
+              <Card className="about-card glass-card hover:border-white/40 transition-all duration-700 group">
                 <CardContent className="p-6 sm:p-8 md:p-10 lg:p-12">
                   <CardHeadline className="mb-4 text-gray-900 group-hover:text-gray-800 transition-colors duration-500">
                     David Holzheimer
@@ -125,7 +150,7 @@ export default function AboutPage() {
               </Card>
 
               {/* Hayley Barnes */}
-              <Card className="glass-card hover:border-white/40 transition-all duration-700 group">
+              <Card className="about-card glass-card hover:border-white/40 transition-all duration-700 group">
                 <CardContent className="p-6 sm:p-8 md:p-10 lg:p-12">
                   <CardHeadline className="mb-4 text-gray-900 group-hover:text-gray-800 transition-colors duration-500">
                     Hayley Barnes

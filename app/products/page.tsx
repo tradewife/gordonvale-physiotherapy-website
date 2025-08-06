@@ -1,30 +1,55 @@
-import React from "react"
+'use client'
+
+import React, { useRef } from "react"
 import { Card, CardContent } from "@/components/ui/card"
 import {
   HeroHeadline,
   SectionHeadline,
   LargeBodyText
 } from "@/components/ui/Typography"
+import { useGSAPAnimations, useReducedMotion } from "@/hooks/use-gsap-animations"
+import { useGSAP } from "@gsap/react"
 
 export default function ProductsPage() {
+  const heroRef = useRef<HTMLElement>(null)
+  const heroTitleRef = useRef<HTMLDivElement>(null)
+  const heroSubtitleRef = useRef<HTMLDivElement>(null)
+
+  const { fadeInUp, staggerReveal, heroEntrance } = useGSAPAnimations()
+  const { safeAnimate } = useReducedMotion()
+
+  useGSAP(() => {
+    safeAnimate(() => {
+      if (heroTitleRef.current && heroSubtitleRef.current) {
+        heroEntrance(heroTitleRef.current, heroSubtitleRef.current, heroSubtitleRef.current)
+      }
+      staggerReveal('.product-card', { duration: 1, stagger: 0.15 })
+      fadeInUp('section.section-spacing', { duration: 0.9 })
+    })
+  }, [])
+
   return (
     <div className="min-h-screen bg-transparent relative">
       {/* Hero Section */}
-      <section className="hero-spacing relative">
+      <section ref={heroRef} className="hero-spacing relative">
         <div className="absolute inset-0 bg-transparent"></div>
-        <div className="absolute inset-0">
+        <div className="absolute inset-0 page-bg-effect">
           <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-orange-500/5 rounded-full blur-3xl"></div>
           <div className="absolute top-1/3 right-1/3 w-80 h-80 bg-blue-400/5 rounded-full blur-3xl"></div>
         </div>
 
         <div className="page-container">
           <div className="hero-content">
-            <HeroHeadline className="hero-text-spacing text-black text-balance">
-              Products <span className="font-normal">&amp; Equipment</span>
-            </HeroHeadline>
-            <LargeBodyText className="text-black/70 body-text-spacing max-w-2xl text-pretty">
-              Quality products and equipment to support your health and rehabilitation journey.
-            </LargeBodyText>
+            <div ref={heroTitleRef}>
+              <HeroHeadline className="hero-text-spacing text-black text-balance section-headline">
+                Products <span className="font-normal">& Equipment</span>
+              </HeroHeadline>
+            </div>
+            <div ref={heroSubtitleRef}>
+              <LargeBodyText className="text-black/70 body-text-spacing max-w-2xl text-pretty">
+                Quality products and equipment to support your health and rehabilitation journey.
+              </LargeBodyText>
+            </div>
           </div>
         </div>
       </section>
@@ -41,7 +66,7 @@ export default function ProductsPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 sm:gap-8 md:gap-10 lg:gap-12">
               
               {/* Therabubble */}
-              <Card className="glass-card hover:border-white/40 transition-all duration-700 group">
+              <Card className="product-card glass-card hover:border-white/40 transition-all duration-700 group">
                 <CardContent className="p-6 sm:p-8 md:p-10 lg:p-12">
                   <div className="w-full h-64 bg-gradient-to-br from-blue-600/20 to-blue-800/20 rounded-lg mb-10 relative overflow-hidden">
                     <img
@@ -69,7 +94,7 @@ export default function ProductsPage() {
               </Card>
 
               {/* Archies */}
-              <Card className="glass-card hover:border-white/40 transition-all duration-700 group">
+              <Card className="product-card glass-card hover:border-white/40 transition-all duration-700 group">
                 <CardContent className="p-6 sm:p-8 md:p-10 lg:p-12">
                   <div className="w-full h-64 bg-gradient-to-br from-orange-600/20 to-orange-800/20 rounded-lg mb-10 relative overflow-hidden">
                     <img
@@ -97,7 +122,7 @@ export default function ProductsPage() {
               </Card>
 
               {/* Walking Aids */}
-              <Card className="glass-card hover:border-white/40 transition-all duration-700 group">
+              <Card className="product-card glass-card hover:border-white/40 transition-all duration-700 group">
                 <CardContent className="p-6 sm:p-8 md:p-10 lg:p-12">
                   <div className="w-full h-64 bg-gradient-to-br from-green-600/20 to-green-800/20 rounded-lg mb-10 relative overflow-hidden">
                     <img
@@ -125,7 +150,7 @@ export default function ProductsPage() {
               </Card>
 
               {/* Olive And Bee */}
-              <Card className="glass-card hover:border-white/40 transition-all duration-700 group">
+              <Card className="product-card glass-card hover:border-white/40 transition-all duration-700 group">
                 <CardContent className="p-6 sm:p-8 md:p-10 lg:p-12">
                   <div className="w-full h-64 bg-gradient-to-br from-purple-600/20 to-purple-800/20 rounded-lg mb-10 relative overflow-hidden">
                     <img

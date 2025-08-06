@@ -2,8 +2,8 @@ import type { Metadata } from 'next'
 import { Instrument_Sans, Instrument_Serif } from 'next/font/google'
 import './globals.css'
 import '../styles/glass.css'
-import Header from '@/components/Header'
-import BackgroundAnimation from '@/components/BackgroundAnimation'
+import AnimatedHeader from '@/components/AnimatedHeader'
+import GlobalAnimations from '@/components/GlobalAnimations'
 
 const instrumentSans = Instrument_Sans({
   subsets: ['latin'],
@@ -32,11 +32,12 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${instrumentSans.variable} ${instrumentSerif.variable}`}>
       <body className="relative min-h-screen">
-        <BackgroundAnimation />
-        <div className="relative" style={{ zIndex: 50 }}>
-          <Header />
-          <main className="pt-20">{children}</main>
-        </div>
+        <GlobalAnimations>
+          <div className="relative" style={{ zIndex: 50 }}>
+            <AnimatedHeader />
+            <main className="pt-20">{children}</main>
+          </div>
+        </GlobalAnimations>
       </body>
     </html>
   )

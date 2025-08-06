@@ -1,4 +1,6 @@
-import React from "react"
+'use client'
+
+import React, { useRef } from "react"
 import { Card, CardContent } from "@/components/ui/card"
 import {
   HeroHeadline,
@@ -7,28 +9,53 @@ import {
   BodyText,
   LargeBodyText
 } from "@/components/ui/Typography"
+import { useGSAP } from "@gsap/react"
+import { useGSAPAnimations, useReducedMotion } from "@/hooks/use-gsap-animations"
 
 export default function NDISPage() {
+  const heroRef = useRef<HTMLElement>(null)
+  const heroTitleRef = useRef<HTMLDivElement>(null)
+  const heroSubtitleRef = useRef<HTMLDivElement>(null)
+
+  const { fadeInUp, staggerReveal, heroEntrance } = useGSAPAnimations()
+  const { safeAnimate } = useReducedMotion()
+
+  useGSAP(() => {
+    safeAnimate(() => {
+      if (heroTitleRef.current && heroSubtitleRef.current) {
+        heroEntrance(heroTitleRef.current, heroSubtitleRef.current, heroSubtitleRef.current)
+      }
+      // Animate treatment/program cards
+      staggerReveal('.ndis-card', { duration: 1, stagger: 0.15 })
+      // Fade in sections
+      fadeInUp('section.section-spacing', { duration: 0.9 })
+    })
+  }, [])
+
   return (
     <div className="min-h-screen bg-transparent relative">
       {/* Hero Section */}
-      <section className="hero-spacing relative">
+      <section ref={heroRef} className="hero-spacing relative">
         <div className="absolute inset-0 bg-transparent"></div>
-        <div className="absolute inset-0">
+        <div className="absolute inset-0 page-bg-effect">
           <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-orange-500/5 rounded-full blur-3xl"></div>
           <div className="absolute top-1/3 right-1/3 w-80 h-80 bg-blue-400/5 rounded-full blur-3xl"></div>
         </div>
 
         <div className="page-container">
           <div className="hero-content">
-            <HeroHeadline className="hero-text-spacing text-black text-balance">
-              NDIS <span className="font-normal">Services</span>
-            </HeroHeadline>
-            <LargeBodyText className="text-black/70 body-text-spacing max-w-2xl text-pretty">
-              As a registered NDIS provider, we have experienced staff with in-depth knowledge
-              in NDIS plan reading and implementation. We work closely with participants to
-              help them achieve their nominated goals through evidence-based physiotherapy interventions.
-            </LargeBodyText>
+            <div ref={heroTitleRef}>
+              <HeroHeadline className="hero-text-spacing text-black text-balance section-headline">
+                NDIS <span className="font-normal">Services</span>
+              </HeroHeadline>
+            </div>
+            <div ref={heroSubtitleRef}>
+              <LargeBodyText className="text-black/70 body-text-spacing max-w-2xl text-pretty">
+                As a registered NDIS provider, we have experienced staff with in-depth knowledge
+                in NDIS plan reading and implementation. We work closely with participants to
+                help them achieve their nominated goals through evidence-based physiotherapy interventions.
+              </LargeBodyText>
+            </div>
           </div>
         </div>
       </section>
@@ -49,7 +76,7 @@ export default function NDISPage() {
             </SectionHeadline>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10 md:gap-12 content-spacing">
               
-              <Card className="glass-card hover:border-white/40 transition-all duration-700 group">
+              <Card className="ndis-card glass-card hover:border-white/40 transition-all duration-700 group">
                 <CardContent className="p-6 sm:p-8 md:p-10 lg:p-12">
                   <CardHeadline className="mb-4 text-gray-900 group-hover:text-gray-800 transition-colors duration-500">
                     Pain &amp; Movement Management
@@ -60,7 +87,7 @@ export default function NDISPage() {
                 </CardContent>
               </Card>
 
-              <Card className="glass-card hover:border-white/40 transition-all duration-700 group">
+              <Card className="ndis-card glass-card hover:border-white/40 transition-all duration-700 group">
                 <CardContent className="p-6 sm:p-8 md:p-10 lg:p-12">
                   <CardHeadline className="mb-4 text-gray-900 group-hover:text-gray-800 transition-colors duration-500">
                     Post Surgery Rehabilitation
@@ -71,7 +98,7 @@ export default function NDISPage() {
                 </CardContent>
               </Card>
 
-              <Card className="glass-card hover:border-white/40 transition-all duration-700 group">
+              <Card className="ndis-card glass-card hover:border-white/40 transition-all duration-700 group">
                 <CardContent className="p-6 sm:p-8 md:p-10 lg:p-12">
                   <CardHeadline className="mb-4 text-gray-900 group-hover:text-gray-800 transition-colors duration-500">
                     Balance and Falls Prevention
@@ -82,7 +109,7 @@ export default function NDISPage() {
                 </CardContent>
               </Card>
 
-              <Card className="glass-card hover:border-white/40 transition-all duration-700 group">
+              <Card className="ndis-card glass-card hover:border-white/40 transition-all duration-700 group">
                 <CardContent className="p-6 sm:p-8 md:p-10 lg:p-12">
                   <CardHeadline className="mb-4 text-gray-900 group-hover:text-gray-800 transition-colors duration-500">
                     Strength and Conditioning
@@ -93,7 +120,7 @@ export default function NDISPage() {
                 </CardContent>
               </Card>
 
-              <Card className="glass-card hover:border-white/40 transition-all duration-700 group">
+              <Card className="ndis-card glass-card hover:border-white/40 transition-all duration-700 group">
                 <CardContent className="p-6 sm:p-8 md:p-10 lg:p-12">
                   <CardHeadline className="mb-4 text-gray-900 group-hover:text-gray-800 transition-colors duration-500">
                     Education and Advice
@@ -104,7 +131,7 @@ export default function NDISPage() {
                 </CardContent>
               </Card>
 
-              <Card className="glass-card hover:border-white/40 transition-all duration-700 group">
+              <Card className="ndis-card glass-card hover:border-white/40 transition-all duration-700 group">
                 <CardContent className="p-6 sm:p-8 md:p-10 lg:p-12">
                   <CardHeadline className="mb-4 text-gray-900 group-hover:text-gray-800 transition-colors duration-500">
                     Equipment Supply
@@ -123,7 +150,7 @@ export default function NDISPage() {
             </SectionHeadline>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 content-spacing">
               
-              <Card className="glass-card hover:border-white/40 transition-all duration-700 group">
+              <Card className="ndis-card glass-card hover:border-white/40 transition-all duration-700 group">
                 <CardContent className="p-6 sm:p-8 md:p-10 lg:p-12">
                   <SectionHeadline className="mb-6 text-gray-900 group-hover:text-gray-800 transition-colors duration-500">
                     Clinic-Based Programs

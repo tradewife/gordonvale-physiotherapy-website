@@ -1,5 +1,5 @@
-import Component from "../physiotherapy-website"
+import AnimatedPhysiotherapyWebsite from "@/components/AnimatedPhysiotherapyWebsite"
 
 export default function Page() {
-  return <Component />
+  return <AnimatedPhysiotherapyWebsite />
 }
