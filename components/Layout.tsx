@@ -1,5 +1,6 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
+import { SmallHeadline } from "@/components/ui/Typography"
 
 interface LayoutProps {
   children: React.ReactNode
@@ -90,7 +91,7 @@ export default function Layout({ children }: LayoutProps) {
           <div className="content-wrapper">
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 sm:gap-12 md:gap-16">
             <div>
-              <h4 className="font-light mb-8 text-black text-xl tracking-wide">Contact</h4>
+              <SmallHeadline className="mb-8 text-black">Contact</SmallHeadline>
               <p className="text-black/60 leading-relaxed text-sm font-light">
                 Shop 8C, Bryce&apos;s Arcade
                 <br />
@@ -104,7 +105,7 @@ export default function Layout({ children }: LayoutProps) {
               </p>
             </div>
             <div>
-              <h4 className="font-light mb-8 text-black text-xl tracking-wide">Services</h4>
+              <SmallHeadline className="mb-8 text-black">Services</SmallHeadline>
               <ul className="text-black/60 space-y-4 text-sm font-light">
                 <li className="hover:text-black transition-colors duration-500 cursor-pointer">
                   Pain &amp; Movement Management
@@ -124,7 +125,7 @@ export default function Layout({ children }: LayoutProps) {
               </ul>
             </div>
             <div>
-              <h4 className="font-light mb-8 text-black text-xl tracking-wide">Hours</h4>
+              <SmallHeadline className="mb-8 text-black">Hours</SmallHeadline>
               <p className="text-black/60 leading-relaxed text-sm font-light">
                 Monday - Friday: 9:00am - 5:00pm
                 <br />
@@ -134,7 +135,7 @@ export default function Layout({ children }: LayoutProps) {
               </p>
             </div>
             <div>
-              <h4 className="font-light mb-8 text-black text-xl tracking-wide">Follow Us</h4>
+              <SmallHeadline className="mb-8 text-black">Follow Us</SmallHeadline>
               <p className="text-black/60 leading-relaxed text-sm font-light">
                 <a 
                   href="https://facebook.com/helencooper000/" 

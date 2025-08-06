@@ -48,7 +48,7 @@ export default function TelehealthPage() {
         <div className="page-container">
           <div className="hero-content">
             <div ref={heroTitleRef}>
-              <HeroHeadline className="hero-text-spacing text-black text-balance section-headline">
+              <HeroHeadline className="hero-text-spacing text-black text-balance">
                 Telehealth <span className="font-normal">Services</span>
               </HeroHeadline>
             </div>

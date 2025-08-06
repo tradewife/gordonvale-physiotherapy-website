@@ -5,7 +5,8 @@ import { Card, CardContent } from "@/components/ui/card"
 import {
   HeroHeadline,
   SectionHeadline,
-  LargeBodyText
+  LargeBodyText,
+  OverlayText
 } from "@/components/ui/Typography"
 import { useGSAPAnimations, useReducedMotion } from "@/hooks/use-gsap-animations"
 import { useGSAP } from "@gsap/react"
@@ -41,7 +42,7 @@ export default function ProductsPage() {
         <div className="page-container">
           <div className="hero-content">
             <div ref={heroTitleRef}>
-              <HeroHeadline className="hero-text-spacing text-black text-balance section-headline">
+              <HeroHeadline className="hero-text-spacing text-black text-balance">
                 Products <span className="font-normal">& Equipment</span>
               </HeroHeadline>
             </div>
@@ -75,9 +76,9 @@ export default function ProductsPage() {
                       className="absolute inset-0 w-full h-full object-contain object-center z-0"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
-                    <div className="absolute bottom-8 left-8 text-white font-light text-lg tracking-wide z-10">
+                    <OverlayText className="absolute bottom-8 left-8 text-white z-10">
                       Respiratory Care
-                    </div>
+                    </OverlayText>
                   </div>
                   <SectionHeadline className="mb-8 text-gray-900 group-hover:text-gray-800 transition-colors duration-500">
                     Therabubble
@@ -103,12 +104,12 @@ export default function ProductsPage() {
                       className="absolute inset-0 w-full h-full object-cover object-center z-0"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
-                    <div className="absolute bottom-8 left-8 text-white font-light text-lg tracking-wide z-10">
+                    <OverlayText className="absolute bottom-8 left-8 text-white z-10">
                       Orthotic Footwear
-                    </div>
+                    </OverlayText>
                   </div>
                   <SectionHeadline className="mb-8 text-gray-900 group-hover:text-gray-800 transition-colors duration-500">
-                    Archies Thongs &amp; Slides
+                    Archies Thongs & Slides
                   </SectionHeadline>
                   <LargeBodyText className="text-gray-700 mb-6">
                     Orthotic support footwear with real arch support up to 2.2cm, featuring 
@@ -131,9 +132,9 @@ export default function ProductsPage() {
                       className="absolute inset-0 w-full h-full object-cover object-center z-0"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
-                    <div className="absolute bottom-8 left-8 text-white font-light text-lg tracking-wide z-10">
+                    <OverlayText className="absolute bottom-8 left-8 text-white z-10">
                       Mobility Support
-                    </div>
+                    </OverlayText>
                   </div>
                   <SectionHeadline className="mb-8 text-gray-900 group-hover:text-gray-800 transition-colors duration-500">
                     Walking Aids, Splints and Braces
@@ -159,9 +160,9 @@ export default function ProductsPage() {
                       className="absolute inset-0 w-full h-full object-cover object-center z-0"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
-                    <div className="absolute bottom-8 left-8 text-white font-light text-lg tracking-wide z-10">
+                    <OverlayText className="absolute bottom-8 left-8 text-white z-10">
                       Personal Care
-                    </div>
+                    </OverlayText>
                   </div>
                   <SectionHeadline className="mb-8 text-gray-900 group-hover:text-gray-800 transition-colors duration-500">
                     Olive And Bee

@@ -4,8 +4,6 @@ import React, { useRef } from "react"
 import { Card, CardContent } from "@/components/ui/card"
 import {
   HeroHeadline,
-  SectionHeadline,
-  CardHeadline,
   BodyText,
   LargeBodyText
 } from "@/components/ui/Typography"
@@ -43,7 +41,7 @@ export default function AboutPage() {
         <div className="page-container">
           <div className="hero-content">
             <div ref={heroTitleRef}>
-              <HeroHeadline className="hero-text-spacing text-black text-balance section-headline">
+              <HeroHeadline className="hero-text-spacing text-black text-balance">
                 Meet our <span className="font-normal">expert team</span>
               </HeroHeadline>
             </div>
@@ -70,10 +68,10 @@ export default function AboutPage() {
               {/* Helen Cooper */}
               <Card className="about-card glass-card hover:border-white/40 transition-all duration-700 group">
                 <CardContent className="p-6 sm:p-8 md:p-10 lg:p-12">
-                  <CardHeadline className="mb-4 text-gray-900 group-hover:text-gray-800 transition-colors duration-500">
+                  <h3 className="font-serif text-2xl md:text-4xl lg:text-5xl font-medium leading-tight tracking-tight mb-4 text-gray-900 group-hover:text-gray-800 transition-colors duration-500">
                     Helen Cooper
-                  </CardHeadline>
-                  <BodyText className="text-orange-400/80 mb-8 font-light uppercase tracking-wider">Principal Physiotherapist</BodyText>
+                  </h3>
+                  <BodyText className="text-black mb-8 font-light uppercase tracking-wider">Principal Physiotherapist</BodyText>
                   <LargeBodyText className="text-gray-700 mb-6">
                     Helen founded Gordonvale Physiotherapy in 2016 with a vision to provide comprehensive,
                     evidence-based physiotherapy care to the local community. With extensive experience in
@@ -89,10 +87,10 @@ export default function AboutPage() {
               {/* Rhys Simpson */}
               <Card className="about-card glass-card hover:border-white/40 transition-all duration-700 group">
                 <CardContent className="p-6 sm:p-8 md:p-10 lg:p-12">
-                  <CardHeadline className="mb-4 text-gray-900 group-hover:text-gray-800 transition-colors duration-500">
+                  <h3 className="font-serif text-2xl md:text-4xl lg:text-5xl font-medium leading-tight tracking-tight mb-4 text-gray-900 group-hover:text-gray-800 transition-colors duration-500">
                     Rhys Simpson
-                  </CardHeadline>
-                  <BodyText className="text-blue-400/80 mb-8 font-light uppercase tracking-wider">Physiotherapist</BodyText>
+                  </h3>
+                  <BodyText className="text-black mb-8 font-light uppercase tracking-wider">Physiotherapist</BodyText>
                   <LargeBodyText className="text-gray-700 mb-6">
                     Rhys graduated from Australian Catholic University in 2021 and has developed a
                     particular expertise in aged care physiotherapy services.
@@ -107,10 +105,10 @@ export default function AboutPage() {
               {/* Steven Miller */}
               <Card className="about-card glass-card hover:border-white/40 transition-all duration-700 group">
                 <CardContent className="p-6 sm:p-8 md:p-10 lg:p-12">
-                  <CardHeadline className="mb-4 text-gray-900 group-hover:text-gray-800 transition-colors duration-500">
+                  <h3 className="font-serif text-2xl md:text-4xl lg:text-5xl font-medium leading-tight tracking-tight mb-4 text-gray-900 group-hover:text-gray-800 transition-colors duration-500">
                     Steven Miller
-                  </CardHeadline>
-                  <BodyText className="text-purple-400/80 mb-8 font-light uppercase tracking-wider">Allied Health Assistant &amp; Physiotherapy Student</BodyText>
+                  </h3>
+                  <BodyText className="text-black mb-8 font-light uppercase tracking-wider">Allied Health Assistant &amp; Physiotherapy Student</BodyText>
                   <LargeBodyText className="text-gray-700">
                     Steven combines his role as an Allied Health Assistant with his ongoing physiotherapy
                     studies, bringing enthusiasm and current knowledge to patient care while supporting
@@ -122,10 +120,10 @@ export default function AboutPage() {
               {/* Peta Leo */}
               <Card className="about-card glass-card hover:border-white/40 transition-all duration-700 group">
                 <CardContent className="p-6 sm:p-8 md:p-10 lg:p-12">
-                  <CardHeadline className="mb-4 text-gray-900 group-hover:text-gray-800 transition-colors duration-500">
+                  <h3 className="font-serif text-2xl md:text-4xl lg:text-5xl font-medium leading-tight tracking-tight mb-4 text-gray-900 group-hover:text-gray-800 transition-colors duration-500">
                     Peta Leo
-                  </CardHeadline>
-                  <BodyText className="text-green-400/80 mb-8 font-light uppercase tracking-wider">Allied Health Assistant</BodyText>
+                  </h3>
+                  <BodyText className="text-black mb-8 font-light uppercase tracking-wider">Allied Health Assistant</BodyText>
                   <LargeBodyText className="text-gray-700">
                     Peta provides essential support to our physiotherapy team, assisting with patient
                     care and treatment programs. Her dedication to helping patients achieve their
@@ -137,10 +135,10 @@ export default function AboutPage() {
               {/* David Holzheimer */}
               <Card className="about-card glass-card hover:border-white/40 transition-all duration-700 group">
                 <CardContent className="p-6 sm:p-8 md:p-10 lg:p-12">
-                  <CardHeadline className="mb-4 text-gray-900 group-hover:text-gray-800 transition-colors duration-500">
+                  <h3 className="font-serif text-2xl md:text-4xl lg:text-5xl font-medium leading-tight tracking-tight mb-4 text-gray-900 group-hover:text-gray-800 transition-colors duration-500">
                     David Holzheimer
-                  </CardHeadline>
-                  <BodyText className="text-orange-400/80 mb-8 font-light uppercase tracking-wider">CEO</BodyText>
+                  </h3>
+                  <BodyText className="text-black mb-8 font-light uppercase tracking-wider">CEO</BodyText>
                   <LargeBodyText className="text-gray-700">
                     David brings extensive expertise in NDIS and Aged Care services, ensuring our
                     clinic operates at the highest standards while maintaining focus on quality
@@ -152,10 +150,10 @@ export default function AboutPage() {
               {/* Hayley Barnes */}
               <Card className="about-card glass-card hover:border-white/40 transition-all duration-700 group">
                 <CardContent className="p-6 sm:p-8 md:p-10 lg:p-12">
-                  <CardHeadline className="mb-4 text-gray-900 group-hover:text-gray-800 transition-colors duration-500">
+                  <h3 className="font-serif text-2xl md:text-4xl lg:text-5xl font-medium leading-tight tracking-tight mb-4 text-gray-900 group-hover:text-gray-800 transition-colors duration-500">
                     Hayley Barnes
-                  </CardHeadline>
-                  <BodyText className="text-blue-400/80 mb-8 font-light uppercase tracking-wider">Practice Manager</BodyText>
+                  </h3>
+                  <BodyText className="text-black mb-8 font-light uppercase tracking-wider">Practice Manager</BodyText>
                   <LargeBodyText className="text-gray-700">
                     Hayley ensures the smooth operation of our clinic, managing appointments,
                     coordinating care, and providing exceptional customer service to all our

@@ -36,7 +36,7 @@ export default function DizzyClinicPage() {
         <div className="page-container">
           <div className="hero-content">
             <div ref={heroTitleRef}>
-              <HeroHeadline className="hero-text-spacing text-black text-balance section-headline">
+              <HeroHeadline className="hero-text-spacing text-black text-balance">
                 Dizzy <span className="font-normal">Clinic</span>
               </HeroHeadline>
             </div>

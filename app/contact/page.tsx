@@ -46,7 +46,7 @@ export default function ContactPage() {
         <div className="page-container">
           <div className="hero-content">
             <div ref={heroTitleRef}>
-              <HeroHeadline className="hero-text-spacing text-black text-balance section-headline">
+              <HeroHeadline className="hero-text-spacing text-black text-balance">
                 Contact <span className="font-normal">Us</span>
               </HeroHeadline>
             </div>

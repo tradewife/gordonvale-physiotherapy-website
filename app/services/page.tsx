@@ -5,6 +5,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import {
   HeroHeadline,
   SectionHeadline,
+  SubsectionHeadline,
   LargeBodyText
 } from "@/components/ui/Typography"
 import { useGSAPAnimations, useReducedMotion } from "@/hooks/use-gsap-animations"
@@ -42,8 +43,8 @@ export default function ServicesPage() {
         <div className="page-container">
           <div className="hero-content">
             <div ref={heroTitleRef}>
-              <HeroHeadline className="hero-text-spacing text-black text-balance section-headline">
-                Comprehensive <span className="font-normal">physiotherapy services</span>
+              <HeroHeadline className="hero-text-spacing text-black text-balance">
+                Services <span className="font-normal">& Expertise</span>
               </HeroHeadline>
             </div>
             <div ref={heroSubtitleRef}>
@@ -76,13 +77,10 @@ export default function ServicesPage() {
                       className="absolute inset-0 w-full h-full object-cover object-center z-0"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
-                    <div className="absolute bottom-8 left-8 text-white font-light text-lg tracking-wide z-10">
-                      Pain Management
-                    </div>
                   </div>
-                  <SectionHeadline className="mb-8 text-gray-900 group-hover:text-gray-800 transition-colors duration-500">
+                  <h3 className="font-serif text-2xl md:text-4xl lg:text-5xl font-medium leading-tight tracking-tight mb-8 text-black text-balance">
                     Management of Acute and Chronic Pain
-                  </SectionHeadline>
+                  </h3>
                   <LargeBodyText className="text-gray-700 mb-6">
                     Physiotherapy plays a crucial role in pain management through evidence-based treatments 
                     that address both the symptoms and underlying causes of pain conditions.
@@ -104,13 +102,10 @@ export default function ServicesPage() {
                       className="absolute inset-0 w-full h-full object-cover object-center z-0"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
-                    <div className="absolute bottom-8 left-8 text-white font-light text-lg tracking-wide z-10">
-                      Aquatic Therapy
-                    </div>
                   </div>
-                  <SectionHeadline className="mb-8 text-gray-900 group-hover:text-gray-800 transition-colors duration-500">
+                  <h3 className="font-serif text-2xl md:text-4xl lg:text-5xl font-medium leading-tight tracking-tight mb-8 text-black text-balance">
                     Aquatic Physiotherapy at Gordonvale Pool
-                  </SectionHeadline>
+                  </h3>
                   <LargeBodyText className="text-gray-700 mb-6">
                     Our hydrotherapy services utilize the unique properties of water to provide 
                     low-impact, high-resistance exercise in a supportive environment.
@@ -132,13 +127,10 @@ export default function ServicesPage() {
                       className="absolute inset-0 w-full h-full object-cover object-center z-0"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
-                    <div className="absolute bottom-8 left-8 text-white font-light text-lg tracking-wide z-10">
-                      Running Rehab
-                    </div>
                   </div>
-                  <SectionHeadline className="mb-8 text-gray-900 group-hover:text-gray-800 transition-colors duration-500">
+                  <h3 className="font-serif text-2xl md:text-4xl lg:text-5xl font-medium leading-tight tracking-tight mb-8 text-black text-balance">
                     Running Rehabilitation
-                  </SectionHeadline>
+                  </h3>
                   <LargeBodyText className="text-gray-700 mb-6">
                     Specialized treatment for running-related injuries including shin splints, 
                     plantar fasciitis, IT band syndrome, and other common running conditions.
@@ -160,13 +152,10 @@ export default function ServicesPage() {
                       className="absolute inset-0 w-full h-full object-cover object-center z-0"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
-                    <div className="absolute bottom-8 left-8 text-white font-light text-lg tracking-wide z-10">
-                      Aged Care
-                    </div>
                   </div>
-                  <SectionHeadline className="mb-8 text-gray-900 group-hover:text-gray-800 transition-colors duration-500">
+                  <h3 className="font-serif text-2xl md:text-4xl lg:text-5xl font-medium leading-tight tracking-tight mb-8 text-black text-balance">
                     Aged Care - Add Life to Your Years
-                  </SectionHeadline>
+                  </h3>
                   <LargeBodyText className="text-gray-700 mb-6">
                     Specialized physiotherapy services designed to help older adults maintain 
                     independence, improve mobility, and enhance quality of life through targeted 
@@ -189,13 +178,10 @@ export default function ServicesPage() {
                       className="absolute inset-0 w-full h-full object-cover object-center z-0"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
-                    <div className="absolute bottom-8 left-8 text-white font-light text-lg tracking-wide z-10">
-                      Women&apos;s Health
-                    </div>
                   </div>
-                  <SectionHeadline className="mb-8 text-gray-900 group-hover:text-gray-800 transition-colors duration-500">
+                  <h3 className="font-serif text-2xl md:text-4xl lg:text-5xl font-medium leading-tight tracking-tight mb-8 text-black text-balance">
                     Women&apos;s Health and Continence
-                  </SectionHeadline>
+                  </h3>
                   <LargeBodyText className="text-gray-700 mb-6">
                     Helen specializes in women&apos;s health physiotherapy, offering dedicated 1-hour 
                     sessions for comprehensive assessment and treatment of pelvic floor dysfunction, 
@@ -218,13 +204,10 @@ export default function ServicesPage() {
                       className="absolute inset-0 w-full h-full object-cover object-center z-0"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
-                    <div className="absolute bottom-8 left-8 text-white font-light text-lg tracking-wide z-10">
-                      Pediatric Care
-                    </div>
                   </div>
-                  <SectionHeadline className="mb-8 text-gray-900 group-hover:text-gray-800 transition-colors duration-500">
+                  <h3 className="font-serif text-2xl md:text-4xl lg:text-5xl font-medium leading-tight tracking-tight mb-8 text-black text-balance">
                     Pediatric Physiotherapy
-                  </SectionHeadline>
+                  </h3>
                   <LargeBodyText className="text-gray-700 mb-6">
                     Specialized physiotherapy services for children, including NDIS clients, 
                     focusing on developmental support, motor skills development, and addressing 

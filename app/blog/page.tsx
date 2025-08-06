@@ -45,7 +45,7 @@ export default function BlogPage() {
         <div className="page-container">
           <div className="hero-content">
             <div ref={heroTitleRef}>
-              <HeroHeadline className="hero-text-spacing text-black text-balance section-headline">
+              <HeroHeadline className="hero-text-spacing text-black text-balance">
                 Blog <span className="font-normal">& Resources</span>
               </HeroHeadline>
             </div>

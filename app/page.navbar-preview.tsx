@@ -1,6 +1,6 @@
 "use client"
 
-import { HeroHeadline, SectionHeadline, BodyText } from "@/components/ui/Typography"
+import { HeroHeadline, SectionHeadline, BodyText, SmallHeadline, CardHeadline } from "@/components/ui/Typography"
 
 export default function NavbarPreview() {
   return (
@@ -34,7 +34,7 @@ export default function NavbarPreview() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {[1, 2, 3, 4, 5, 6].map((item) => (
                 <div key={item} className="bg-gray-50 p-6 rounded-lg">
-                  <h3 className="text-xl font-semibold mb-4 text-black">Feature {item}</h3>
+                  <CardHeadline className="mb-4 text-black">Feature {item}</CardHeadline>
                   <BodyText className="text-black/70">
                     The navigation now features optimized spacing and animated hover effects.
                     Links are sized to fit perfectly on one line with even distribution.
@@ -59,7 +59,7 @@ export default function NavbarPreview() {
             <div className="space-y-6">
               {[1, 2, 3, 4].map((item) => (
                 <div key={item} className="bg-white p-6 rounded-lg shadow-sm">
-                  <h3 className="text-lg font-semibold mb-3 text-black">Animation Feature {item}</h3>
+                  <CardHeadline className="mb-3 text-black">Animation Feature {item}</CardHeadline>
                   <BodyText className="text-black/70">
                     The horizontal bar animation provides visual feedback and enhances the user experience.
                     Smooth transitions create a professional and modern feel.
@@ -85,7 +85,7 @@ export default function NavbarPreview() {
             
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 sm:gap-12 md:gap-16">
               <div>
-                <h4 className="font-light mb-8 text-black text-xl tracking-wide">Contact</h4>
+                <SmallHeadline className="mb-8 text-black">Contact</SmallHeadline>
                 <p className="text-black/60 leading-relaxed text-sm font-light">
                   Shop 8C, Bryce&apos;s Arcade
                   <br />
@@ -99,7 +99,7 @@ export default function NavbarPreview() {
                 </p>
               </div>
               <div>
-                <h4 className="font-light mb-8 text-black text-xl tracking-wide">Services</h4>
+                <SmallHeadline className="mb-8 text-black">Services</SmallHeadline>
                 <ul className="text-black/60 space-y-4 text-sm font-light">
                   <li className="hover:text-black transition-colors duration-500 cursor-pointer">
                     Pain &amp; Movement Management
@@ -119,7 +119,7 @@ export default function NavbarPreview() {
                 </ul>
               </div>
               <div>
-                <h4 className="font-light mb-8 text-black text-xl tracking-wide">Hours</h4>
+                <SmallHeadline className="mb-8 text-black">Hours</SmallHeadline>
                 <p className="text-black/60 leading-relaxed text-sm font-light">
                   Monday - Friday: 9:00am - 5:00pm
                   <br />
@@ -129,7 +129,7 @@ export default function NavbarPreview() {
                 </p>
               </div>
               <div>
-                <h4 className="font-light mb-8 text-black text-xl tracking-wide">Follow Us</h4>
+                <SmallHeadline className="mb-8 text-black">Follow Us</SmallHeadline>
                 <p className="text-black/60 leading-relaxed text-sm font-light">
                   <a 
                     href="https://facebook.com/helencooper000/" 
