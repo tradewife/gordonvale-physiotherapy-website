@@ -10,6 +10,16 @@ import {
   LargeBodyText,
   CardHeadline
 } from "@/components/ui/Typography"
+import {
+  WheelchairIcon,
+  CarIcon,
+  HospitalIcon,
+  ShieldIcon,
+  LocationIcon,
+  ClockIcon,
+  LightningIcon,
+  HeartIcon
+} from "@/components/icons"
 
 export default function Component() {
   return (
@@ -169,32 +179,32 @@ export default function Component() {
         <div className="page-container">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 sm:gap-12 md:gap-16 mb-16 sm:mb-20 md:mb-24">
             <div className="group text-center">
-              <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white/10 backdrop-blur-xl border border-white/20 shadow-lg rounded-full mx-auto mb-6 sm:mb-8 flex items-center justify-center group-hover:bg-gray-50 transition-all duration-500 border border-white/20">
-                <span className="text-2xl">♿</span>
+              <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white/40 backdrop-blur-xl border border-white/50 shadow-lg rounded-full mx-auto mb-6 sm:mb-8 flex items-center justify-center group-hover:bg-white/50 transition-all duration-500">
+                <WheelchairIcon width={32} height={32} color="currentColor" />
               </div>
               <LargeBodyText className="font-light text-black/80 group-hover:text-black transition-colors duration-500 tracking-wide">
                 Wheelchair access
               </LargeBodyText>
             </div>
             <div className="group text-center">
-              <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white/10 backdrop-blur-xl border border-white/20 shadow-lg rounded-full mx-auto mb-6 sm:mb-8 flex items-center justify-center group-hover:bg-gray-50 transition-all duration-500 border border-white/20">
-                <span className="text-2xl">🚗</span>
+              <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white/40 backdrop-blur-xl border border-white/50 shadow-lg rounded-full mx-auto mb-6 sm:mb-8 flex items-center justify-center group-hover:bg-white/50 transition-all duration-500">
+                <CarIcon width={32} height={32} color="currentColor" />
               </div>
               <LargeBodyText className="font-light text-black/80 group-hover:text-black transition-colors duration-500 tracking-wide">
                 Disabled parking
               </LargeBodyText>
             </div>
             <div className="group text-center">
-              <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white/10 backdrop-blur-xl border border-white/20 shadow-lg rounded-full mx-auto mb-6 sm:mb-8 flex items-center justify-center group-hover:bg-gray-50 transition-all duration-500 border border-white/20">
-                <span className="text-2xl">🏥</span>
+              <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white/40 backdrop-blur-xl border border-white/50 shadow-lg rounded-full mx-auto mb-6 sm:mb-8 flex items-center justify-center group-hover:bg-white/50 transition-all duration-500">
+                <HospitalIcon width={32} height={32} color="currentColor" />
               </div>
               <LargeBodyText className="font-light text-black/80 group-hover:text-black transition-colors duration-500 tracking-wide">
                 Modern equipment
               </LargeBodyText>
             </div>
             <div className="group text-center">
-              <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white/10 backdrop-blur-xl border border-white/20 shadow-lg rounded-full mx-auto mb-6 sm:mb-8 flex items-center justify-center group-hover:bg-gray-50 transition-all duration-500 border border-white/20">
-                <span className="text-2xl">🛡️</span>
+              <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white/40 backdrop-blur-xl border border-white/50 shadow-lg rounded-full mx-auto mb-6 sm:mb-8 flex items-center justify-center group-hover:bg-white/50 transition-all duration-500">
+                <ShieldIcon width={32} height={32} color="currentColor" />
               </div>
               <LargeBodyText className="font-light text-black/80 group-hover:text-black transition-colors duration-500 tracking-wide">
                 Insurance care
@@ -204,26 +214,26 @@ export default function Component() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 sm:gap-12 md:gap-16 text-center">
             <div className="group text-black/70 hover:text-black transition-colors duration-500 cursor-pointer">
-              <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white/10 backdrop-blur-xl border border-white/20 shadow-lg rounded-full mx-auto mb-6 sm:mb-8 flex items-center justify-center group-hover:bg-gray-50 transition-all duration-500 border border-white/20">
-                <span className="text-2xl">📍</span>
+              <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white/40 backdrop-blur-xl border border-white/50 shadow-lg rounded-full mx-auto mb-6 sm:mb-8 flex items-center justify-center group-hover:bg-white/50 transition-all duration-500">
+                <LocationIcon width={32} height={32} color="currentColor" />
               </div>
               <LargeBodyText className="font-light tracking-wide">Central location</LargeBodyText>
             </div>
             <div className="group text-black/70 hover:text-black transition-colors duration-500 cursor-pointer">
-              <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white/10 backdrop-blur-xl border border-white/20 shadow-lg rounded-full mx-auto mb-6 sm:mb-8 flex items-center justify-center group-hover:bg-gray-50 transition-all duration-500 border border-white/20">
-                <span className="text-2xl">🕐</span>
+              <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white/40 backdrop-blur-xl border border-white/50 shadow-lg rounded-full mx-auto mb-6 sm:mb-8 flex items-center justify-center group-hover:bg-white/50 transition-all duration-500">
+                <ClockIcon width={32} height={32} color="currentColor" />
               </div>
               <LargeBodyText className="font-light tracking-wide">Flexible hours</LargeBodyText>
             </div>
             <div className="group text-black/70 hover:text-black transition-colors duration-500 cursor-pointer">
-              <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white/10 backdrop-blur-xl border border-white/20 shadow-lg rounded-full mx-auto mb-6 sm:mb-8 flex items-center justify-center group-hover:bg-gray-50 transition-all duration-500 border border-white/20">
-                <span className="text-2xl">⚡</span>
+              <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white/40 backdrop-blur-xl border border-white/50 shadow-lg rounded-full mx-auto mb-6 sm:mb-8 flex items-center justify-center group-hover:bg-white/50 transition-all duration-500">
+                <LightningIcon width={32} height={32} color="currentColor" />
               </div>
               <LargeBodyText className="font-light tracking-wide">Fast recovery</LargeBodyText>
             </div>
             <div className="group text-black/70 hover:text-black transition-colors duration-500 cursor-pointer">
-              <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white/10 backdrop-blur-xl border border-white/20 shadow-lg rounded-full mx-auto mb-6 sm:mb-8 flex items-center justify-center group-hover:bg-gray-50 transition-all duration-500 border border-white/20">
-                <span className="text-2xl">❤️</span>
+              <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white/40 backdrop-blur-xl border border-white/50 shadow-lg rounded-full mx-auto mb-6 sm:mb-8 flex items-center justify-center group-hover:bg-white/50 transition-all duration-500">
+                <HeartIcon width={32} height={32} color="currentColor" />
               </div>
               <LargeBodyText className="font-light tracking-wide">Caring team</LargeBodyText>
             </div>
@@ -279,7 +289,7 @@ export default function Component() {
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 sm:gap-12 md:gap-16">
             <div>
               <CardHeadline className="font-light mb-8 text-black tracking-wide">Contact</CardHeadline>
-              <LargeBodyText className="text-black/60 leading-relaxed font-light">
+              <BodyText className="text-black/60 leading-relaxed font-light">
                 Shop 8C, Bryce's Arcade
                 <br />
                 58 Norman St, Gordonvale
@@ -289,41 +299,41 @@ export default function Component() {
                 Phone: 0401 942 903
                 <br />
                 Email: reception@gordonvalephysiotherapy.com
-              </LargeBodyText>
+              </BodyText>
             </div>
             <div>
               <CardHeadline className="font-light mb-8 text-black tracking-wide">Services</CardHeadline>
               <ul className="text-black/60 space-y-4 font-light">
-                <li><LargeBodyText className="hover:text-black transition-colors duration-500 cursor-pointer">
+                <li><BodyText className="hover:text-black transition-colors duration-500 cursor-pointer">
                   Pain &amp; Movement Management
-                </LargeBodyText></li>
-                <li><LargeBodyText className="hover:text-black transition-colors duration-500 cursor-pointer">
+                </BodyText></li>
+                <li><BodyText className="hover:text-black transition-colors duration-500 cursor-pointer">
                   Aquatic Physiotherapy
-                </LargeBodyText></li>
-                <li><LargeBodyText className="hover:text-black transition-colors duration-500 cursor-pointer">
+                </BodyText></li>
+                <li><BodyText className="hover:text-black transition-colors duration-500 cursor-pointer">
                   Running Rehabilitation
-                </LargeBodyText></li>
-                <li><LargeBodyText className="hover:text-black transition-colors duration-500 cursor-pointer">
+                </BodyText></li>
+                <li><BodyText className="hover:text-black transition-colors duration-500 cursor-pointer">
                   Women's Health
-                </LargeBodyText></li>
-                <li><LargeBodyText className="hover:text-black transition-colors duration-500 cursor-pointer">
+                </BodyText></li>
+                <li><BodyText className="hover:text-black transition-colors duration-500 cursor-pointer">
                   NDIS Services
-                </LargeBodyText></li>
+                </BodyText></li>
               </ul>
             </div>
             <div>
               <CardHeadline className="font-light mb-8 text-black tracking-wide">Hours</CardHeadline>
-              <LargeBodyText className="text-black/60 leading-relaxed font-light">
+              <BodyText className="text-black/60 leading-relaxed font-light">
                 Monday - Friday: 9:00am - 5:00pm
                 <br />
                 After hours appointments by arrangement
                 <br />
                 Closed Public Holidays
-              </LargeBodyText>
+              </BodyText>
             </div>
             <div>
               <CardHeadline className="font-light mb-8 text-black tracking-wide">Follow Us</CardHeadline>
-              <LargeBodyText className="text-black/60 leading-relaxed font-light">
+              <BodyText className="text-black/60 leading-relaxed font-light">
                 <a 
                   href="https://facebook.com/helencooper000/" 
                   target="_blank" 
@@ -332,11 +342,11 @@ export default function Component() {
                 >
                   Facebook
                 </a>
-              </LargeBodyText>
+              </BodyText>
             </div>
           </div>
           <div className="border-t border-black/10 mt-20 pt-12 text-center text-black/40 font-light">
-            <LargeBodyText>&copy; 2024 Gordonvale Physiotherapy. All rights reserved.</LargeBodyText>
+            <BodyText>&copy; 2024 Gordonvale Physiotherapy. All rights reserved.</BodyText>
           </div>
         </div>
       </footer>

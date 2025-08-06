@@ -44,7 +44,11 @@ export default function ProductsPage() {
               <Card className="glass-card hover:border-white/40 transition-all duration-700 group">
                 <CardContent className="p-6 sm:p-8 md:p-10 lg:p-12">
                   <div className="w-full h-64 bg-gradient-to-br from-blue-600/20 to-blue-800/20 rounded-lg mb-10 relative overflow-hidden">
-                    {/* No product image found for Therabubble on the source site */}
+                    <img
+                      src="/therabubble.jpg"
+                      alt="Therabubble respiratory care device"
+                      className="absolute inset-0 w-full h-full object-contain object-center z-0"
+                    />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
                     <div className="absolute bottom-8 left-8 text-white font-light text-lg tracking-wide z-10">
                       Respiratory Care
@@ -68,7 +72,11 @@ export default function ProductsPage() {
               <Card className="glass-card hover:border-white/40 transition-all duration-700 group">
                 <CardContent className="p-6 sm:p-8 md:p-10 lg:p-12">
                   <div className="w-full h-64 bg-gradient-to-br from-orange-600/20 to-orange-800/20 rounded-lg mb-10 relative overflow-hidden">
-                    {/* No product image found for Archies Thongs & Slides on the source site */}
+                    <img
+                      src="/archies.jpg"
+                      alt="Archies orthotic thongs and slides"
+                      className="absolute inset-0 w-full h-full object-cover object-center z-0"
+                    />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
                     <div className="absolute bottom-8 left-8 text-white font-light text-lg tracking-wide z-10">
                       Orthotic Footwear

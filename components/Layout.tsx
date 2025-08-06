@@ -91,7 +91,7 @@ export default function Layout({ children }: LayoutProps) {
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 sm:gap-12 md:gap-16">
             <div>
               <h4 className="font-light mb-8 text-black text-xl tracking-wide">Contact</h4>
-              <p className="text-black/60 leading-relaxed text-lg font-light">
+              <p className="text-black/60 leading-relaxed text-sm font-light">
                 Shop 8C, Bryce&apos;s Arcade
                 <br />
                 58 Norman St, Gordonvale
@@ -105,7 +105,7 @@ export default function Layout({ children }: LayoutProps) {
             </div>
             <div>
               <h4 className="font-light mb-8 text-black text-xl tracking-wide">Services</h4>
-              <ul className="text-black/60 space-y-4 text-lg font-light">
+              <ul className="text-black/60 space-y-4 text-sm font-light">
                 <li className="hover:text-black transition-colors duration-500 cursor-pointer">
                   Pain &amp; Movement Management
                 </li>
@@ -125,7 +125,7 @@ export default function Layout({ children }: LayoutProps) {
             </div>
             <div>
               <h4 className="font-light mb-8 text-black text-xl tracking-wide">Hours</h4>
-              <p className="text-black/60 leading-relaxed text-lg font-light">
+              <p className="text-black/60 leading-relaxed text-sm font-light">
                 Monday - Friday: 9:00am - 5:00pm
                 <br />
                 After hours appointments by arrangement
@@ -135,7 +135,7 @@ export default function Layout({ children }: LayoutProps) {
             </div>
             <div>
               <h4 className="font-light mb-8 text-black text-xl tracking-wide">Follow Us</h4>
-              <p className="text-black/60 leading-relaxed text-lg font-light">
+              <p className="text-black/60 leading-relaxed text-sm font-light">
                 <a 
                   href="https://facebook.com/helencooper000/" 
                   target="_blank" 

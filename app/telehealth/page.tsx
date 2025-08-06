@@ -7,6 +7,11 @@ import {
   BodyText,
   LargeBodyText
 } from "@/components/ui/Typography"
+import {
+  HomeIcon,
+  GlobeIcon,
+  LightningIcon
+} from "@/components/icons"
 
 export default function TelehealthPage() {
   return (
@@ -144,7 +149,7 @@ export default function TelehealthPage() {
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-10 md:gap-12">
                 <div className="text-center">
                   <div className="w-20 h-20 bg-blue-500/20 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <span className="text-blue-400 text-3xl">🏠</span>
+                    <HomeIcon width={48} height={48} color="rgb(96 165 250)" />
                   </div>
                   <CardHeadline className="mb-4 text-gray-900">Convenience</CardHeadline>
                   <LargeBodyText className="text-gray-700">
@@ -153,7 +158,7 @@ export default function TelehealthPage() {
                 </div>
                 <div className="text-center">
                   <div className="w-20 h-20 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <span className="text-green-400 text-3xl">🌍</span>
+                    <GlobeIcon width={48} height={48} color="rgb(74 222 128)" />
                   </div>
                   <CardHeadline className="mb-4 text-gray-900">Accessibility</CardHeadline>
                   <LargeBodyText className="text-gray-700">
@@ -162,7 +167,7 @@ export default function TelehealthPage() {
                 </div>
                 <div className="text-center">
                   <div className="w-20 h-20 bg-purple-500/20 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <span className="text-purple-400 text-3xl">⚡</span>
+                    <LightningIcon width={48} height={48} color="rgb(196 181 253)" />
                   </div>
                   <CardHeadline className="mb-4 text-gray-900">Flexibility</CardHeadline>
                   <LargeBodyText className="text-gray-700">
