@@ -12,6 +12,7 @@ import {
   LargeBodyText,
   CardHeadline
 } from "@/components/ui/Typography"
+
 import {
   WheelchairIcon,
   CarIcon,
@@ -157,7 +158,7 @@ export default function AnimatedPhysiotherapyWebsite() {
   // Add hover animations for interactive elements
   useEffect(() => {
     const cards = document.querySelectorAll('.service-card')
-    const facilityIcons = document.querySelectorAll('.facility-icon')
+
     const buttons = document.querySelectorAll('.animated-button')
 
     const cleanupFunctions: (() => void)[] = []
@@ -191,32 +192,60 @@ export default function AnimatedPhysiotherapyWebsite() {
       })
     })
 
-    // Facility icons hover animation
-    facilityIcons.forEach((icon) => {
-      const handleMouseEnter = () => {
-        gsap.to(icon, {
-          scale: 1.1,
-          rotation: 5,
-          duration: 0.2,
-          ease: 'power2.out'
+    // ChromaGrid effect for facility icons
+    const chromaGrids = document.querySelectorAll('.chroma-grid')
+
+    chromaGrids.forEach((grid) => {
+      const radius = parseInt(grid.getAttribute('data-radius') || '200')
+      const damping = parseFloat(grid.getAttribute('data-damping') || '0.3')
+      const ease = grid.getAttribute('data-ease') || 'power3.out'
+
+      const items = grid.querySelectorAll('.chroma-item')
+
+      const handleMouseMove = (e: Event) => {
+        const mouseEvent = e as MouseEvent
+        const rect = grid.getBoundingClientRect()
+        const mouseX = mouseEvent.clientX - rect.left
+        const mouseY = mouseEvent.clientY - rect.top
+
+        items.forEach((item) => {
+          const itemRect = item.getBoundingClientRect()
+          const itemX = itemRect.left - rect.left + itemRect.width / 2
+          const itemY = itemRect.top - rect.top + itemRect.height / 2
+
+          const distance = Math.sqrt(
+            Math.pow(mouseX - itemX, 2) + Math.pow(mouseY - itemY, 2)
+          )
+
+          const normalizedDistance = Math.min(distance / radius, 1)
+          const scale = 1 + (1 - normalizedDistance) * 0.25
+
+          gsap.to(item, {
+            scale,
+            opacity: 1,
+            duration: damping,
+            ease
+          })
         })
       }
 
       const handleMouseLeave = () => {
-        gsap.to(icon, {
-          scale: 1,
-          rotation: 0,
-          duration: 0.2,
-          ease: 'power2.out'
+        items.forEach((item) => {
+          gsap.to(item, {
+            scale: 1,
+            opacity: 1,
+            duration: damping,
+            ease
+          })
         })
       }
 
-      icon.addEventListener('mouseenter', handleMouseEnter)
-      icon.addEventListener('mouseleave', handleMouseLeave)
+      grid.addEventListener('mousemove', handleMouseMove)
+      grid.addEventListener('mouseleave', handleMouseLeave)
 
       cleanupFunctions.push(() => {
-        icon.removeEventListener('mouseenter', handleMouseEnter)
-        icon.removeEventListener('mouseleave', handleMouseLeave)
+        grid.removeEventListener('mousemove', handleMouseMove)
+        grid.removeEventListener('mouseleave', handleMouseLeave)
       })
     })
 
@@ -415,38 +444,46 @@ export default function AnimatedPhysiotherapyWebsite() {
         </div>
       </section>
 
-      {/* Professional Services Grid */}
+      {/* Professional Services Grid with Chroma Effect */}
       <section ref={facilitiesRef} className="section-spacing relative">
         <div className="absolute inset-0 bg-transparent"></div>
         <div className="page-container">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 sm:gap-12 md:gap-16 mb-16 sm:mb-20 md:mb-24">
-            <div className="facility-icon group text-center">
-              <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white/40 backdrop-blur-xl border border-white/50 shadow-lg rounded-full mx-auto mb-6 sm:mb-8 flex items-center justify-center group-hover:bg-white/50 transition-all duration-500">
-                <WheelchairIcon width={32} height={32} color="currentColor" />
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 sm:gap-12 md:gap-16 mb-16 sm:mb-20 md:mb-24 chroma-grid" data-radius="200" data-damping="0.3" data-fadeout="1.0" data-ease="power3.out">
+            <div className="facility-icon group text-center chroma-item">
+              <div className="w-20 h-20 bg-indigo-500/60 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-indigo-500/80 transition-all duration-300 shadow-lg shadow-indigo-500/30 backdrop-blur-sm border border-indigo-300/40" style={{
+                boxShadow: 'inset 0 2px 4px rgba(255, 255, 255, 0.3), inset 0 -2px 4px rgba(0, 0, 0, 0.1), 0 4px 12px rgba(79, 70, 229, 0.3)'
+              }}>
+                <WheelchairIcon width={42} height={42} color="rgb(255 255 255)" />
               </div>
               <LargeBodyText className="font-light text-black/80 group-hover:text-black transition-colors duration-500 tracking-wide">
                 Wheelchair access
               </LargeBodyText>
             </div>
-            <div className="facility-icon group text-center">
-              <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white/40 backdrop-blur-xl border border-white/50 shadow-lg rounded-full mx-auto mb-6 sm:mb-8 flex items-center justify-center group-hover:bg-white/50 transition-all duration-500">
-                <CarIcon width={32} height={32} color="currentColor" />
+            <div className="facility-icon group text-center chroma-item">
+              <div className="w-20 h-20 bg-emerald-500/60 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-emerald-500/80 transition-all duration-300 shadow-lg shadow-emerald-500/30 backdrop-blur-sm border border-emerald-300/40" style={{
+                boxShadow: 'inset 0 2px 4px rgba(255, 255, 255, 0.3), inset 0 -2px 4px rgba(0, 0, 0, 0.1), 0 4px 12px rgba(16, 185, 129, 0.3)'
+              }}>
+                <CarIcon width={42} height={42} color="rgb(255 255 255)" />
               </div>
               <LargeBodyText className="font-light text-black/80 group-hover:text-black transition-colors duration-500 tracking-wide">
                 Disabled parking
               </LargeBodyText>
             </div>
-            <div className="facility-icon group text-center">
-              <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white/40 backdrop-blur-xl border border-white/50 shadow-lg rounded-full mx-auto mb-6 sm:mb-8 flex items-center justify-center group-hover:bg-white/50 transition-all duration-500">
-                <HospitalIcon width={32} height={32} color="currentColor" />
+            <div className="facility-icon group text-center chroma-item">
+              <div className="w-20 h-20 bg-red-500/60 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-red-500/80 transition-all duration-300 shadow-lg shadow-red-500/30 backdrop-blur-sm border border-red-300/40" style={{
+                boxShadow: 'inset 0 2px 4px rgba(255, 255, 255, 0.3), inset 0 -2px 4px rgba(0, 0, 0, 0.1), 0 4px 12px rgba(239, 68, 68, 0.3)'
+              }}>
+                <HospitalIcon width={42} height={42} color="rgb(255 255 255)" />
               </div>
               <LargeBodyText className="font-light text-black/80 group-hover:text-black transition-colors duration-500 tracking-wide">
                 Modern equipment
               </LargeBodyText>
             </div>
-            <div className="facility-icon group text-center">
-              <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white/40 backdrop-blur-xl border border-white/50 shadow-lg rounded-full mx-auto mb-6 sm:mb-8 flex items-center justify-center group-hover:bg-white/50 transition-all duration-500">
-                <ShieldIcon width={32} height={32} color="currentColor" />
+            <div className="facility-icon group text-center chroma-item">
+              <div className="w-20 h-20 bg-purple-500/60 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-purple-500/80 transition-all duration-300 shadow-lg shadow-purple-500/30 backdrop-blur-sm border border-purple-300/40" style={{
+                boxShadow: 'inset 0 2px 4px rgba(255, 255, 255, 0.3), inset 0 -2px 4px rgba(0, 0, 0, 0.1), 0 4px 12px rgba(168, 85, 247, 0.3)'
+              }}>
+                <ShieldIcon width={42} height={42} color="rgb(255 255 255)" />
               </div>
               <LargeBodyText className="font-light text-black/80 group-hover:text-black transition-colors duration-500 tracking-wide">
                 Insurance care
@@ -454,28 +491,36 @@ export default function AnimatedPhysiotherapyWebsite() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 sm:gap-12 md:gap-16 text-center">
-            <div className="facility-icon group text-black/70 hover:text-black transition-colors duration-500 cursor-pointer">
-              <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white/40 backdrop-blur-xl border border-white/50 shadow-lg rounded-full mx-auto mb-6 sm:mb-8 flex items-center justify-center group-hover:bg-white/50 transition-all duration-500">
-                <LocationIcon width={32} height={32} color="currentColor" />
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 sm:gap-12 md:gap-16 text-center chroma-grid" data-radius="200" data-damping="0.3" data-fadeout="1.0" data-ease="power3.out">
+            <div className="facility-icon group text-black/70 hover:text-black transition-colors duration-500 cursor-pointer chroma-item">
+              <div className="w-20 h-20 bg-orange-500/60 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-orange-500/80 transition-all duration-300 shadow-lg shadow-orange-500/30 backdrop-blur-sm border border-orange-300/40" style={{
+                boxShadow: 'inset 0 2px 4px rgba(255, 255, 255, 0.3), inset 0 -2px 4px rgba(0, 0, 0, 0.1), 0 4px 12px rgba(251, 146, 60, 0.3)'
+              }}>
+                <LocationIcon width={42} height={42} color="rgb(255 255 255)" />
               </div>
               <LargeBodyText className="font-light tracking-wide">Central location</LargeBodyText>
             </div>
-            <div className="facility-icon group text-black/70 hover:text-black transition-colors duration-500 cursor-pointer">
-              <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white/40 backdrop-blur-xl border border-white/50 shadow-lg rounded-full mx-auto mb-6 sm:mb-8 flex items-center justify-center group-hover:bg-white/50 transition-all duration-500">
-                <ClockIcon width={32} height={32} color="currentColor" />
+            <div className="facility-icon group text-black/70 hover:text-black transition-colors duration-500 cursor-pointer chroma-item">
+              <div className="w-20 h-20 bg-cyan-500/60 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-cyan-500/80 transition-all duration-300 shadow-lg shadow-cyan-500/30 backdrop-blur-sm border border-cyan-300/40" style={{
+                boxShadow: 'inset 0 2px 4px rgba(255, 255, 255, 0.3), inset 0 -2px 4px rgba(0, 0, 0, 0.1), 0 4px 12px rgba(34, 211, 238, 0.3)'
+              }}>
+                <ClockIcon width={42} height={42} color="rgb(255 255 255)" />
               </div>
               <LargeBodyText className="font-light tracking-wide">Flexible hours</LargeBodyText>
             </div>
-            <div className="facility-icon group text-black/70 hover:text-black transition-colors duration-500 cursor-pointer">
-              <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white/40 backdrop-blur-xl border border-white/50 shadow-lg rounded-full mx-auto mb-6 sm:mb-8 flex items-center justify-center group-hover:bg-white/50 transition-all duration-500">
-                <LightningIcon width={32} height={32} color="currentColor" />
+            <div className="facility-icon group text-black/70 hover:text-black transition-colors duration-500 cursor-pointer chroma-item">
+              <div className="w-20 h-20 bg-yellow-500/60 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-yellow-500/80 transition-all duration-300 shadow-lg shadow-yellow-500/30 backdrop-blur-sm border border-yellow-300/40" style={{
+                boxShadow: 'inset 0 2px 4px rgba(255, 255, 255, 0.3), inset 0 -2px 4px rgba(0, 0, 0, 0.1), 0 4px 12px rgba(234, 179, 8, 0.3)'
+              }}>
+                <LightningIcon width={42} height={42} color="rgb(255 255 255)" />
               </div>
               <LargeBodyText className="font-light tracking-wide">Fast recovery</LargeBodyText>
             </div>
-            <div className="facility-icon group text-black/70 hover:text-black transition-colors duration-500 cursor-pointer">
-              <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white/40 backdrop-blur-xl border border-white/50 shadow-lg rounded-full mx-auto mb-6 sm:mb-8 flex items-center justify-center group-hover:bg-white/50 transition-all duration-500">
-                <HeartIcon width={32} height={32} color="currentColor" />
+            <div className="facility-icon group text-black/70 hover:text-black transition-colors duration-500 cursor-pointer chroma-item">
+              <div className="w-20 h-20 bg-rose-500/60 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-rose-500/80 transition-all duration-300 shadow-lg shadow-rose-500/30 backdrop-blur-sm border border-rose-300/40" style={{
+                boxShadow: 'inset 0 2px 4px rgba(255, 255, 255, 0.3), inset 0 -2px 4px rgba(0, 0, 0, 0.1), 0 4px 12px rgba(244, 63, 94, 0.3)'
+              }}>
+                <HeartIcon width={42} height={42} color="rgb(255 255 255)" />
               </div>
               <LargeBodyText className="font-light tracking-wide">Caring team</LargeBodyText>
             </div>

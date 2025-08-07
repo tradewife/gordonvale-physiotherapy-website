@@ -12,6 +12,7 @@ import {
   GlobeIcon,
   LightningIcon
 } from "@/components/icons"
+
 import { useGSAP } from "@gsap/react"
 import gsap from "gsap"
 import { useGSAPAnimations, useReducedMotion } from "@/hooks/use-gsap-animations"
@@ -60,6 +61,58 @@ export default function TelehealthPage() {
       staggerReveal('.telehealth-card', { duration: 1, stagger: 0.15, delay: 0.5 })
       // Fade in other sections
       fadeInUp('section.section-spacing', { duration: 0.9 })
+
+      // ChromaGrid effect for telehealth icons
+      const chromaGrids = document.querySelectorAll('.chroma-grid')
+
+      chromaGrids.forEach((grid) => {
+        const radius = parseInt(grid.getAttribute('data-radius') || '200')
+        const damping = parseFloat(grid.getAttribute('data-damping') || '0.3')
+        const ease = grid.getAttribute('data-ease') || 'power3.out'
+
+        const items = grid.querySelectorAll('.chroma-item')
+
+        const handleMouseMove = (e: Event) => {
+          const mouseEvent = e as MouseEvent
+          const rect = grid.getBoundingClientRect()
+          const mouseX = mouseEvent.clientX - rect.left
+          const mouseY = mouseEvent.clientY - rect.top
+
+          items.forEach((item) => {
+            const itemRect = item.getBoundingClientRect()
+            const itemX = itemRect.left - rect.left + itemRect.width / 2
+            const itemY = itemRect.top - rect.top + itemRect.height / 2
+
+            const distance = Math.sqrt(
+              Math.pow(mouseX - itemX, 2) + Math.pow(mouseY - itemY, 2)
+            )
+
+            const normalizedDistance = Math.min(distance / radius, 1)
+            const scale = 1 + (1 - normalizedDistance) * 0.25
+
+            gsap.to(item, {
+              scale,
+              opacity: 1,
+              duration: damping,
+              ease
+            })
+          })
+        }
+
+        const handleMouseLeave = () => {
+          items.forEach((item) => {
+            gsap.to(item, {
+              scale: 1,
+              opacity: 1,
+              duration: damping,
+              ease
+            })
+          })
+        }
+
+        grid.addEventListener('mousemove', handleMouseMove)
+        grid.addEventListener('mouseleave', handleMouseLeave)
+      })
     })
   }, [])
 
@@ -199,28 +252,34 @@ export default function TelehealthPage() {
               <h2 className="font-serif text-3xl md:text-5xl lg:text-6xl font-medium leading-tight tracking-tight text-black mb-12 sm:mb-16 telehealth-section-heading">
                 Benefits of Telehealth
               </h2>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-10 md:gap-12">
-                <div className="text-center">
-                  <div className="w-20 h-20 bg-blue-500/20 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <HomeIcon width={48} height={48} color="rgb(96 165 250)" />
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-10 md:gap-12 chroma-grid" data-radius="200" data-damping="0.3" data-fadeout="1.0" data-ease="power3.out">
+                <div className="text-center chroma-item">
+                  <div className="w-20 h-20 bg-blue-500/60 rounded-full flex items-center justify-center mx-auto mb-6 hover:bg-blue-500/80 transition-all duration-300 shadow-lg shadow-blue-500/30 backdrop-blur-sm border border-blue-300/40" style={{
+                    boxShadow: 'inset 0 2px 4px rgba(255, 255, 255, 0.3), inset 0 -2px 4px rgba(0, 0, 0, 0.1), 0 4px 12px rgba(59, 130, 246, 0.3)'
+                  }}>
+                    <HomeIcon width={48} height={48} color="rgb(255 255 255)" />
                   </div>
                   <CardHeadline className="mb-4 text-gray-900">Convenience</CardHeadline>
                   <LargeBodyText className="text-gray-700">
                     Receive care from the comfort of your own home without travel time or transportation concerns.
                   </LargeBodyText>
                 </div>
-                <div className="text-center">
-                  <div className="w-20 h-20 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <GlobeIcon width={48} height={48} color="rgb(74 222 128)" />
+                <div className="text-center chroma-item">
+                  <div className="w-20 h-20 bg-green-500/60 rounded-full flex items-center justify-center mx-auto mb-6 hover:bg-green-500/80 transition-all duration-300 shadow-lg shadow-green-500/30 backdrop-blur-sm border border-green-300/40" style={{
+                    boxShadow: 'inset 0 2px 4px rgba(255, 255, 255, 0.3), inset 0 -2px 4px rgba(0, 0, 0, 0.1), 0 4px 12px rgba(34, 197, 94, 0.3)'
+                  }}>
+                    <GlobeIcon width={48} height={48} color="rgb(255 255 255)" />
                   </div>
                   <CardHeadline className="mb-4 text-gray-900">Accessibility</CardHeadline>
                   <LargeBodyText className="text-gray-700">
                     Perfect for patients in remote areas or those with mobility limitations that make travel difficult.
                   </LargeBodyText>
                 </div>
-                <div className="text-center">
-                  <div className="w-20 h-20 bg-purple-500/20 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <LightningIcon width={48} height={48} color="rgb(196 181 253)" />
+                <div className="text-center chroma-item">
+                  <div className="w-20 h-20 bg-purple-500/60 rounded-full flex items-center justify-center mx-auto mb-6 hover:bg-purple-500/80 transition-all duration-300 shadow-lg shadow-purple-500/30 backdrop-blur-sm border border-purple-300/40" style={{
+                    boxShadow: 'inset 0 2px 4px rgba(255, 255, 255, 0.3), inset 0 -2px 4px rgba(0, 0, 0, 0.1), 0 4px 12px rgba(168, 85, 247, 0.3)'
+                  }}>
+                    <LightningIcon width={48} height={48} color="rgb(255 255 255)" />
                   </div>
                   <CardHeadline className="mb-4 text-gray-900">Flexibility</CardHeadline>
                   <LargeBodyText className="text-gray-700">
