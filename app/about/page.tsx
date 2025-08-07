@@ -8,6 +8,7 @@ import {
   LargeBodyText
 } from "@/components/ui/Typography"
 import { useGSAP } from "@gsap/react"
+import gsap from "gsap"
 import { useGSAPAnimations, useReducedMotion } from "@/hooks/use-gsap-animations"
 
 export default function AboutPage() {
@@ -15,14 +16,26 @@ export default function AboutPage() {
   const heroTitleRef = useRef<HTMLDivElement>(null)
   const heroSubtitleRef = useRef<HTMLDivElement>(null)
 
-  const { fadeInUp, staggerReveal, heroEntrance } = useGSAPAnimations()
+  const { fadeInUp, staggerReveal } = useGSAPAnimations()
   const { safeAnimate } = useReducedMotion()
 
   useGSAP(() => {
     safeAnimate(() => {
-      if (heroTitleRef.current && heroSubtitleRef.current) {
-        heroEntrance(heroTitleRef.current, heroSubtitleRef.current, heroSubtitleRef.current)
+      // Clean animations consistent with other pages
+      if (heroTitleRef.current) {
+        gsap.fromTo(heroTitleRef.current,
+          { y: 100, opacity: 0 },
+          { y: 0, opacity: 1, duration: 1.2, ease: 'power2.out' }
+        )
       }
+
+      if (heroSubtitleRef.current) {
+        gsap.fromTo(heroSubtitleRef.current,
+          { y: 60, opacity: 0 },
+          { y: 0, opacity: 1, duration: 1, ease: 'power2.out', delay: 0.8 }
+        )
+      }
+
       staggerReveal('.about-card', { duration: 1, stagger: 0.15 })
       fadeInUp('section.section-spacing', { duration: 0.9 })
     })

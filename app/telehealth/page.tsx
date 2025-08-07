@@ -4,9 +4,7 @@ import React, { useRef } from "react"
 import { Card, CardContent } from "@/components/ui/card"
 import {
   HeroHeadline,
-  SectionHeadline,
   CardHeadline,
-  BodyText,
   LargeBodyText
 } from "@/components/ui/Typography"
 import {
@@ -15,6 +13,7 @@ import {
   LightningIcon
 } from "@/components/icons"
 import { useGSAP } from "@gsap/react"
+import gsap from "gsap"
 import { useGSAPAnimations, useReducedMotion } from "@/hooks/use-gsap-animations"
 
 export default function TelehealthPage() {
@@ -22,15 +21,44 @@ export default function TelehealthPage() {
   const heroTitleRef = useRef<HTMLDivElement>(null)
   const heroSubtitleRef = useRef<HTMLDivElement>(null)
 
-  const { fadeInUp, staggerReveal, heroEntrance } = useGSAPAnimations()
+  const { fadeInUp, staggerReveal } = useGSAPAnimations()
   const { safeAnimate } = useReducedMotion()
 
   useGSAP(() => {
     safeAnimate(() => {
-      if (heroTitleRef.current && heroSubtitleRef.current) {
-        heroEntrance(heroTitleRef.current, heroSubtitleRef.current, heroSubtitleRef.current)
+      // Initially hide section headings to prevent global animations from showing them
+      gsap.set('.telehealth-section-heading', { opacity: 0, y: 40 })
+
+      // Create a timeline for proper three-stage staggered sequence
+      const tl = gsap.timeline()
+
+      // Stage 1: Main heading appears first
+      if (heroTitleRef.current) {
+        tl.fromTo(heroTitleRef.current,
+          { y: 100, opacity: 0 },
+          { y: 0, opacity: 1, duration: 1.2, ease: 'power2.out' }
+        )
       }
-      staggerReveal('.telehealth-card', { duration: 1, stagger: 0.15 })
+
+      // Stage 2: Subtitle appears after main heading completes
+      if (heroSubtitleRef.current) {
+        tl.fromTo(heroSubtitleRef.current,
+          { y: 60, opacity: 0 },
+          { y: 0, opacity: 1, duration: 1, ease: 'power2.out' },
+          '+=0.3'  // Start 0.3s AFTER main heading finishes
+        )
+      }
+
+      // Stage 3: Section headings appear after subtitle completes
+      tl.fromTo('.telehealth-section-heading',
+        { y: 40, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.8, ease: 'power2.out' },
+        '+=0.3'  // Start 0.3s AFTER subtitle finishes
+      )
+
+      // Then animate telehealth cards shortly after section headings
+      staggerReveal('.telehealth-card', { duration: 1, stagger: 0.15, delay: 0.5 })
+      // Fade in other sections
       fadeInUp('section.section-spacing', { duration: 0.9 })
     })
   }, [])
@@ -74,9 +102,9 @@ export default function TelehealthPage() {
         <div className="page-container">
 
             {/* Process Steps */}
-            <SectionHeadline className="mb-12 sm:mb-16 text-black">
+            <h2 className="font-serif text-3xl md:text-5xl lg:text-6xl font-medium leading-tight tracking-tight mb-12 sm:mb-16 text-black telehealth-section-heading">
               How It Works
-            </SectionHeadline>
+            </h2>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 content-spacing">
               
               <Card className="telehealth-card glass-card hover:border-white/40 transition-all duration-700 group">
@@ -142,9 +170,9 @@ export default function TelehealthPage() {
             </div>
 
             <div className="space-y-8 text-black/70 text-content content-spacing mt-24 sm:mt-32 md:mt-40">
-              <SectionHeadline className="text-black mb-12 sm:mb-16">
+              <h2 className="font-serif text-3xl md:text-5xl lg:text-6xl font-medium leading-tight tracking-tight text-black mb-12 sm:mb-16 telehealth-section-heading">
                 What You&apos;ll Need
-              </SectionHeadline>
+              </h2>
               <div className="grid md:grid-cols-2 gap-8 sm:gap-10 md:gap-12">
                 <div>
                   <CardHeadline className="mb-8 text-gray-900">Technical Requirements</CardHeadline>
@@ -168,9 +196,9 @@ export default function TelehealthPage() {
             </div>
 
             <div className="space-y-8 text-black/70 text-content content-spacing mt-24 sm:mt-32 md:mt-40">
-              <SectionHeadline className="text-black mb-12 sm:mb-16">
+              <h2 className="font-serif text-3xl md:text-5xl lg:text-6xl font-medium leading-tight tracking-tight text-black mb-12 sm:mb-16 telehealth-section-heading">
                 Benefits of Telehealth
-              </SectionHeadline>
+              </h2>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-10 md:gap-12">
                 <div className="text-center">
                   <div className="w-20 h-20 bg-blue-500/20 rounded-full flex items-center justify-center mx-auto mb-6">

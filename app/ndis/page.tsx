@@ -10,6 +10,7 @@ import {
   LargeBodyText
 } from "@/components/ui/Typography"
 import { useGSAP } from "@gsap/react"
+import gsap from "gsap"
 import { useGSAPAnimations, useReducedMotion } from "@/hooks/use-gsap-animations"
 
 export default function NDISPage() {
@@ -17,17 +18,44 @@ export default function NDISPage() {
   const heroTitleRef = useRef<HTMLDivElement>(null)
   const heroSubtitleRef = useRef<HTMLDivElement>(null)
 
-  const { fadeInUp, staggerReveal, heroEntrance } = useGSAPAnimations()
+  const { fadeInUp, staggerReveal } = useGSAPAnimations()
   const { safeAnimate } = useReducedMotion()
 
   useGSAP(() => {
     safeAnimate(() => {
-      if (heroTitleRef.current && heroSubtitleRef.current) {
-        heroEntrance(heroTitleRef.current, heroSubtitleRef.current, heroSubtitleRef.current)
+      // Initially hide section headings to prevent global animations from showing them
+      gsap.set('.ndis-section-heading', { opacity: 0, y: 40 })
+
+      // Create a timeline for proper three-stage staggered sequence
+      const tl = gsap.timeline()
+
+      // Stage 1: Main heading appears first
+      if (heroTitleRef.current) {
+        tl.fromTo(heroTitleRef.current,
+          { y: 100, opacity: 0 },
+          { y: 0, opacity: 1, duration: 1.2, ease: 'power2.out' }
+        )
       }
-      // Animate treatment/program cards
-      staggerReveal('.ndis-card', { duration: 1, stagger: 0.15 })
-      // Fade in sections
+
+      // Stage 2: Subtitle appears after main heading completes
+      if (heroSubtitleRef.current) {
+        tl.fromTo(heroSubtitleRef.current,
+          { y: 60, opacity: 0 },
+          { y: 0, opacity: 1, duration: 1, ease: 'power2.out' },
+          '+=0.3'  // Start 0.3s AFTER main heading finishes
+        )
+      }
+
+      // Stage 3: Section headings appear after subtitle completes
+      tl.fromTo('.ndis-section-heading',
+        { y: 40, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.8, ease: 'power2.out' },
+        '+=0.3'  // Start 0.3s AFTER subtitle finishes
+      )
+
+      // Then animate treatment/program cards shortly after section headings
+      staggerReveal('.ndis-card', { duration: 1, stagger: 0.15, delay: 0.5 })
+      // Fade in other sections
       fadeInUp('section.section-spacing', { duration: 0.9 })
     })
   }, [])
@@ -71,9 +99,9 @@ export default function NDISPage() {
         <div className="page-container">
 
             {/* Treatment Options */}
-            <SectionHeadline className="mb-12 sm:mb-16 text-black">
+            <h2 className="font-serif text-3xl md:text-5xl lg:text-6xl font-medium leading-tight tracking-tight mb-12 sm:mb-16 text-black ndis-section-heading">
               Treatment Options
-            </SectionHeadline>
+            </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10 md:gap-12 content-spacing">
               
               <Card className="ndis-card glass-card hover:border-white/40 transition-all duration-700 group">
@@ -145,16 +173,16 @@ export default function NDISPage() {
             </div>
 
             {/* Program Types */}
-            <SectionHeadline className="mb-12 sm:mb-16 text-black mt-24 sm:mt-32 md:mt-40">
+            <h2 className="font-serif text-3xl md:text-5xl lg:text-6xl font-medium leading-tight tracking-tight mb-12 sm:mb-16 text-black mt-24 sm:mt-32 md:mt-40">
               Program Types
-            </SectionHeadline>
+            </h2>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 content-spacing">
               
               <Card className="ndis-card glass-card hover:border-white/40 transition-all duration-700 group">
                 <CardContent className="p-6 sm:p-8 md:p-10 lg:p-12">
-                  <SectionHeadline className="mb-6 text-gray-900 group-hover:text-gray-800 transition-colors duration-500">
+                  <CardHeadline className="mb-6 text-gray-900 group-hover:text-gray-800 transition-colors duration-500">
                     Clinic-Based Programs
-                  </SectionHeadline>
+                  </CardHeadline>
                   <ul className="text-gray-700 space-y-4">
                     <li><LargeBodyText className="text-gray-700">• Therapeutic Treatments</LargeBodyText></li>
                     <li><LargeBodyText className="text-gray-700">• Gymnasium programs with specialized equipment</LargeBodyText></li>
@@ -166,9 +194,9 @@ export default function NDISPage() {
 
               <Card className="glass-card hover:border-white/40 transition-all duration-700 group">
                 <CardContent className="p-6 sm:p-8 md:p-10 lg:p-12">
-                  <SectionHeadline className="mb-6 text-gray-900 group-hover:text-gray-800 transition-colors duration-500">
+                  <CardHeadline className="mb-6 text-gray-900 group-hover:text-gray-800 transition-colors duration-500">
                     Community-Based Programs
-                  </SectionHeadline>
+                  </CardHeadline>
                   <ul className="text-gray-700 space-y-4">
                     <li><LargeBodyText className="text-gray-700">• In home physiotherapy</LargeBodyText></li>
                     <li><LargeBodyText className="text-gray-700">• Hydrotherapy programs</LargeBodyText></li>
@@ -181,9 +209,9 @@ export default function NDISPage() {
             </div>
 
             <div className="space-y-8 text-black/70 text-content content-spacing mt-24 sm:mt-32 md:mt-40">
-              <SectionHeadline className="text-black mb-12 sm:mb-16">
+              <h2 className="font-serif text-3xl md:text-5xl lg:text-6xl font-medium leading-tight tracking-tight text-black mb-12 sm:mb-16">
                 Specialized Gymnasium Equipment
-              </SectionHeadline>
+              </h2>
               <LargeBodyText>
                 Our clinic features specialized gymnasium equipment designed to accommodate 
                 participants of all abilities and mobility levels. This includes accessible 
@@ -197,9 +225,9 @@ export default function NDISPage() {
             </div>
 
             <div className="space-y-8 text-black/70 text-content mt-24 sm:mt-32 md:mt-40">
-              <SectionHeadline className="text-black mb-12 sm:mb-16">
+              <h2 className="font-serif text-3xl md:text-5xl lg:text-6xl font-medium leading-tight tracking-tight text-black mb-12 sm:mb-16">
                 Plan Management Support
-              </SectionHeadline>
+              </h2>
               <LargeBodyText>
                 We support all plan management types including self managed, plan managed, 
                 provider managed, and NDIA managed plans. Our experienced team can help 

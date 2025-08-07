@@ -5,25 +5,37 @@ import { Card, CardContent } from "@/components/ui/card"
 import {
   HeroHeadline,
   SectionHeadline,
-  LargeBodyText,
-  OverlayText
+  LargeBodyText
 } from "@/components/ui/Typography"
 import { useGSAPAnimations, useReducedMotion } from "@/hooks/use-gsap-animations"
 import { useGSAP } from "@gsap/react"
+import gsap from "gsap"
 
 export default function ProductsPage() {
   const heroRef = useRef<HTMLElement>(null)
   const heroTitleRef = useRef<HTMLDivElement>(null)
   const heroSubtitleRef = useRef<HTMLDivElement>(null)
 
-  const { fadeInUp, staggerReveal, heroEntrance } = useGSAPAnimations()
+  const { fadeInUp, staggerReveal } = useGSAPAnimations()
   const { safeAnimate } = useReducedMotion()
 
   useGSAP(() => {
     safeAnimate(() => {
-      if (heroTitleRef.current && heroSubtitleRef.current) {
-        heroEntrance(heroTitleRef.current, heroSubtitleRef.current, heroSubtitleRef.current)
+      // Clean animations consistent with other pages
+      if (heroTitleRef.current) {
+        gsap.fromTo(heroTitleRef.current,
+          { y: 100, opacity: 0 },
+          { y: 0, opacity: 1, duration: 1.2, ease: 'power2.out' }
+        )
       }
+
+      if (heroSubtitleRef.current) {
+        gsap.fromTo(heroSubtitleRef.current,
+          { y: 60, opacity: 0 },
+          { y: 0, opacity: 1, duration: 1, ease: 'power2.out', delay: 0.8 }
+        )
+      }
+
       staggerReveal('.product-card', { duration: 1, stagger: 0.15 })
       fadeInUp('section.section-spacing', { duration: 0.9 })
     })
@@ -69,16 +81,12 @@ export default function ProductsPage() {
               {/* Therabubble */}
               <Card className="product-card glass-card hover:border-white/40 transition-all duration-700 group">
                 <CardContent className="p-6 sm:p-8 md:p-10 lg:p-12">
-                  <div className="w-full h-64 bg-gradient-to-br from-blue-600/20 to-blue-800/20 rounded-lg mb-10 relative overflow-hidden">
+                  <div className="w-full h-64 bg-white rounded-lg mb-10 relative overflow-hidden">
                     <img
                       src="/therabubble.jpg"
                       alt="Therabubble respiratory care device"
                       className="absolute inset-0 w-full h-full object-contain object-center z-0"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
-                    <OverlayText className="absolute bottom-8 left-8 text-white z-10">
-                      Respiratory Care
-                    </OverlayText>
                   </div>
                   <SectionHeadline className="mb-8 text-gray-900 group-hover:text-gray-800 transition-colors duration-500">
                     Therabubble
@@ -103,10 +111,6 @@ export default function ProductsPage() {
                       alt="Archies orthotic thongs and slides"
                       className="absolute inset-0 w-full h-full object-cover object-center z-0"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
-                    <OverlayText className="absolute bottom-8 left-8 text-white z-10">
-                      Orthotic Footwear
-                    </OverlayText>
                   </div>
                   <SectionHeadline className="mb-8 text-gray-900 group-hover:text-gray-800 transition-colors duration-500">
                     Archies Thongs & Slides
@@ -131,10 +135,6 @@ export default function ProductsPage() {
                       alt="Mobility Aids"
                       className="absolute inset-0 w-full h-full object-cover object-center z-0"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
-                    <OverlayText className="absolute bottom-8 left-8 text-white z-10">
-                      Mobility Support
-                    </OverlayText>
                   </div>
                   <SectionHeadline className="mb-8 text-gray-900 group-hover:text-gray-800 transition-colors duration-500">
                     Walking Aids, Splints and Braces
@@ -159,10 +159,6 @@ export default function ProductsPage() {
                       alt="Olive & Bee"
                       className="absolute inset-0 w-full h-full object-cover object-center z-0"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
-                    <OverlayText className="absolute bottom-8 left-8 text-white z-10">
-                      Personal Care
-                    </OverlayText>
                   </div>
                   <SectionHeadline className="mb-8 text-gray-900 group-hover:text-gray-800 transition-colors duration-500">
                     Olive And Bee

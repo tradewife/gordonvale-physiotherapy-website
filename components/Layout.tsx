@@ -68,12 +68,7 @@ export default function Layout({ children }: LayoutProps) {
             >
               Contact
             </Link>
-            <Link
-              href="/blog"
-              className="text-black/70 hover:text-black transition-all duration-500 font-light text-sm tracking-wide uppercase"
-            >
-              Blog
-            </Link>
+
           </nav>
           <Button className="bg-black text-white hover:bg-black/90 transition-all duration-300 px-6 py-2 sm:px-8 sm:py-3 font-medium text-sm tracking-wide">
             Book now

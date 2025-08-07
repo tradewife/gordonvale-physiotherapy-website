@@ -10,6 +10,7 @@ import {
   LargeBodyText
 } from "@/components/ui/Typography"
 import { useGSAP } from "@gsap/react"
+import gsap from "gsap"
 import { useGSAPAnimations, useReducedMotion } from "@/hooks/use-gsap-animations"
 
 export default function BlogPage() {
@@ -17,14 +18,26 @@ export default function BlogPage() {
   const heroTitleRef = useRef<HTMLDivElement>(null)
   const heroSubtitleRef = useRef<HTMLDivElement>(null)
 
-  const { fadeInUp, staggerReveal, heroEntrance } = useGSAPAnimations()
+  const { fadeInUp, staggerReveal } = useGSAPAnimations()
   const { safeAnimate } = useReducedMotion()
 
   useGSAP(() => {
     safeAnimate(() => {
-      if (heroTitleRef.current && heroSubtitleRef.current) {
-        heroEntrance(heroTitleRef.current, heroSubtitleRef.current, heroSubtitleRef.current)
+      // Clean animations consistent with other pages
+      if (heroTitleRef.current) {
+        gsap.fromTo(heroTitleRef.current,
+          { y: 100, opacity: 0 },
+          { y: 0, opacity: 1, duration: 1.2, ease: 'power2.out' }
+        )
       }
+
+      if (heroSubtitleRef.current) {
+        gsap.fromTo(heroSubtitleRef.current,
+          { y: 60, opacity: 0 },
+          { y: 0, opacity: 1, duration: 1, ease: 'power2.out', delay: 0.8 }
+        )
+      }
+
       // Animate the coming-soon card as a single item
       staggerReveal('.blog-card', { duration: 1, stagger: 0.15 })
       // Smooth fade on sections
@@ -86,9 +99,10 @@ export default function BlogPage() {
                   </Link>
                   <Button
                     variant="outline"
-                    className="glass-input hover:bg-black/10 transition-all duration-300 px-8 py-4 text-lg font-medium"
+                    className="border-black/20 text-black hover:bg-black/5 transition-all duration-300 px-8 py-4 text-lg font-medium"
+                    onClick={() => window.history.back()}
                   >
-                    Call 0401 942 903
+                    Go Back
                   </Button>
                 </div>
               </CardContent>
