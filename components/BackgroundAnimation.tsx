@@ -1,6 +1,12 @@
+/* eslint-disable react/jsx-no-useless-fragment */
 "use client"
 
-import UnicornScene from "unicornstudio-react/next"
+import dynamic from "next/dynamic"
+// Dynamically import Unicorn Studio component with SSR disabled
+const UnicornScene = dynamic(
+  () => import("unicornstudio-react/next"),
+  { ssr: false }
+)
 import { useEffect, useState } from "react"
 
 export default function BackgroundAnimation() {
