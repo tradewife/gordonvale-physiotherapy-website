@@ -27,7 +27,7 @@ export default function BackgroundAnimation() {
       >
         <UnicornScene
           key={key}
-          projectId="yIrvcvdByowgyQc1VmDf"
+          projectId="JVofcmqXDssnf1aIHxr6"
           width="100%"
           height="100%"
           className="w-full h-full"
@@ -42,7 +42,7 @@ export default function BackgroundAnimation() {
           showPlaceholderWhileLoading={true}
           showPlaceholderOnError={true}
           onLoad={() => {
-            console.log('New Unicorn Studio animation loaded successfully - Project: yIrvcvdByowgyQc1VmDf')
+            console.log('New Unicorn Studio animation loaded successfully - Project: JVofcmqXDssnf1aIHxr6')
           }}
           onError={(error) => {
             console.error('Animation loading error:', error)
