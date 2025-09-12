@@ -112,7 +112,7 @@ export default function AnimatedPhysiotherapyWebsite() {
       }
 
       // Add scroll-triggered animations for section headlines
-      gsap.utils.toArray('.section-headline').forEach((headline: any) => {
+      gsap.utils.toArray<HTMLElement>('.section-headline').forEach((headline) => {
         gsap.fromTo(headline, 
           {
             y: 50,
@@ -133,7 +133,7 @@ export default function AnimatedPhysiotherapyWebsite() {
       })
 
       // Animate service card images on scroll
-      gsap.utils.toArray('.service-image').forEach((image: any) => {
+      gsap.utils.toArray<HTMLElement>('.service-image').forEach((image) => {
         gsap.fromTo(image,
           {
             scale: 1.1,
@@ -342,13 +342,13 @@ export default function AnimatedPhysiotherapyWebsite() {
 
             <div className="space-y-8 text-black/70 text-content mb-12 sm:mb-16 md:mb-20">
               <LargeBodyText>
-                We're a team of experienced physiotherapists who are passionate about helping people move better, feel better and live better. Our clinic offers a wide range of services including sports injury treatment, chronic pain management, post-surgical rehabilitation, and preventive care.
+                We&apos;re a team of experienced physiotherapists who are passionate about helping people move better, feel better and live better. Our clinic offers a wide range of services including sports injury treatment, chronic pain management, post-surgical rehabilitation, and preventive care.
               </LargeBodyText>
               <LargeBodyText>
                 Our approach combines the latest evidence-based treatments with hands-on manual therapy techniques. We believe in empowering our patients through education and providing them with the tools they need for long-term success.
               </LargeBodyText>
               <LargeBodyText>
-                Whether you're recovering from an injury, managing a chronic condition, or looking to optimize your performance, our team is here to support you every step of the way. We work closely with other healthcare professionals to ensure you receive comprehensive care.
+                Whether you&apos;re recovering from an injury, managing a chronic condition, or looking to optimize your performance, our team is here to support you every step of the way. We work closely with other healthcare professionals to ensure you receive comprehensive care.
               </LargeBodyText>
             </div>
           </div>
@@ -431,14 +431,14 @@ export default function AnimatedPhysiotherapyWebsite() {
                     <div className="absolute bottom-6 right-6 w-16 h-16 bg-orange-400/15 rounded-full blur-lg"></div>
                   </div>
                   <div className="absolute bottom-8 left-8 text-white font-light text-lg tracking-wide z-10">
-                    Women's Health
+                    Women&apos;s Health
                   </div>
                 </div>
 <SectionHeadline className="mb-8 text-gray-900 group-hover:text-gray-800 transition-colors duration-500">
-  Women's Health
+  Women&apos;s Health
 </SectionHeadline>
 <LargeBodyText className="text-gray-700">
-  Specialized care including pelvic floor dysfunction, pregnancy, and women's pain care.
+  Specialized care including pelvic floor dysfunction, pregnancy, and women&apos;s pain care.
 </LargeBodyText>
               </CardContent>
             </Card>
@@ -450,7 +450,7 @@ export default function AnimatedPhysiotherapyWebsite() {
       <section ref={facilitiesRef} className="section-spacing relative">
         <div className="absolute inset-0 bg-transparent"></div>
         <div className="page-container">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 sm:gap-12 md:gap-16 mb-16 sm:mb-20 md:mb-24 chroma-grid" data-radius="200" data-damping="0.3" data-fadeout="1.0" data-ease="power3.out">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 sm:gap-12 md:gap-16 text-center chroma-grid" data-radius="200" data-damping="0.3" data-fadeout="1.0" data-ease="power3.out">
             <div className="facility-icon group text-center chroma-item">
               <div className="w-20 h-20 bg-indigo-500/60 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-indigo-500/80 transition-all duration-300 shadow-lg shadow-indigo-500/30 backdrop-blur-sm border border-indigo-300/40" style={{
                 boxShadow: 'inset 0 2px 4px rgba(255, 255, 255, 0.3), inset 0 -2px 4px rgba(0, 0, 0, 0.1), 0 4px 12px rgba(79, 70, 229, 0.3)'
@@ -491,9 +491,7 @@ export default function AnimatedPhysiotherapyWebsite() {
                 Insurance care
               </LargeBodyText>
             </div>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 sm:gap-12 md:gap-16 text-center chroma-grid" data-radius="200" data-damping="0.3" data-fadeout="1.0" data-ease="power3.out">
+          
             <div className="facility-icon group text-black/70 hover:text-black transition-colors duration-500 cursor-pointer chroma-item">
               <div className="w-20 h-20 bg-orange-500/60 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-orange-500/80 transition-all duration-300 shadow-lg shadow-orange-500/30 backdrop-blur-sm border border-orange-300/40" style={{
                 boxShadow: 'inset 0 2px 4px rgba(255, 255, 255, 0.3), inset 0 -2px 4px rgba(0, 0, 0, 0.1), 0 4px 12px rgba(251, 146, 60, 0.3)'
@@ -579,7 +577,7 @@ export default function AnimatedPhysiotherapyWebsite() {
             <div>
               <CardHeadline className="font-light mb-8 text-black tracking-wide">Contact</CardHeadline>
               <BodyText className="text-black/60 leading-relaxed font-light">
-                Shop 8C, Bryce's Arcade
+                Shop 8C, Bryce&apos;s Arcade
                 <br />
                 58 Norman St, Gordonvale
                 <br />
@@ -603,7 +601,7 @@ export default function AnimatedPhysiotherapyWebsite() {
                   Running Rehabilitation
                 </BodyText></li>
                 <li><BodyText className="hover:text-black transition-colors duration-500 cursor-pointer">
-                  Women's Health
+                  Women&apos;s Health
                 </BodyText></li>
                 <li><BodyText className="hover:text-black transition-colors duration-500 cursor-pointer">
                   NDIS Services
