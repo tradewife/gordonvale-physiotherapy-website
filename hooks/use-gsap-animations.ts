@@ -3,7 +3,7 @@
 import { useGSAP } from '@gsap/react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import { useRef, RefObject } from 'react'
+import { useRef } from 'react'
 
 // Register ScrollTrigger plugin
 if (typeof window !== 'undefined') {
@@ -21,10 +21,7 @@ export function useGSAPAnimations() {
   const containerRef = useRef<HTMLDivElement>(null)
 
   // Fade in animation from bottom
-  const fadeInUp = (
-    selector: string | Element | RefObject<Element>,
-    options: AnimationOptions = {}
-  ) => {
+  const fadeInUp = (selector: gsap.DOMTarget, options: AnimationOptions = {}) => {
     const {
       duration = 1,
       delay = 0,
@@ -55,10 +52,7 @@ export function useGSAPAnimations() {
   }
 
   // Fade in animation from left
-  const fadeInLeft = (
-    selector: string | Element | RefObject<Element>,
-    options: AnimationOptions = {}
-  ) => {
+  const fadeInLeft = (selector: gsap.DOMTarget, options: AnimationOptions = {}) => {
     const {
       duration = 1,
       delay = 0,
@@ -87,10 +81,7 @@ export function useGSAPAnimations() {
   }
 
   // Fade in animation from right
-  const fadeInRight = (
-    selector: string | Element | RefObject<Element>,
-    options: AnimationOptions = {}
-  ) => {
+  const fadeInRight = (selector: gsap.DOMTarget, options: AnimationOptions = {}) => {
     const {
       duration = 1,
       delay = 0,
@@ -119,10 +110,7 @@ export function useGSAPAnimations() {
   }
 
   // Scale in animation
-  const scaleIn = (
-    selector: string | Element | RefObject<Element>,
-    options: AnimationOptions = {}
-  ) => {
+  const scaleIn = (selector: gsap.DOMTarget, options: AnimationOptions = {}) => {
     const {
       duration = 0.8,
       delay = 0,
@@ -153,10 +141,7 @@ export function useGSAPAnimations() {
   }
 
   // Staggered reveal animation for cards
-  const staggerReveal = (
-    selector: string | Element | RefObject<Element>,
-    options: AnimationOptions = {}
-  ) => {
+  const staggerReveal = (selector: gsap.DOMTarget, options: AnimationOptions = {}) => {
     const {
       duration = 1.2,
       delay = 0,
@@ -190,9 +175,9 @@ export function useGSAPAnimations() {
 
   // Hero entrance animation
   const heroEntrance = (
-    titleSelector: string | Element | RefObject<Element>,
-    subtitleSelector: string | Element | RefObject<Element>,
-    buttonSelector: string | Element | RefObject<Element>
+    titleSelector: gsap.DOMTarget,
+    subtitleSelector: gsap.DOMTarget,
+    buttonSelector: gsap.DOMTarget
   ) => {
     const tl = gsap.timeline()
 
@@ -281,10 +266,7 @@ export function useGSAPAnimations() {
   }
 
   // Parallax effect for background elements
-  const createParallax = (
-    selector: string | Element | RefObject<Element>,
-    speed: number = 0.5
-  ) => {
+  const createParallax = (selector: gsap.DOMTarget, speed: number = 0.5) => {
     return gsap.to(selector, {
       yPercent: -50 * speed,
       ease: 'none',
