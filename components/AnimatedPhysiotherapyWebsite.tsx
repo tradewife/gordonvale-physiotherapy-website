@@ -335,11 +335,12 @@ export default function AnimatedPhysiotherapyWebsite() {
         </div>
 
         <div className="page-container">
-          <HeroHeadline className="section-headline content-spacing text-black text-balance text-4xl sm:text-5xl md:text-6xl lg:text-7xl">
-            Experts in pain, movement & rehabilitation
-          </HeroHeadline>
-          
-          <div className="space-y-8 text-black/70 text-content mb-12 sm:mb-16 md:mb-20">
+          <div className="hero-content">
+            <HeroHeadline className="section-headline content-spacing text-black text-balance text-4xl sm:text-5xl md:text-6xl lg:text-7xl">
+              Experts in pain, movement & rehabilitation
+            </HeroHeadline>
+
+            <div className="space-y-8 text-black/70 text-content mb-12 sm:mb-16 md:mb-20">
               <LargeBodyText>
                 We're a team of experienced physiotherapists who are passionate about helping people move better, feel better and live better. Our clinic offers a wide range of services including sports injury treatment, chronic pain management, post-surgical rehabilitation, and preventive care.
               </LargeBodyText>
@@ -349,6 +350,7 @@ export default function AnimatedPhysiotherapyWebsite() {
               <LargeBodyText>
                 Whether you're recovering from an injury, managing a chronic condition, or looking to optimize your performance, our team is here to support you every step of the way. We work closely with other healthcare professionals to ensure you receive comprehensive care.
               </LargeBodyText>
+            </div>
           </div>
         </div>
       </section>
