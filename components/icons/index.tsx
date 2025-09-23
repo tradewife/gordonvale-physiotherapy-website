@@ -35,18 +35,6 @@ export { default as HeartIcon } from './HeartIcon';
 export { default as HomeIcon } from './HomeIcon';
 export { default as GlobeIcon } from './GlobeIcon';
 
-// Glassmorphism Health Icons
-export {
-  WheelchairGlassIcon,
-  ParkingGlassIcon,
-  HospitalGlassIcon,
-  InsuranceGlassIcon,
-  LocationGlassIcon,
-  ScheduleGlassIcon,
-  RecoveryGlassIcon,
-  CareGlassIcon
-} from './HealthIcons';
-
 // Icon wrapper component for consistent sizing and styling
 interface IconProps {
   width?: number | string;
