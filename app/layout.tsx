@@ -19,9 +19,9 @@ const instrumentSerif = Instrument_Serif({
 })
 
 export const metadata: Metadata = {
-  title: 'v0 App',
-  description: 'Created with v0',
-  generator: 'v0.dev',
+  title: 'Gordonvale Physiotherapy Clinic',
+  description: 'Trusted physiotherapy, rehabilitation, and wellness services for the Gordonvale community.',
+  generator: 'Gordonvale Physiotherapy Website',
 }
 
 export default function RootLayout({
