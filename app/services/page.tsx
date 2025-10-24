@@ -144,7 +144,7 @@ export default function ServicesPage() {
                     Running Rehabilitation
                   </h3>
                   <LargeBodyText className="text-gray-700 mb-6">
-                    Specialized treatment for running-related injuries including shin splints, 
+                    Targeted treatment for running-related injuries including shin splints, 
                     plantar fasciitis, IT band syndrome, and other common running conditions.
                   </LargeBodyText>
                   <LargeBodyText className="text-gray-700">
@@ -169,7 +169,7 @@ export default function ServicesPage() {
                     Aged Care - Add Life to Your Years
                   </h3>
                   <LargeBodyText className="text-gray-700 mb-6">
-                    Specialized physiotherapy services designed to help older adults maintain 
+                    Dedicated physiotherapy services designed to help older adults maintain 
                     independence, improve mobility, and enhance quality of life through targeted 
                     interventions and fall prevention programs.
                   </LargeBodyText>
@@ -194,14 +194,8 @@ export default function ServicesPage() {
                   <h3 className="font-serif text-2xl md:text-4xl lg:text-5xl font-medium leading-tight tracking-tight mb-8 text-black text-balance">
                     Women&apos;s Health and Continence
                   </h3>
-                  <LargeBodyText className="text-gray-700 mb-6">
-                    Helen specializes in women&apos;s health physiotherapy, offering dedicated 1-hour 
-                    sessions for comprehensive assessment and treatment of pelvic floor dysfunction, 
-                    pregnancy-related conditions, and continence issues.
-                  </LargeBodyText>
                   <LargeBodyText className="text-gray-700">
-                    Our women&apos;s health services provide a comfortable, private environment for 
-                    addressing sensitive health concerns with expert, compassionate care.
+                    Dedicated care including pelvic floor dysfunction, pregnancy, and women’s pain and continence issues.
                   </LargeBodyText>
                 </CardContent>
               </Card>
@@ -221,7 +215,7 @@ export default function ServicesPage() {
                     Pediatric Physiotherapy
                   </h3>
                   <LargeBodyText className="text-gray-700 mb-6">
-                    Specialized physiotherapy services for children, including NDIS clients, 
+                    Dedicated physiotherapy services for children, including NDIS clients, 
                     focusing on developmental support, motor skills development, and addressing 
                     childhood movement disorders.
                   </LargeBodyText>

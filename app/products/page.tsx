@@ -131,7 +131,7 @@ export default function ProductsPage() {
                 <CardContent className="p-6 sm:p-8 md:p-10 lg:p-12">
                   <div className="w-full h-64 bg-gradient-to-br from-green-600/20 to-green-800/20 rounded-lg mb-10 relative overflow-hidden">
                     <img
-                      src="/mobility.jpg"
+                      src="/mobility2.png"
                       alt="Mobility Aids"
                       className="absolute inset-0 w-full h-full object-cover object-center z-0"
                     />
