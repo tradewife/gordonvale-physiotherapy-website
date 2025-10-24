@@ -1,12 +1,8 @@
-"use client"
-
 import Link from "next/link"
-import { CallButton } from "@/components/CallButton"
 import { Button } from "@/components/ui/button"
 import { MenuIcon } from "@/components/icons"
 import { Sheet, SheetContent, SheetTrigger, SheetHeader, SheetTitle } from "@/components/ui/sheet"
 import { SubsectionHeadline, BodyText } from "@/components/ui/Typography"
-import { SITE_EMAIL } from "@/lib/constants"
 
 export default function Header() {
   return (
@@ -73,14 +69,9 @@ export default function Header() {
           </SheetContent>
         </Sheet>
 
-        <div className="flex items-center gap-2">
-          <CallButton className="bg-black text-white hover:bg-black/90 transition-all duration-300 px-4 py-3 sm:px-5 font-medium text-sm tracking-wide">
-            Call
-          </CallButton>
-          <Button asChild variant="outline" className="border-black/20 text-black hover:bg-black/5 transition-all duration-300 px-4 py-3 sm:px-5 font-medium text-sm tracking-wide">
-            <a href={`mailto:${SITE_EMAIL}`} aria-label="Email reception">Email</a>
-          </Button>
-        </div>
+        <Button className="bg-black text-white hover:bg-black/90 transition-all duration-300 px-6 py-3 sm:px-8 font-medium text-sm tracking-wide">
+          Book now
+        </Button>
       </div>
     </header>
   )

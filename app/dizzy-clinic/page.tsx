@@ -61,7 +61,7 @@ export default function DizzyClinicPage() {
                   the underlying causes and develop targeted treatment plans.
                 </LargeBodyText>
                 <LargeBodyText className="text-black/70 text-pretty">
-                  Through comprehensive evaluation and targeted interventions, we help patients regain
+                  Through comprehensive evaluation and specialized interventions, we help patients regain
                   confidence in their balance and reduce symptoms that impact daily activities.
                 </LargeBodyText>
               </div>
@@ -86,7 +86,7 @@ export default function DizzyClinicPage() {
                     Habituation Exercises
                   </SectionHeadline>
                   <LargeBodyText className="text-gray-700">
-                    Targeted exercises designed to help your vestibular system adapt and reduce 
+                    Specialized exercises designed to help your vestibular system adapt and reduce 
                     sensitivity to movements that trigger dizziness symptoms.
                   </LargeBodyText>
                 </CardContent>
@@ -128,7 +128,7 @@ export default function DizzyClinicPage() {
                     Repositioning Techniques for BPPV
                   </SectionHeadline>
                   <LargeBodyText className="text-gray-700">
-                    Evidence-based repositioning techniques including the Epley manoeuvre for treating 
+                    Specialized repositioning techniques including the Epley manoeuvre for treating 
                     Benign Paroxysmal Positional Vertigo (BPPV) and related conditions.
                   </LargeBodyText>
                 </CardContent>
@@ -146,7 +146,7 @@ export default function DizzyClinicPage() {
               </LargeBodyText>
               <LargeBodyText>
                 Based on our findings, we develop an individualized treatment plan that may include 
-                various combinations of the targeted techniques above, tailored to your specific 
+                various combinations of the specialized techniques above, tailored to your specific 
                 condition and goals.
               </LargeBodyText>
             </div>

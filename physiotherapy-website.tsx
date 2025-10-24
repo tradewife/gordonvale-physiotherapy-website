@@ -1,4 +1,3 @@
-import { CallButton } from "@/components/CallButton"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
@@ -21,8 +20,6 @@ import {
   LightningIcon,
   HeartIcon
 } from "@/components/icons"
-import { SITE_EMAIL, SITE_PHONE } from "@/lib/constants"
-import { useState } from "react"
 
 export default function Component() {
   return (
@@ -51,14 +48,9 @@ export default function Component() {
             <LargeBodyText className="text-black/70 body-text-spacing max-w-2xl text-pretty">
               Hands-on, experienced, and compassionate care for all ages and conditions.
             </LargeBodyText>
-            <div className="flex gap-3">
-              <CallButton className="bg-black text-white hover:bg-black/90 px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base font-medium transition-all duration-300 tracking-wide">
-                Call
-              </CallButton>
-              <Button asChild variant="outline" className="border-black/20 text-black hover:bg-black/5 px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base font-medium transition-all duration-300 tracking-wide">
-                <a href={`mailto:${SITE_EMAIL}`} aria-label="Email reception">Email</a>
-              </Button>
-            </div>
+            <Button className="bg-black text-white hover:bg-black/90 px-8 sm:px-12 py-3 sm:py-4 text-base sm:text-lg font-medium transition-all duration-300 tracking-wide">
+              Book now
+            </Button>
           </div>
         </div>
       </section>
@@ -94,12 +86,12 @@ export default function Component() {
                   Sports &amp; injury care
                 </CardHeadline>
                 <LargeBodyText className="text-gray-700">
-                  Treatment and rehabilitation for sports and work related injuries, chronic pain and acute conditions.
+                  Treatment and rehabilitation for sports and non-related injuries, chronic pain and acute conditions.
                 </LargeBodyText>
               </CardContent>
             </Card>
 
-            {/* NDIS & Aged Care */}
+            {/* NCS & Aged Care */}
             <Card className="glass-card hover:border-white/40 transition-all duration-700 group">
               <CardContent className="p-6 sm:p-8 md:p-10 lg:p-12">
                 <div className="w-full h-80 bg-gradient-to-br from-orange-600/20 to-orange-800/20 rounded-lg mb-10 relative overflow-hidden">
@@ -116,10 +108,10 @@ export default function Component() {
                   <div className="absolute bottom-8 left-8 text-white font-light text-lg tracking-wide z-10">Aged Care</div>
                 </div>
                 <CardHeadline className="mb-8 text-gray-900 group-hover:text-gray-800 transition-colors duration-500">
-                  NDIS &amp; Aged Care
+                  NCS &amp; aged care
                 </CardHeadline>
                 <LargeBodyText className="text-gray-700">
-                  Responsive NDIS expertise, accessible care and support for all ages and abilities.
+                  Responsive NCS expertise, accessible care and support for all ages and abilities.
                 </LargeBodyText>
               </CardContent>
             </Card>
@@ -146,7 +138,7 @@ export default function Component() {
                   Women's Health
                 </CardHeadline>
                 <LargeBodyText className="text-gray-700">
-                  Dedicated care including pelvic floor dysfunction, pregnancy, and women’s pain and continence issues.
+                  Specialized care including pelvic floor dysfunction, pregnancy, and women's pain care.
                 </LargeBodyText>
               </CardContent>
             </Card>
@@ -261,7 +253,30 @@ export default function Component() {
             <SectionHeadline className="content-spacing text-black text-balance">Book an appointment</SectionHeadline>
 
             <div className="glass-card p-6 sm:p-8 md:p-10 lg:p-12 rounded-2xl border border-white/20 ">
-              <ContactMessageBoxStandalone />
+              <form className="space-y-8">
+                <Input
+                  placeholder="Name"
+                  className="glass-card glass-input placeholder:text-black/40 focus:border-black/70 focus:ring-black/10 h-16 text-lg  font-light"
+                />
+                <Input
+                  placeholder="Email"
+                  type="email"
+                  className="glass-card glass-input placeholder:text-black/40 focus:border-black/70 focus:ring-black/10 h-16 text-lg  font-light"
+                />
+                <Input
+                  placeholder="Phone"
+                  type="tel"
+                  className="glass-card glass-input placeholder:text-black/40 focus:border-black/70 focus:ring-black/10 h-16 text-lg  font-light"
+                />
+                <Textarea
+                  placeholder="Message"
+                  rows={6}
+                  className="glass-card glass-input placeholder:text-black/40 focus:border-black/70 focus:ring-black/10 text-lg  font-light"
+                />
+                <Button className="w-full bg-black text-white hover:bg-black/90 py-6 text-xl font-medium transition-all duration-300 tracking-wide">
+                  Submit
+                </Button>
+              </form>
             </div>
           </div>
         </div>
@@ -281,9 +296,9 @@ export default function Component() {
                 <br />
                 Queensland 4865
                 <br />
-                Phone: {SITE_PHONE}
+                Phone: 0401 942 903
                 <br />
-                Email: {SITE_EMAIL}
+                Email: reception@gordonvalephysiotherapy.com
               </BodyText>
             </div>
             <div>
@@ -336,53 +351,5 @@ export default function Component() {
         </div>
       </footer>
     </div>
-  )
-}
-
-function ContactMessageBoxStandalone() {
-  const [error, setError] = useState<string | null>(null)
-
-  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-    setError(null)
-    const fd = new FormData(e.currentTarget)
-    const name = String(fd.get('name') || '').trim()
-    const email = String(fd.get('email') || '').trim()
-    const message = String(fd.get('message') || '').trim()
-    if (!name || !email || !message) {
-      setError('Please fill out Name, Email, and Message.')
-      return
-    }
-    const subject = `New website enquiry from ${name}`
-    const body = [
-      `Name: ${name}`,
-      `Email: ${email}`,
-      '',
-      'Message:',
-      message,
-    ].join('\n')
-    const mailto = `mailto:${SITE_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
-    window.location.href = mailto
-  }
-
-  return (
-    <form className="space-y-6 text-left" onSubmit={onSubmit} noValidate>
-      <div>
-        <label htmlFor="ps-name" className="block text-black/80 mb-2">Name *</label>
-        <Input id="ps-name" name="name" required placeholder="Your full name" className="glass-card glass-input placeholder:text-black/40 focus:border-black/70 focus:ring-black/10 h-14 text-base font-light" />
-      </div>
-      <div>
-        <label htmlFor="ps-email" className="block text-black/80 mb-2">Email *</label>
-        <Input id="ps-email" name="email" type="email" required placeholder="your.email@example.com" className="glass-card glass-input placeholder:text-black/40 focus:border-black/70 focus:ring-black/10 h-14 text-base font-light" />
-      </div>
-      <div>
-        <label htmlFor="ps-message" className="block text-black/80 mb-2">Message *</label>
-        <Textarea id="ps-message" name="message" rows={6} required placeholder="How can we help?" className="glass-card glass-input placeholder:text-black/40 focus:border-black/70 focus:ring-black/10 text-base font-light" />
-      </div>
-      {error ? <p className="text-red-600 text-sm" role="alert">{error}</p> : null}
-      <Button type="submit" className="w-full bg-black text-white hover:bg-black/90 py-4 text-lg font-medium transition-all duration-300 tracking-wide">
-        Send via Email
-      </Button>
-    </form>
   )
 }

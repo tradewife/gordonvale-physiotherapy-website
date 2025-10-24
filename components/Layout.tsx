@@ -1,7 +1,6 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { SmallHeadline } from "@/components/ui/Typography"
-import { SITE_EMAIL, SITE_PHONE } from "@/lib/constants"
 
 interface LayoutProps {
   children: React.ReactNode
@@ -71,14 +70,9 @@ export default function Layout({ children }: LayoutProps) {
             </Link>
 
           </nav>
-          <div className="flex items-center gap-2">
-            <Button asChild className="bg-black text-white hover:bg-black/90 transition-all duration-300 px-4 py-2 sm:px-5 sm:py-3 font-medium text-sm tracking-wide">
-              <a href={`tel:${SITE_PHONE}`} aria-label={`Call Gordonvale Physiotherapy on ${SITE_PHONE}`}>Call</a>
-            </Button>
-            <Button asChild variant="outline" className="border-black/20 text-black hover:bg-black/5 transition-all duration-300 px-4 py-2 sm:px-5 sm:py-3 font-medium text-sm tracking-wide">
-              <a href={`mailto:${SITE_EMAIL}`} aria-label="Email reception">Email</a>
-            </Button>
-          </div>
+          <Button className="bg-black text-white hover:bg-black/90 transition-all duration-300 px-6 py-2 sm:px-8 sm:py-3 font-medium text-sm tracking-wide">
+            Book now
+          </Button>
         </div>
       </header>
 
@@ -100,9 +94,9 @@ export default function Layout({ children }: LayoutProps) {
                 <br />
                 Queensland 4865
                 <br />
-                Phone: {SITE_PHONE}
+                Phone: 0401 942 903
                 <br />
-                Email: {SITE_EMAIL}
+                Email: reception@gordonvalephysiotherapy.com
               </p>
             </div>
             <div>
