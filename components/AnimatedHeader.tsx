@@ -2,9 +2,11 @@
 
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
+import { CallButton } from "@/components/CallButton"
 import { MenuIcon } from "@/components/icons"
 import { Sheet, SheetContent, SheetTrigger, SheetHeader, SheetTitle } from "@/components/ui/sheet"
 import { SubsectionHeadline, BodyText } from "@/components/ui/Typography"
+import { SITE_EMAIL } from "@/lib/constants"
 import { useGSAP } from '@gsap/react'
 import { gsap } from 'gsap'
 import { useRef, useEffect } from 'react'
@@ -15,7 +17,7 @@ export default function AnimatedHeader() {
   const logoRef = useRef<HTMLDivElement>(null)
   const navRef = useRef<HTMLElement>(null)
   const menuButtonRef = useRef<HTMLButtonElement>(null)
-  const buttonRef = useRef<HTMLButtonElement>(null)
+  const buttonRef = useRef<HTMLDivElement>(null)
   const { safeAnimate } = useReducedMotion()
 
   useGSAP(() => {
@@ -124,12 +126,12 @@ export default function AnimatedHeader() {
             </SheetContent>
           </Sheet>
 
-          <Button
-            ref={buttonRef}
-            className="bg-black text-white hover:bg-black/90 transition-all duration-300 px-6 py-3 sm:px-8 font-medium text-sm tracking-wide hover:scale-105 hover:shadow-lg"
-          >
-            Book now
-          </Button>
+          <div ref={buttonRef} className="flex items-center gap-2 md:gap-3">
+            <CallButton className="bg-black text-white hover:bg-black/90 transition-all duration-300 px-4 py-3 sm:px-5 font-medium text-sm tracking-wide hover:scale-105 hover:shadow-lg" />
+            <Button asChild variant="outline" className="border-black/20 text-black hover:bg-black/5 transition-all duration-300 px-4 py-3 sm:px-5 font-medium text-sm tracking-wide">
+              <a href={`mailto:${SITE_EMAIL}`} aria-label="Email reception">Email</a>
+            </Button>
+          </div>
         </div>
       </div>
     </header>

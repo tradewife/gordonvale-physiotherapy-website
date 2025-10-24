@@ -121,7 +121,7 @@ export default function NDISPage() {
                     Post Surgery Rehabilitation
                   </CardHeadline>
                   <LargeBodyText className="text-gray-700">
-                    Specialized rehabilitation programs following surgical procedures.
+                    Targeted rehabilitation programs following surgical procedures.
                   </LargeBodyText>
                 </CardContent>
               </Card>
@@ -185,7 +185,7 @@ export default function NDISPage() {
                   </CardHeadline>
                   <ul className="text-gray-700 space-y-4">
                     <li><LargeBodyText className="text-gray-700">• Therapeutic Treatments</LargeBodyText></li>
-                    <li><LargeBodyText className="text-gray-700">• Gymnasium programs with specialized equipment</LargeBodyText></li>
+                    <li><LargeBodyText className="text-gray-700">• Gymnasium programs with accessible equipment</LargeBodyText></li>
                     <li><LargeBodyText className="text-gray-700">• Rehabilitation programs</LargeBodyText></li>
                     <li><LargeBodyText className="text-gray-700">• Exercise physiotherapy</LargeBodyText></li>
                   </ul>
@@ -210,10 +210,10 @@ export default function NDISPage() {
 
             <div className="space-y-8 text-black/70 text-content content-spacing mt-24 sm:mt-32 md:mt-40">
               <h2 className="font-serif text-3xl md:text-5xl lg:text-6xl font-medium leading-tight tracking-tight text-black mb-12 sm:mb-16">
-                Specialized Gymnasium Equipment
+                Accessible Gymnasium Equipment
               </h2>
               <LargeBodyText>
-                Our clinic features specialized gymnasium equipment designed to accommodate 
+                Our clinic features accessible gymnasium equipment designed to accommodate 
                 participants of all abilities and mobility levels. This includes accessible 
                 exercise machines, parallel bars, mat areas, and adaptive equipment.
               </LargeBodyText>
@@ -223,21 +223,7 @@ export default function NDISPage() {
                 access appropriate exercise opportunities.
               </LargeBodyText>
             </div>
-
-            <div className="space-y-8 text-black/70 text-content mt-24 sm:mt-32 md:mt-40">
-              <h2 className="font-serif text-3xl md:text-5xl lg:text-6xl font-medium leading-tight tracking-tight text-black mb-12 sm:mb-16">
-                Plan Management Support
-              </h2>
-              <LargeBodyText>
-                We support all plan management types including self managed, plan managed, 
-                provider managed, and NDIA managed plans. Our experienced team can help 
-                navigate the complexities of NDIS funding and documentation.
-              </LargeBodyText>
-              <LargeBodyText>
-                We work closely with plan managers, support coordinators, and participants 
-                to ensure seamless service delivery and optimal use of allocated funding.
-              </LargeBodyText>
-          </div>
+          
         </div>
       </section>
     </div>

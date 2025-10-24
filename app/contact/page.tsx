@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useRef } from "react"
+import React, { useRef, useState } from "react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
@@ -14,11 +14,13 @@ import {
 import { useGSAP } from "@gsap/react"
 import gsap from "gsap"
 import { useGSAPAnimations, useReducedMotion } from "@/hooks/use-gsap-animations"
+import { SITE_EMAIL, SITE_PHONE } from "@/lib/constants"
 
 export default function ContactPage() {
   const heroRef = useRef<HTMLElement>(null)
   const heroTitleRef = useRef<HTMLDivElement>(null)
   const heroSubtitleRef = useRef<HTMLDivElement>(null)
+  const [error, setError] = useState<string | null>(null)
 
   const { fadeInUp, staggerReveal } = useGSAPAnimations()
   const { safeAnimate } = useReducedMotion()
@@ -87,9 +89,9 @@ export default function ContactPage() {
               <div className="flex flex-col">
                 <Card className="contact-card glass-card mb-8">
                   <CardContent className="p-6 sm:p-8 md:p-10 lg:p-12">
-                    <SectionHeadline className="mb-8 text-black">
-                      Visit Our Clinic
-                    </SectionHeadline>
+                  <SectionHeadline className="mb-8 text-black">
+                    Visit Our Clinic
+                  </SectionHeadline>
                     <div className="space-y-6">
                       <div>
                         <CardHeadline className="mb-3 text-black">Address</CardHeadline>
@@ -101,15 +103,11 @@ export default function ContactPage() {
                       </div>
                       <div>
                         <CardHeadline className="mb-3 text-gray-900">Phone</CardHeadline>
-                        <LargeBodyText className="text-gray-700">
-                          0401 942 903
-                        </LargeBodyText>
+                        <LargeBodyText className="text-gray-700">{SITE_PHONE}</LargeBodyText>
                       </div>
                       <div>
                         <CardHeadline className="mb-3 text-gray-900">Email</CardHeadline>
-                        <LargeBodyText className="text-gray-700">
-                          reception@gordonvalephysiotherapy.com
-                        </LargeBodyText>
+                        <LargeBodyText className="text-gray-700">{SITE_EMAIL}</LargeBodyText>
                       </div>
                     </div>
                   </CardContent>
@@ -144,43 +142,68 @@ export default function ContactPage() {
                   <SectionHeadline className="mb-8 text-black">
                     Send us a Message
                   </SectionHeadline>
-                  <form className="space-y-6">
+                  <form className="space-y-6" onSubmit={(e) => {
+                    e.preventDefault()
+                    setError(null)
+                    const fd = new FormData(e.currentTarget)
+                    const name = String(fd.get('name') || '').trim()
+                    const email = String(fd.get('email') || '').trim()
+                    const message = String(fd.get('message') || '').trim()
+                    if (!name || !email || !message) {
+                      setError('Please fill out Name, Email, and Message.')
+                      return
+                    }
+                    const subject = `New website enquiry from ${name}`
+                    const body = [
+                      `Name: ${name}`,
+                      `Email: ${email}`,
+                      '',
+                      'Message:',
+                      message,
+                    ].join('\n')
+                    const mailto = `mailto:${SITE_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
+                    window.location.href = mailto
+                  }} noValidate>
                     <div>
-                      <LargeBodyText className="block text-gray-700 mb-3">
-                        Name *
-                      </LargeBodyText>
+                      <label htmlFor="contact-name" className="block text-gray-700 mb-3">Name *</label>
                       <Input
+                        id="contact-name"
+                        name="name"
+                        required
                         className="glass-card glass-input placeholder:text-black/40 focus:border-black/40 text-base md:text-lg lg:text-xl p-4"
                         placeholder="Your full name"
                       />
                     </div>
                     <div>
-                      <LargeBodyText className="block text-gray-700 mb-3">
-                        Email Address *
-                      </LargeBodyText>
+                      <label htmlFor="contact-email" className="block text-gray-700 mb-3">Email Address *</label>
                       <Input
+                        id="contact-email"
+                        name="email"
                         type="email"
+                        required
                         className="glass-card glass-input placeholder:text-black/40 focus:border-black/40 text-base md:text-lg lg:text-xl p-4"
                         placeholder="your.email@example.com"
                       />
                     </div>
                     <div>
-                      <LargeBodyText className="block text-gray-700 mb-3">
-                        Message *
-                      </LargeBodyText>
+                      <label htmlFor="contact-message" className="block text-gray-700 mb-3">Message *</label>
                       <Textarea
+                        id="contact-message"
+                        name="message"
+                        required
                         className="glass-card glass-input placeholder:text-black/40 focus:border-black/40 text-base md:text-lg lg:text-xl p-4 min-h-[150px]"
                         placeholder="Tell us about your condition or how we can help you..."
                       />
                     </div>
-                    <Button className="w-full bg-black text-white hover:bg-gray-800 transition-all duration-300 py-4 text-lg font-medium">
-                      Send Message
+                    {error ? <p className="text-red-600 text-sm" role="alert">{error}</p> : null}
+                    <Button type="submit" className="w-full bg-black text-white hover:bg-gray-800 transition-all duration-300 py-4 text-lg font-medium">
+                      Send via Email
                     </Button>
                   </form>
                   
                   <div className="mt-12 pt-8 border-t border-black/10">
                     <LargeBodyText className="text-gray-700 mb-4">
-                      Please call 0401942903 to make your appointment or for further information.
+                      Please call {SITE_PHONE} to make your appointment or for further information.
                     </LargeBodyText>
                     <LargeBodyText className="text-gray-700 mb-4">
                       If we have your email address we can send you an online form to complete 
