@@ -1,6 +1,7 @@
 'use client'
 
 import { Button } from "@/components/ui/button"
+import { CallButton } from "@/components/CallButton"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Card, CardContent } from "@/components/ui/card"
@@ -26,8 +27,9 @@ import {
 import { useGSAP } from '@gsap/react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import { useRef, useEffect } from 'react'
+import { useRef, useEffect, useState } from 'react'
 import { useGSAPAnimations, useReducedMotion } from '@/hooks/use-gsap-animations'
+import { SITE_EMAIL, SITE_PHONE } from '@/lib/constants'
 
 // Register ScrollTrigger plugin
 if (typeof window !== 'undefined') {
@@ -315,11 +317,14 @@ export default function AnimatedPhysiotherapyWebsite() {
               Hands-on, experienced, and compassionate care for all ages and conditions.
               </LargeBodyText>
             </div>
-            <div className="inline-block" ref={heroButtonRef}>
-              <Button 
-                className="animated-button bg-black text-white hover:bg-black/90 px-8 sm:px-12 py-3 sm:py-4 text-base sm:text-lg font-medium transition-all duration-300 tracking-wide"
-              >
-                Book now
+            <div className="inline-flex gap-3 sm:gap-4 items-center" ref={heroButtonRef}>
+              <CallButton className="animated-button bg-black text-white hover:bg-black/90 px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base font-medium transition-all duration-300 tracking-wide">
+                Call
+              </CallButton>
+              <Button asChild variant="outline" className="animated-button border-black/20 text-black hover:bg-black/5 px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base font-medium transition-all duration-300 tracking-wide">
+                <a href={`mailto:${SITE_EMAIL}`} aria-label="Email reception">
+                  Email
+                </a>
               </Button>
             </div>
           </div>
@@ -356,7 +361,7 @@ export default function AnimatedPhysiotherapyWebsite() {
       </section>
 
       {/* Services Section - Cinematic Cards */}
-      <section ref={servicesRef} className="section-spacing relative">
+      <section ref={servicesRef} className="section-spacing relative pt-16 md:pt-24">
         <div className="absolute inset-0 bg-transparent"></div>
         <div className="absolute inset-0 services-bg-effect">
           <div className="absolute top-20 right-20 w-96 h-96 bg-blue-500/3 rounded-full blur-3xl"></div>
@@ -386,12 +391,12 @@ export default function AnimatedPhysiotherapyWebsite() {
   Sports & injury care
 </SectionHeadline>
                 <LargeBodyText className="text-gray-700">
-                  Treatment and rehabilitation for sports and non-related injuries, chronic pain and acute conditions.
+                  Treatment and rehabilitation for sports and work related injuries, chronic pain and acute conditions.
                 </LargeBodyText>
               </CardContent>
             </Card>
 
-            {/* NCS & Aged Care */}
+            {/* NDIS & Aged Care */}
             <Card className="service-card glass-card hover:border-white/40 transition-all duration-700 group">
               <CardContent className="p-6 sm:p-8 md:p-10 lg:p-12">
                 <div className="w-full h-80 bg-gradient-to-br from-orange-600/20 to-orange-800/20 rounded-lg mb-10 relative overflow-hidden">
@@ -408,10 +413,10 @@ export default function AnimatedPhysiotherapyWebsite() {
                   <div className="absolute bottom-8 left-8 text-white font-light text-lg tracking-wide z-10">Aged Care</div>
                 </div>
 <SectionHeadline className="mb-8 text-gray-900 group-hover:text-gray-800 transition-colors duration-500">
-  NCS & aged care
+  NDIS & Aged Care
 </SectionHeadline>
                 <LargeBodyText className="text-gray-700">
-                  Responsive NCS expertise, accessible care and support for all ages and abilities.
+                  Responsive NDIS expertise, accessible care and support for all ages and abilities.
                 </LargeBodyText>
               </CardContent>
             </Card>
@@ -438,7 +443,7 @@ export default function AnimatedPhysiotherapyWebsite() {
   Women&apos;s Health
 </SectionHeadline>
 <LargeBodyText className="text-gray-700">
-  Specialized care including pelvic floor dysfunction, pregnancy, and women&apos;s pain care.
+  Dedicated care including pelvic floor dysfunction, pregnancy, and women’s pain and continence issues.
 </LargeBodyText>
               </CardContent>
             </Card>
@@ -540,30 +545,7 @@ export default function AnimatedPhysiotherapyWebsite() {
             <SectionHeadline className="section-headline content-spacing text-black text-balance">Book an appointment</SectionHeadline>
 
             <div className="glass-card p-6 sm:p-8 md:p-10 lg:p-12 rounded-2xl border border-white/20 ">
-              <form className="space-y-8">
-                <Input
-                  placeholder="Name"
-                  className="glass-card glass-input placeholder:text-black/40 focus:border-black/70 focus:ring-black/10 h-16 text-lg  font-light"
-                />
-                <Input
-                  placeholder="Email"
-                  type="email"
-                  className="glass-card glass-input placeholder:text-black/40 focus:border-black/70 focus:ring-black/10 h-16 text-lg  font-light"
-                />
-                <Input
-                  placeholder="Phone"
-                  type="tel"
-                  className="glass-card glass-input placeholder:text-black/40 focus:border-black/70 focus:ring-black/10 h-16 text-lg  font-light"
-                />
-                <Textarea
-                  placeholder="Message"
-                  rows={6}
-                  className="glass-card glass-input placeholder:text-black/40 focus:border-black/70 focus:ring-black/10 text-lg  font-light"
-                />
-                <Button className="animated-button w-full bg-black text-white hover:bg-black/90 py-6 text-xl font-medium transition-all duration-300 tracking-wide">
-                  Submit
-                </Button>
-              </form>
+              <ContactMessageBox />
             </div>
           </div>
         </div>
@@ -583,9 +565,9 @@ export default function AnimatedPhysiotherapyWebsite() {
                 <br />
                 Queensland 4865
                 <br />
-                Phone: 0401 942 903
+                Phone: {SITE_PHONE}
                 <br />
-                Email: reception@gordonvalephysiotherapy.com
+                Email: {SITE_EMAIL}
               </BodyText>
             </div>
             <div>
@@ -638,5 +620,88 @@ export default function AnimatedPhysiotherapyWebsite() {
         </div>
       </footer>
     </div>
+  )
+}
+
+function ContactMessageBox() {
+  const [error, setError] = useState<string | null>(null)
+
+  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    setError(null)
+    const form = e.currentTarget
+    const formData = new FormData(form)
+    const name = String(formData.get('name') || '').trim()
+    const email = String(formData.get('email') || '').trim()
+    const message = String(formData.get('message') || '').trim()
+
+    if (!name || !email || !message) {
+      setError('Please fill out Name, Email, and Message.')
+      return
+    }
+
+    const subject = `New website enquiry from ${name}`
+    const body = [
+      `Name: ${name}`,
+      `Email: ${email}`,
+      '',
+      'Message:',
+      message,
+    ].join('\n')
+    const mailto = `mailto:${SITE_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
+    window.location.href = mailto
+  }
+
+  return (
+    <form className="space-y-6 text-left" onSubmit={onSubmit} noValidate>
+      <div>
+        <label htmlFor="name" className="block text-black/80 mb-2">Name *</label>
+        <Input
+          id="name"
+          name="name"
+          required
+          placeholder="Your full name"
+          className="glass-card glass-input placeholder:text-black/40 focus:border-black/70 focus:ring-black/10 h-14 text-base font-light"
+        />
+      </div>
+      <div>
+        <label htmlFor="email" className="block text-black/80 mb-2">Email *</label>
+        <Input
+          id="email"
+          name="email"
+          type="email"
+          required
+          placeholder="your.email@example.com"
+          className="glass-card glass-input placeholder:text-black/40 focus:border-black/70 focus:ring-black/10 h-14 text-base font-light"
+        />
+      </div>
+      <div>
+        <label htmlFor="message" className="block text-black/80 mb-2">Message *</label>
+        <Textarea
+          id="message"
+          name="message"
+          required
+          rows={6}
+          placeholder="How can we help?"
+          className="glass-card glass-input placeholder:text-black/40 focus:border-black/70 focus:ring-black/10 text-base font-light"
+        />
+      </div>
+      {error ? (
+        <p className="text-red-600 text-sm" role="alert">{error}</p>
+      ) : null}
+      <div className="flex flex-col sm:flex-row gap-3">
+        <Button type="submit" className="animated-button w-full bg-black text-white hover:bg-black/90 py-4 text-lg font-medium transition-all duration-300 tracking-wide">
+          Send via Email
+        </Button>
+      </div>
+      <div className="mt-6 flex gap-3 justify-center">
+        <Button asChild className="bg-black text-white hover:bg-black/90 px-6 py-3 text-base font-medium">
+          <a href={`tel:${SITE_PHONE}`} aria-label={`Call Gordonvale Physiotherapy on ${SITE_PHONE}`}>Call</a>
+        </Button>
+        <Button asChild variant="outline" className="border-black/20 text-black hover:bg-black/5 px-6 py-3 text-base font-medium">
+          <a href={`mailto:${SITE_EMAIL}`} aria-label="Email reception">Email</a>
+        </Button>
+      </div>
+    </form>
   )
 }

@@ -90,10 +90,7 @@ export default function AboutPage() {
                     evidence-based physiotherapy care to the local community. With extensive experience in
                     pain management, women&apos;s health, and rehabilitation.
                   </LargeBodyText>
-                  <LargeBodyText className="text-gray-700">
-                    Helen specializes in women&apos;s health and continence, offering dedicated 1-hour sessions
-                    for comprehensive care and treatment.
-                  </LargeBodyText>
+                  {/* Removed specialist claim per wording policy */}
                 </CardContent>
               </Card>
 
@@ -130,17 +127,15 @@ export default function AboutPage() {
                 </CardContent>
               </Card>
 
-              {/* Peta Leo */}
+              {/* Shelley Fitzsimons */}
               <Card className="about-card glass-card hover:border-white/40 transition-all duration-700 group">
                 <CardContent className="p-6 sm:p-8 md:p-10 lg:p-12">
                   <h3 className="font-serif text-2xl md:text-4xl lg:text-5xl font-medium leading-tight tracking-tight mb-4 text-gray-900 group-hover:text-gray-800 transition-colors duration-500">
-                    Peta Leo
+                    Shelley Fitzsimons
                   </h3>
                   <BodyText className="text-black mb-8 font-light uppercase tracking-wider">Allied Health Assistant</BodyText>
                   <LargeBodyText className="text-gray-700">
-                    Peta provides essential support to our physiotherapy team, assisting with patient
-                    care and treatment programs. Her dedication to helping patients achieve their
-                    rehabilitation goals makes her an invaluable part of our team.
+                    Shelley provides essential support to our physiotherapy team, assisting with patient care and treatment programs. Her dedication to helping patients achieve their rehabilitation goals makes her an invaluable part of our team.
                   </LargeBodyText>
                 </CardContent>
               </Card>
