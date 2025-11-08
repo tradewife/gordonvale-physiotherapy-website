@@ -22,7 +22,7 @@ import {
   HeartIcon
 } from "@/components/icons"
 import { SITE_EMAIL, SITE_PHONE } from "@/lib/constants"
-import { useState } from "react"
+import { useContactForm } from "@/hooks/use-contact-form"
 
 export default function Component() {
   return (
@@ -340,33 +340,12 @@ export default function Component() {
 }
 
 function ContactMessageBoxStandalone() {
-  const [error, setError] = useState<string | null>(null)
-
-  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-    setError(null)
-    const fd = new FormData(e.currentTarget)
-    const name = String(fd.get('name') || '').trim()
-    const email = String(fd.get('email') || '').trim()
-    const message = String(fd.get('message') || '').trim()
-    if (!name || !email || !message) {
-      setError('Please fill out Name, Email, and Message.')
-      return
-    }
-    const subject = `New website enquiry from ${name}`
-    const body = [
-      `Name: ${name}`,
-      `Email: ${email}`,
-      '',
-      'Message:',
-      message,
-    ].join('\n')
-    const mailto = `mailto:${SITE_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
-    window.location.href = mailto
-  }
+  const { handleSubmit, isSubmitting, error, successMessage } = useContactForm({
+    source: "preview-contact-form",
+  })
 
   return (
-    <form className="space-y-6 text-left" onSubmit={onSubmit} noValidate>
+    <form className="space-y-6 text-left" onSubmit={handleSubmit} noValidate>
       <div>
         <label htmlFor="ps-name" className="block text-black/80 mb-2">Name *</label>
         <Input id="ps-name" name="name" required placeholder="Your full name" className="glass-card glass-input placeholder:text-black/40 focus:border-black/70 focus:ring-black/10 h-14 text-base font-light" />
@@ -380,8 +359,15 @@ function ContactMessageBoxStandalone() {
         <Textarea id="ps-message" name="message" rows={6} required placeholder="How can we help?" className="glass-card glass-input placeholder:text-black/40 focus:border-black/70 focus:ring-black/10 text-base font-light" />
       </div>
       {error ? <p className="text-red-600 text-sm" role="alert">{error}</p> : null}
-      <Button type="submit" className="w-full bg-black text-white hover:bg-black/90 py-4 text-lg font-medium transition-all duration-300 tracking-wide">
-        Send via Email
+      {successMessage ? (
+        <p className="text-green-700 text-sm" role="status">{successMessage}</p>
+      ) : null}
+      <Button
+        type="submit"
+        disabled={isSubmitting}
+        className="w-full bg-black text-white hover:bg-black/90 py-4 text-lg font-medium transition-all duration-300 tracking-wide disabled:opacity-70 disabled:cursor-not-allowed"
+      >
+        {isSubmitting ? "Sending..." : "Send Message"}
       </Button>
     </form>
   )

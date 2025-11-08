@@ -32,6 +32,20 @@ pnpm dev
 
 The application will be available at `http://localhost:3000`
 
+### Contact Form Email Delivery
+
+Website enquiry forms post to `/api/contact`, which forwards messages via SMTP (ideal for Vercel serverless functions). To enable delivery:
+
+1. Choose an SMTP provider (e.g. clinic email host, Postmark, SendGrid) and generate credentials.
+2. Copy `.env.example` to `.env.local` (and configure the same keys in Vercel → Project → Settings → Environment Variables for production).
+3. Provide values for:
+   - `CONTACT_FORM_RECIPIENT` – address that should receive submissions (e.g. `reception@gordonvalephysiotherapy.com`)
+   - `CONTACT_FORM_FROM` – optional display name/from address if your SMTP service requires one
+   - `SMTP_HOST`, `SMTP_PORT`, `SMTP_USER`, `SMTP_PASS`, and optionally `SMTP_SECURE`
+4. Restart `pnpm dev` so Next.js can read the new variables.
+
+Submissions will now be sent directly to reception without relying on the visitor's mail client.
+
 ### Available Scripts
 
 - `pnpm dev` - Start development server

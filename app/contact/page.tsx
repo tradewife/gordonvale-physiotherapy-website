@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useRef, useState } from "react"
+import React, { useRef } from "react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
@@ -15,12 +15,16 @@ import { useGSAP } from "@gsap/react"
 import gsap from "gsap"
 import { useGSAPAnimations, useReducedMotion } from "@/hooks/use-gsap-animations"
 import { SITE_EMAIL, SITE_PHONE } from "@/lib/constants"
+import { useContactForm } from "@/hooks/use-contact-form"
 
 export default function ContactPage() {
   const heroRef = useRef<HTMLElement>(null)
   const heroTitleRef = useRef<HTMLDivElement>(null)
   const heroSubtitleRef = useRef<HTMLDivElement>(null)
-  const [error, setError] = useState<string | null>(null)
+  const { handleSubmit, isSubmitting, error, successMessage } = useContactForm({
+    source: "contact-page",
+    successMessage: "Thanks for your message. Our reception team will reply shortly.",
+  })
 
   const { fadeInUp, staggerReveal } = useGSAPAnimations()
   const { safeAnimate } = useReducedMotion()
@@ -142,28 +146,7 @@ export default function ContactPage() {
                   <SectionHeadline className="mb-8 text-black">
                     Send us a Message
                   </SectionHeadline>
-                  <form className="space-y-6" onSubmit={(e) => {
-                    e.preventDefault()
-                    setError(null)
-                    const fd = new FormData(e.currentTarget)
-                    const name = String(fd.get('name') || '').trim()
-                    const email = String(fd.get('email') || '').trim()
-                    const message = String(fd.get('message') || '').trim()
-                    if (!name || !email || !message) {
-                      setError('Please fill out Name, Email, and Message.')
-                      return
-                    }
-                    const subject = `New website enquiry from ${name}`
-                    const body = [
-                      `Name: ${name}`,
-                      `Email: ${email}`,
-                      '',
-                      'Message:',
-                      message,
-                    ].join('\n')
-                    const mailto = `mailto:${SITE_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
-                    window.location.href = mailto
-                  }} noValidate>
+                  <form className="space-y-6" onSubmit={handleSubmit} noValidate>
                     <div>
                       <label htmlFor="contact-name" className="block text-gray-700 mb-3">Name *</label>
                       <Input
@@ -196,8 +179,15 @@ export default function ContactPage() {
                       />
                     </div>
                     {error ? <p className="text-red-600 text-sm" role="alert">{error}</p> : null}
-                    <Button type="submit" className="w-full bg-black text-white hover:bg-gray-800 transition-all duration-300 py-4 text-lg font-medium">
-                      Send via Email
+                    {successMessage ? (
+                      <p className="text-green-700 text-sm" role="status">{successMessage}</p>
+                    ) : null}
+                    <Button
+                      type="submit"
+                      disabled={isSubmitting}
+                      className="w-full bg-black text-white hover:bg-gray-800 transition-all duration-300 py-4 text-lg font-medium disabled:opacity-70 disabled:cursor-not-allowed"
+                    >
+                      {isSubmitting ? "Sending..." : "Send Message"}
                     </Button>
                   </form>
                   

@@ -27,9 +27,10 @@ import {
 import { useGSAP } from '@gsap/react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import { useRef, useEffect, useState } from 'react'
+import { useRef, useEffect } from 'react'
 import { useGSAPAnimations, useReducedMotion } from '@/hooks/use-gsap-animations'
 import { SITE_EMAIL, SITE_PHONE } from '@/lib/constants'
+import { useContactForm } from '@/hooks/use-contact-form'
 
 // Register ScrollTrigger plugin
 if (typeof window !== 'undefined') {
@@ -624,36 +625,12 @@ export default function AnimatedPhysiotherapyWebsite() {
 }
 
 function ContactMessageBox() {
-  const [error, setError] = useState<string | null>(null)
-
-  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-    setError(null)
-    const form = e.currentTarget
-    const formData = new FormData(form)
-    const name = String(formData.get('name') || '').trim()
-    const email = String(formData.get('email') || '').trim()
-    const message = String(formData.get('message') || '').trim()
-
-    if (!name || !email || !message) {
-      setError('Please fill out Name, Email, and Message.')
-      return
-    }
-
-    const subject = `New website enquiry from ${name}`
-    const body = [
-      `Name: ${name}`,
-      `Email: ${email}`,
-      '',
-      'Message:',
-      message,
-    ].join('\n')
-    const mailto = `mailto:${SITE_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
-    window.location.href = mailto
-  }
+  const { handleSubmit, isSubmitting, error, successMessage } = useContactForm({
+    source: "homepage-contact-form",
+  })
 
   return (
-    <form className="space-y-6 text-left" onSubmit={onSubmit} noValidate>
+    <form className="space-y-6 text-left" onSubmit={handleSubmit} noValidate>
       <div>
         <label htmlFor="name" className="block text-black/80 mb-2">Name *</label>
         <Input
@@ -689,9 +666,16 @@ function ContactMessageBox() {
       {error ? (
         <p className="text-red-600 text-sm" role="alert">{error}</p>
       ) : null}
+      {successMessage ? (
+        <p className="text-green-700 text-sm" role="status">{successMessage}</p>
+      ) : null}
       <div className="flex flex-col sm:flex-row gap-3">
-        <Button type="submit" className="animated-button w-full bg-black text-white hover:bg-black/90 py-4 text-lg font-medium transition-all duration-300 tracking-wide">
-          Send via Email
+        <Button
+          type="submit"
+          disabled={isSubmitting}
+          className="animated-button w-full bg-black text-white hover:bg-black/90 py-4 text-lg font-medium transition-all duration-300 tracking-wide disabled:opacity-70 disabled:cursor-not-allowed"
+        >
+          {isSubmitting ? "Sending..." : "Send Message"}
         </Button>
       </div>
       <div className="mt-6 flex gap-3 justify-center">
