@@ -402,9 +402,6 @@ export default function AnimatedPhysiotherapyWebsite() {
                     <div className="absolute top-6 left-6 w-16 h-16 bg-orange-400/20 rounded-full blur-xl"></div>
                     <div className="absolute bottom-8 right-8 w-12 h-12 bg-blue-400/30 rounded-full blur-lg"></div>
                   </div>
-                  <div className="absolute bottom-8 left-8 text-white font-light text-lg tracking-wide z-10">
-                    Sports Care
-                  </div>
                 </div>
 <SectionHeadline className="mb-8 text-gray-900 group-hover:text-gray-800 transition-colors duration-500">
   Sports & injury care
@@ -429,7 +426,6 @@ export default function AnimatedPhysiotherapyWebsite() {
                     <div className="absolute top-6 right-6 w-20 h-20 bg-orange-400/15 rounded-full blur-xl"></div>
                     <div className="absolute bottom-6 left-6 w-14 h-14 bg-blue-400/20 rounded-full blur-lg"></div>
                   </div>
-                  <div className="absolute bottom-8 left-8 text-white font-light text-lg tracking-wide z-10">Aged Care</div>
                 </div>
 <SectionHeadline className="mb-8 text-gray-900 group-hover:text-gray-800 transition-colors duration-500">
   NDIS & Aged Care
@@ -453,9 +449,6 @@ export default function AnimatedPhysiotherapyWebsite() {
                   <div className="absolute inset-0">
                     <div className="absolute top-8 left-8 w-18 h-18 bg-purple-400/20 rounded-full blur-xl"></div>
                     <div className="absolute bottom-6 right-6 w-16 h-16 bg-orange-400/15 rounded-full blur-lg"></div>
-                  </div>
-                  <div className="absolute bottom-8 left-8 text-white font-light text-lg tracking-wide z-10">
-                    Women&apos;s Health
                   </div>
                 </div>
 <SectionHeadline className="mb-8 text-gray-900 group-hover:text-gray-800 transition-colors duration-500">
