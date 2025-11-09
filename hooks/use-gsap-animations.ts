@@ -10,6 +10,23 @@ if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger)
 }
 
+const MOBILE_BREAKPOINT = '(max-width: 640px)'
+
+const isMobileViewport = () =>
+  typeof window !== 'undefined' && window.matchMedia(MOBILE_BREAKPOINT).matches
+
+const shouldSimplifyMotion = () => isMobileViewport() || respectsReducedMotion()
+
+const finalizeAnimation = (target: gsap.DOMTarget, props: gsap.TweenVars = {}) => {
+  return gsap.set(target, {
+    opacity: props.opacity ?? 1,
+    x: props.x ?? 0,
+    y: props.y ?? 0,
+    scale: props.scale ?? 1,
+    ...props
+  })
+}
+
 export interface AnimationOptions {
   duration?: number
   delay?: number
@@ -28,6 +45,10 @@ export function useGSAPAnimations() {
       ease = 'power2.out',
       stagger = 0.1
     } = options
+
+    if (shouldSimplifyMotion()) {
+      return finalizeAnimation(selector)
+    }
 
     return gsap.fromTo(
       selector,
@@ -59,6 +80,10 @@ export function useGSAPAnimations() {
       ease = 'power2.out'
     } = options
 
+    if (shouldSimplifyMotion()) {
+      return finalizeAnimation(selector)
+    }
+
     return gsap.fromTo(
       selector,
       {
@@ -87,6 +112,10 @@ export function useGSAPAnimations() {
       delay = 0,
       ease = 'power2.out'
     } = options
+
+    if (shouldSimplifyMotion()) {
+      return finalizeAnimation(selector)
+    }
 
     return gsap.fromTo(
       selector,
@@ -117,6 +146,10 @@ export function useGSAPAnimations() {
       ease = 'back.out(1.7)',
       stagger = 0.1
     } = options
+
+    if (shouldSimplifyMotion()) {
+      return finalizeAnimation(selector)
+    }
 
     return gsap.fromTo(
       selector,
@@ -149,6 +182,10 @@ export function useGSAPAnimations() {
       stagger = 0.2
     } = options
 
+    if (shouldSimplifyMotion()) {
+      return finalizeAnimation(selector)
+    }
+
     return gsap.fromTo(
       selector,
       {
@@ -179,6 +216,13 @@ export function useGSAPAnimations() {
     subtitleSelector: gsap.DOMTarget,
     buttonSelector: gsap.DOMTarget
   ) => {
+    if (shouldSimplifyMotion()) {
+      finalizeAnimation(titleSelector)
+      finalizeAnimation(subtitleSelector)
+      finalizeAnimation(buttonSelector)
+      return gsap.timeline()
+    }
+
     const tl = gsap.timeline()
 
     tl.fromTo(
@@ -237,6 +281,10 @@ export function useGSAPAnimations() {
       ease?: string
     } = {}
   ) => {
+    if (shouldSimplifyMotion()) {
+      return () => {}
+    }
+
     const { scale = 1.05, duration = 0.3, ease = 'power2.out' } = options
 
     const handleMouseEnter = () => {
@@ -267,6 +315,10 @@ export function useGSAPAnimations() {
 
   // Parallax effect for background elements
   const createParallax = (selector: gsap.DOMTarget, speed: number = 0.5) => {
+    if (shouldSimplifyMotion()) {
+      return gsap.set(selector, { yPercent: 0 })
+    }
+
     return gsap.to(selector, {
       yPercent: -50 * speed,
       ease: 'none',

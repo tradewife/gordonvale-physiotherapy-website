@@ -62,6 +62,8 @@ export default function AnimatedPhysiotherapyWebsite() {
 
   useGSAP(() => {
     safeAnimate(() => {
+      const isMobileViewport = window.matchMedia('(max-width: 640px)').matches
+
       // Hero entrance animation
       if (heroTitleRef.current && heroSubtitleRef.current && heroButtonRef.current) {
         heroEntrance(
@@ -114,52 +116,68 @@ export default function AnimatedPhysiotherapyWebsite() {
         })
       }
 
-      // Add scroll-triggered animations for section headlines
-      gsap.utils.toArray<HTMLElement>('.section-headline').forEach((headline) => {
-        gsap.fromTo(headline, 
-          {
-            y: 50,
-            opacity: 0
-          },
-          {
-            y: 0,
-            opacity: 1,
-            duration: 1,
-            ease: 'power2.out',
-            scrollTrigger: {
-              trigger: headline,
-              start: 'top 85%',
-              toggleActions: 'play none none reverse'
+      if (!isMobileViewport) {
+        // Add scroll-triggered animations for section headlines
+        gsap.utils.toArray<HTMLElement>('.section-headline').forEach((headline) => {
+          gsap.fromTo(headline, 
+            {
+              y: 50,
+              opacity: 0
+            },
+            {
+              y: 0,
+              opacity: 1,
+              duration: 1,
+              ease: 'power2.out',
+              scrollTrigger: {
+                trigger: headline,
+                start: 'top 85%',
+                toggleActions: 'play none none reverse'
+              }
             }
-          }
-        )
-      })
+          )
+        })
 
-      // Animate service card images on scroll
-      gsap.utils.toArray<HTMLElement>('.service-image').forEach((image) => {
-        gsap.fromTo(image,
-          {
-            scale: 1.1,
-            opacity: 0
-          },
-          {
-            scale: 1,
-            opacity: 1,
-            duration: 1.5,
-            ease: 'power2.out',
-            scrollTrigger: {
-              trigger: image,
-              start: 'top 80%',
-              toggleActions: 'play none none reverse'
+        // Animate service card images on scroll
+        gsap.utils.toArray<HTMLElement>('.service-image').forEach((image) => {
+          gsap.fromTo(image,
+            {
+              scale: 1.1,
+              opacity: 0
+            },
+            {
+              scale: 1,
+              opacity: 1,
+              duration: 1.5,
+              ease: 'power2.out',
+              scrollTrigger: {
+                trigger: image,
+                start: 'top 80%',
+                toggleActions: 'play none none reverse'
+              }
             }
-          }
-        )
-      })
+          )
+        })
+      } else {
+        gsap.set('.section-headline', { opacity: 1, y: 0 })
+        gsap.set('.service-image', { opacity: 1, scale: 1 })
+      }
     })
   }, [])
 
   // Add hover animations for interactive elements
   useEffect(() => {
+    if (typeof window === 'undefined') return
+
+    const supportsHover = window.matchMedia('(hover: hover)').matches
+
+    if (!supportsHover) {
+      gsap.set('.service-card', { clearProps: 'transform' })
+      gsap.set('.animated-button', { clearProps: 'transform' })
+      gsap.set('.chroma-grid .chroma-item', { clearProps: 'transform', opacity: 1, scale: 1 })
+      return
+    }
+
     const cards = document.querySelectorAll('.service-card')
 
     const buttons = document.querySelectorAll('.animated-button')
@@ -341,7 +359,7 @@ export default function AnimatedPhysiotherapyWebsite() {
         </div>
 
         <div className="page-container">
-          <div className="hero-content">
+          <div className="hero-content px-4 sm:px-0">
             <HeroHeadline className="section-headline content-spacing text-black text-balance text-4xl sm:text-5xl md:text-6xl lg:text-7xl">
               Experts in pain, movement & rehabilitation
             </HeroHeadline>
