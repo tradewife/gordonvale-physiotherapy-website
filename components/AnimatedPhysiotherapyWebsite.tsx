@@ -615,9 +615,9 @@ export default function AnimatedPhysiotherapyWebsite() {
             <div>
               <CardHeadline className="font-light mb-8 text-black tracking-wide">Follow Us</CardHeadline>
               <BodyText className="text-black/60 leading-relaxed font-light">
-                <a 
-                  href="https://facebook.com/helencooper000/" 
-                  target="_blank" 
+                <a
+                  href="https://www.facebook.com/gordonvalephysiotherapy/"
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-black transition-colors duration-500"
                 >
