@@ -139,7 +139,7 @@ export default function Layout({ children }: LayoutProps) {
               <SmallHeadline className="mb-8 text-black">Follow Us</SmallHeadline>
               <p className="text-black/60 leading-relaxed text-sm font-light">
                 <a 
-                  href="https://facebook.com/helencooper000/" 
+                  href="https://www.facebook.com/gordonvalephysiotherapy/" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="hover:text-black transition-colors duration-500"
