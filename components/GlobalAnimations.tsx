@@ -1,6 +1,6 @@
 'use client'
 
-import { ReactNode, useEffect } from 'react'
+import { ReactNode, useEffect, useState } from 'react'
 import BackgroundAnimation from '@/components/BackgroundAnimation'
 import { useGSAP } from '@gsap/react'
 import { gsap } from 'gsap'
@@ -20,9 +20,14 @@ if (typeof window !== 'undefined') {
  */
 export default function GlobalAnimations({ children }: { children: ReactNode }) {
   const { safeAnimate } = useReducedMotion()
+  const [bgReady, setBgReady] = useState(false)
 
   // Page enter + scroll animations for all pages
   useEffect(() => {
+    if (!bgReady) {
+      return
+    }
+
     const cleanupFns: Array<() => void> = []
 
     // Entrance animation for visible content
@@ -120,7 +125,23 @@ export default function GlobalAnimations({ children }: { children: ReactNode }) 
     return () => {
       cleanupFns.forEach((fn) => fn())
     }
-  }, [safeAnimate])
+  }, [safeAnimate, bgReady])
+
+  useEffect(() => {
+    if (typeof document !== 'undefined' && document.documentElement.dataset.bgReady === 'true') {
+      setBgReady(true)
+      return
+    }
+
+    const handleReady = () => setBgReady(true)
+    window.addEventListener('background-ready', handleReady)
+    const timeoutId = window.setTimeout(() => setBgReady(true), 2500)
+
+    return () => {
+      window.removeEventListener('background-ready', handleReady)
+      window.clearTimeout(timeoutId)
+    }
+  }, [])
 
   return (
     <div className="relative min-h-screen">
@@ -128,7 +149,11 @@ export default function GlobalAnimations({ children }: { children: ReactNode }) 
       <BackgroundAnimation />
 
       {/* Foreground application content */}
-      <div className="relative z-50">
+      <div
+        className={`relative z-50 transition-opacity duration-700 ease-out ${
+          bgReady ? 'opacity-100' : 'opacity-0 pointer-events-none'
+        }`}
+      >
         {children}
       </div>
     </div>
