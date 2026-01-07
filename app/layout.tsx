@@ -5,6 +5,8 @@ import '../styles/glass.css'
 import AnimatedHeader from '@/components/AnimatedHeader'
 import GlobalAnimations from '@/components/GlobalAnimations'
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.gordonvalephysiotherapy.com'
+
 const instrumentSans = Instrument_Sans({
   subsets: ['latin'],
   variable: '--font-instrument-sans',
@@ -19,6 +21,7 @@ const instrumentSerif = Instrument_Serif({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: 'Gordonvale Physiotherapy Clinic',
   description: 'Trusted physiotherapy, rehabilitation, and wellness services for the Gordonvale community.',
   generator: 'Gordonvale Physiotherapy Website',
