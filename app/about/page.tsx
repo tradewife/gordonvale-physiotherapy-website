@@ -112,21 +112,6 @@ export default function AboutPage() {
                 </CardContent>
               </Card>
 
-              {/* Steven Miller */}
-              <Card className="about-card glass-card hover:border-white/40 transition-all duration-700 group">
-                <CardContent className="p-6 sm:p-8 md:p-10 lg:p-12">
-                  <h3 className="font-serif text-2xl md:text-4xl lg:text-5xl font-medium leading-tight tracking-tight mb-4 text-gray-900 group-hover:text-gray-800 transition-colors duration-500">
-                    Steven Miller
-                  </h3>
-                  <BodyText className="text-black mb-8 font-light uppercase tracking-wider">Allied Health Assistant &amp; Physiotherapy Student</BodyText>
-                  <LargeBodyText className="text-gray-700">
-                    Steven combines his role as an Allied Health Assistant with his ongoing physiotherapy
-                    studies, bringing enthusiasm and current knowledge to patient care while supporting
-                    our physiotherapists in delivering comprehensive treatment programs.
-                  </LargeBodyText>
-                </CardContent>
-              </Card>
-
               {/* Shelley Fitzsimons */}
               <Card className="about-card glass-card hover:border-white/40 transition-all duration-700 group">
                 <CardContent className="p-6 sm:p-8 md:p-10 lg:p-12">
