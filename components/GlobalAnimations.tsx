@@ -6,6 +6,7 @@ import { useGSAP } from '@gsap/react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { useReducedMotion } from '@/hooks/use-gsap-animations'
+import { useIsMobile } from '@/hooks/use-mobile'
 
 // Ensure GSAP plugins on client
 if (typeof window !== 'undefined') {
@@ -21,10 +22,17 @@ if (typeof window !== 'undefined') {
 export default function GlobalAnimations({ children }: { children: ReactNode }) {
   const { safeAnimate } = useReducedMotion()
   const [bgReady, setBgReady] = useState(false)
+  const isMobile = useIsMobile()
 
   // Page enter + scroll animations for all pages
   useEffect(() => {
     if (!bgReady) {
+      return
+    }
+    if (typeof window !== 'undefined' && window.matchMedia('(max-width: 767px)').matches) {
+      return
+    }
+    if (isMobile) {
       return
     }
 
@@ -125,7 +133,7 @@ export default function GlobalAnimations({ children }: { children: ReactNode }) 
     return () => {
       cleanupFns.forEach((fn) => fn())
     }
-  }, [safeAnimate, bgReady])
+  }, [safeAnimate, bgReady, isMobile])
 
   useEffect(() => {
     if (typeof document !== 'undefined' && document.documentElement.dataset.bgReady === 'true') {
