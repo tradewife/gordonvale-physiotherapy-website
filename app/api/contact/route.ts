@@ -4,6 +4,7 @@ import { z } from "zod"
 
 const contactSchema = z.object({
   name: z.string().min(1, "Name is required"),
+  phone: z.string().min(1, "Phone number is required"),
   email: z.string().email("A valid email address is required"),
   message: z.string().min(1, "Message is required"),
   source: z.string().optional(),
@@ -53,7 +54,7 @@ export async function POST(request: Request) {
     )
   }
 
-  const { name, email, message, source } = parsed.data
+  const { name, phone, email, message, source } = parsed.data
 
   try {
     const port = Number(getEnv("SMTP_PORT"))
@@ -75,6 +76,7 @@ export async function POST(request: Request) {
     const htmlBody = `
       <h2>New website enquiry</h2>
       <p><strong>Name:</strong> ${escapeHtml(name)}</p>
+      <p><strong>Phone:</strong> ${escapeHtml(phone)}</p>
       <p><strong>Email:</strong> ${escapeHtml(email)}</p>
       <p><strong>Source:</strong> ${escapeHtml(source ?? "Not provided")}</p>
       <p><strong>Message:</strong></p>
@@ -88,6 +90,7 @@ export async function POST(request: Request) {
       subject: `New website enquiry from ${name}`,
       text: [
         `Name: ${name}`,
+        `Phone: ${phone}`,
         `Email: ${email}`,
         source ? `Source: ${source}` : null,
         "",

@@ -158,6 +158,19 @@ export default function ContactPage() {
                       />
                     </div>
                     <div>
+                      <label htmlFor="contact-phone" className="block text-gray-700 mb-3">Phone *</label>
+                      <Input
+                        id="contact-phone"
+                        name="phone"
+                        type="tel"
+                        inputMode="tel"
+                        autoComplete="tel"
+                        required
+                        className="glass-card glass-input placeholder:text-black/40 focus:border-black/40 text-base md:text-lg lg:text-xl p-4"
+                        placeholder="Your phone number"
+                      />
+                    </div>
+                    <div>
                       <label htmlFor="contact-email" className="block text-gray-700 mb-3">Email Address *</label>
                       <Input
                         id="contact-email"

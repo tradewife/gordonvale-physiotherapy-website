@@ -20,11 +20,12 @@ export function useContactForm({ source, successMessage }: ContactFormOptions) {
     const form = event.currentTarget
     const formData = new FormData(form)
     const name = String(formData.get("name") ?? "").trim()
+    const phone = String(formData.get("phone") ?? "").trim()
     const email = String(formData.get("email") ?? "").trim()
     const message = String(formData.get("message") ?? "").trim()
 
-    if (!name || !email || !message) {
-      setError("Please fill out Name, Email, and Message.")
+    if (!name || !phone || !email || !message) {
+      setError("Please fill out Name, Phone, Email, and Message.")
       setSuccess(null)
       return
     }
@@ -37,7 +38,7 @@ export function useContactForm({ source, successMessage }: ContactFormOptions) {
       const response = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, email, message, source }),
+        body: JSON.stringify({ name, phone, email, message, source }),
       })
 
       const data: { error?: string } | undefined = await response.json().catch(() => undefined)

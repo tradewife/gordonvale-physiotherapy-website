@@ -653,6 +653,19 @@ function ContactMessageBox() {
         />
       </div>
       <div>
+        <label htmlFor="phone" className="block text-black/80 mb-2">Phone *</label>
+        <Input
+          id="phone"
+          name="phone"
+          type="tel"
+          inputMode="tel"
+          autoComplete="tel"
+          required
+          placeholder="Your phone number"
+          className="glass-card glass-input placeholder:text-black/40 focus:border-black/70 focus:ring-black/10 h-14 text-base font-light"
+        />
+      </div>
+      <div>
         <label htmlFor="email" className="block text-black/80 mb-2">Email *</label>
         <Input
           id="email"
